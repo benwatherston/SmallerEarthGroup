@@ -1,0 +1,22 @@
+// BORDER
+@mixin border($width: 1px, $style: solid, $color: rgba(0,0,0,0.1) ){
+  border: $width $style $color;
+}
+@mixin border-left($width: 1px, $style: solid, $color: rgba(0,0,0,0.1) ){
+  border-left: $width $style $color;
+}
+@mixin border-top($width: 1px, $style: solid, $color: rgba(0,0,0,0.1) ){
+  border-top: $width $style $color;
+}
+@mixin border-right($width: 1px, $style: solid, $color: rgba(0,0,0,0.1) ){
+  border-right: $width $style $color;
+}
+@mixin border-bottom($width: 1px, $style: solid, $color: rgba(0,0,0,0.1) ){
+  border-bottom: $width $style $color;
+}
+
+@mixin border-radius($border: 30px){
+  -webkit-border-radius: $border;
+  -moz-border-radius: $border;
+  border-radius: $border;
+}

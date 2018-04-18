@@ -1,0 +1,42 @@
+.btn{
+  border-radius: 30px;
+  display: inline-block;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  border: 3px solid transparent;
+  padding: 8px 30px;
+  font-size: 1rem;
+  line-height: 1.5;
+  text-decoration: none;
+  cursor: pointer;
+  min-width: 180px;
+  box-sizing: border-box;
+  &__ghost{
+    &--secondary{
+      border-color: $brand-2;
+      color: $brand-2;
+      &:hover{
+        background: $brand-2;
+        color: white;
+      }
+    }
+  }
+}
+
+.btn--primary{
+  background: $primary;
+  color: white;
+  &:hover{
+    background: lighten($primary, 5%);
+  }
+}
+
+.btn--secondary{
+  background: $brand-2;
+  color: white;
+}

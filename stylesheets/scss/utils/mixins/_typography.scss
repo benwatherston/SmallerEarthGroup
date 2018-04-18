@@ -1,0 +1,39 @@
+@mixin truncate($truncation-boundary) {
+  max-width: $truncation-boundary;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// Font-size
+@mixin f-xs{
+  font-size: 12px;
+  @include s{
+    font-size: 14px;
+  }
+}
+@mixin f-s{
+  font-size: 14px;
+  @include s{
+    font-size: 16px;
+  }
+}
+
+@mixin f-m{
+  font-size: 16px;
+  @include s{
+    font-size: 18px;
+  }
+}
+@mixin f-l{
+  font-size: 20px;
+  @include s{
+    font-size: 24px;
+  }
+}
+@mixin f-xl{
+  font-size: 26px;
+  @include s{
+    font-size: 32px;
+  }
+}

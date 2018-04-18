@@ -1,0 +1,205 @@
+.hero{
+  &__wrap{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    @include s{
+      height: 575px;
+    }
+    @include m{
+      height: 600px;
+    }
+    @include l{
+      height: 650px;
+    }
+    @include xl{
+      height: 700px;
+    }
+  }
+  &__offer{
+    &--wrap{
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include s{
+        @include justify-content(flex-end);
+      }
+    }
+    &--inner{
+      @include flexbox;
+      @include flex-direction(column);
+      @include align-items(center);
+      @include justify-content(center);
+      @include flex(0 0 160px);
+      width: 160px;
+      height: 160px;
+      text-align: center;
+      background: $brand-2;
+      color: #fff;
+      border-radius: 50%;
+      text-decoration: none;
+      box-sizing: border-box;
+      @include f-s();
+      @include p-s();
+      @include shadow;
+      @include s{
+        @include flex(0 0 200px);
+        width: 200px;
+        height: 200px;
+      }
+    }
+  }
+  &__image{
+    width: 100%;
+    height: 100%;
+    &--img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  &__content{
+    &--wrap{
+      @include flexbox();
+      @include flex-direction(column);
+      @include justify-content(space-between);
+      @include container;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-sizing: border-box;
+      padding-top: 100px;
+      @include s{
+        padding-top: 100px;
+        @include flex-direction(row);
+      }
+    }
+    &--home{
+      @include flexbox;
+      @include flex-direction(column);
+      width: 260px;
+      @include xs{
+        width: 340px;
+      }
+      @include s{
+        @include flex(0 1 470px);
+      }
+      @include m{
+        @include flex(0 1 480px);
+      }
+      @include l{
+        @include flex(0 1 620px);
+      }
+    }
+  }
+  &__title{
+    margin-bottom: 20px;
+  }
+  &__button{
+    &:first-child{
+      margin: 0 0 20px;
+      @include s{
+        margin: 0 20px 0 0;
+      }
+    }
+    &--wrap{
+      @include flexbox();
+      @include flex-direction(column);
+      @include s{
+        @include flex-direction(row);
+      }
+    }
+  }
+  &__speech{
+    &--wrap{
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      width: 56px;
+      @include s{
+        display: none;
+      }
+      #speech--close{
+        opacity: 0;
+        visibility: hidden;
+        @include transform(scale(0));
+        height: 0;
+        overflow: hidden;
+      }
+      &.active{
+        #speech--close{
+          opacity: 1;
+          visibility: visible;
+          @include transform(scale(1));
+          height: auto;
+          overflow: visible;
+        }
+        #speech--open{
+          opacity: 0;
+          visibility: hidden;
+          @include transform(scale(0));
+          height: 0;
+          overflow: hidden;
+        }
+      }
+    }
+    &--icon{
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      width: 48px;
+      height: 48px;
+      svg{
+        width: 48px;
+        height: 48px;
+        position: absolute;
+        cursor: pointer;
+        @include transition(all 0.3s);
+      }
+    }
+    &--menu{
+      &__wrap{
+        position: absolute;
+        background: $brand;
+        left: 6px;
+        bottom: 70px;
+        @include border-radius;
+        padding: 20px 10px 10px;
+        ul{
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          text-align: center;
+          line-height: 1;
+          @include flexbox;
+          @include flex-direction(column);
+          &:before{
+            content: "";
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 20px solid $brand;
+            bottom: -18px;
+            right: calc(50% - 10px);
+          }
+        }
+      }
+      &__item{
+        margin-bottom: 10px;
+        &:last-child{
+          margin: 0;
+        }
+        svg{
+          width: 32px;
+        }
+      }
+    }
+  }
+}

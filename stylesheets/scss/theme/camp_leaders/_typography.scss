@@ -1,0 +1,16 @@
+h1{
+  font-size: 36px;
+  line-height: 0.9;
+  @include xs{
+    font-size: 48px;
+  }
+  @include s{
+    font-size: 62px;
+  }
+  @include m{
+    font-size: 72px;
+  }
+  @include l{
+    font-size: 82px;
+  }
+}
