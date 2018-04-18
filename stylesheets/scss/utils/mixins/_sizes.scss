@@ -1,0 +1,92 @@
+@mixin container{
+  padding-left: 40px;
+  padding-right: 40px;
+  @include s{
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  @include m{
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+  @include l{
+    padding-left: 120px;
+    padding-right: 120px;
+  }
+  @include xl{
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}
+
+
+// margin
+@mixin m-xs{
+  margin: 5px;
+  @include s{
+    margin: 10px;
+  }
+}
+@mixin m-s{
+  margin: 10px;
+  @include s{
+    margin: 20px;
+  }
+}
+
+@mixin m-m{
+  margin: 20px;
+  @include s{
+    margin: 30px;
+  }
+}
+
+@mixin m-l{
+  margin: 30px;
+  @include s{
+    margin: 40px;
+  }
+}
+
+@mixin m-lx{
+  margin: 40px;
+  @include s{
+    margin: 50px;
+  }
+}
+
+
+// Padding
+@mixin p-xs{
+  padding: 5px;
+  @include s{
+    padding: 10px;
+  }
+}
+@mixin p-s{
+  padding: 10px;
+  @include s{
+    padding: 20px;
+  }
+}
+
+@mixin p-m{
+  padding: 20px;
+  @include s{
+    padding: 30px;
+  }
+}
+
+@mixin p-l{
+  padding: 30px;
+  @include s{
+    padding: 40px;
+  }
+}
+
+@mixin p-lx{
+  padding: 40px;
+  @include s{
+    padding: 50px;
+  }
+}

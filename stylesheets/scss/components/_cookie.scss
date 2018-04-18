@@ -1,0 +1,23 @@
+.cookie{
+  &__wrap{
+    @include flexbox();
+    @include justify-content(center);
+    padding: 10px;
+    background: $brand-2;
+    color: #fff;
+  }
+  &__inner{
+    @include flexbox();
+    @include align-items(center);
+    @include f-s;
+    text-align: center;
+  }
+  &__close{
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  &__text{
+    @include flex(1 1  auto);
+  }
+}
+
