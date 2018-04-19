@@ -19,6 +19,27 @@
   }
 }
 
+@mixin container-small{
+  padding-left: 20px;
+  padding-right: 20px;
+  @include s{
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  @include m{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+  @include l{
+    padding-left: 60px;
+    padding-right: 60px;
+  }
+  @include xl{
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+}
+
 
 // margin
 @mixin m-xs{

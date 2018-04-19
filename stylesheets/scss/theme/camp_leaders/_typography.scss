@@ -1,16 +1,50 @@
+@font-face {
+  font-family: 'Helvetica neue';
+  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Md.eot'); /* IE9 Compat Modes */
+  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Md.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Md.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+*{
+  font-family: "Helvetica neue", Arial, Helvetica, sans-serif;
+}
+
 h1{
-  font-size: 36px;
+  font-size: 38px;
   line-height: 0.9;
   @include xs{
-    font-size: 48px;
+    font-size: 54px;
   }
   @include s{
-    font-size: 62px;
+    font-size: 68px;
   }
   @include m{
-    font-size: 72px;
+    font-size: 80px;
   }
   @include l{
-    font-size: 82px;
+    font-size: 90px;
+  }
+  @include xl{
+    font-size: 100px;
+  }
+}
+
+h2{
+  font-size: 34px;
+  line-height: 0.9;
+  @include xs{
+    font-size: 40px;
+  }
+  @include s{
+    font-size: 50px;
+  }
+  @include m{
+    font-size: 60px;
+  }
+  @include l{
+    font-size: 70px;
+  }
+  @include xl{
+    font-size: 80px;
   }
 }

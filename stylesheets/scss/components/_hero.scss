@@ -2,6 +2,7 @@
   &__wrap{
     width: 100%;
     height: 100vh;
+    min-height: 460px;
     position: relative;
     @include s{
       height: 575px;
@@ -39,9 +40,10 @@
       border-radius: 50%;
       text-decoration: none;
       box-sizing: border-box;
-      @include f-s();
+      @include f-xs();
       @include p-s();
       @include shadow;
+      z-index: 2;
       @include s{
         @include flex(0 0 200px);
         width: 200px;
@@ -53,10 +55,7 @@
     width: 100%;
     height: 100%;
     &--img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center center;
+      @include background-image();
     }
   }
   &__content{
@@ -84,16 +83,19 @@
       @include flex-direction(column);
       width: 260px;
       @include xs{
-        width: 340px;
+        width: 400px;
       }
       @include s{
         @include flex(0 1 470px);
       }
       @include m{
-        @include flex(0 1 480px);
+        @include flex(0 1 580px);
       }
       @include l{
         @include flex(0 1 620px);
+      }
+      @include xl{
+        @include flex(0 1 820px);
       }
     }
   }
@@ -133,18 +135,22 @@
       }
       &.active{
         #speech--close{
+          @include transform(scale(1));
           opacity: 1;
           visibility: visible;
-          @include transform(scale(1));
           height: auto;
           overflow: visible;
         }
         #speech--open{
+          @include transform(scale(0));
           opacity: 0;
           visibility: hidden;
-          @include transform(scale(0));
           height: 0;
           overflow: hidden;
+        }
+        .hero__speech--menu__wrap{
+          opacity: 1;
+          visibility: visible;
         }
       }
     }
@@ -166,14 +172,16 @@
       &__wrap{
         position: absolute;
         background: $brand;
-        left: 6px;
+        right: -15px;
         bottom: 70px;
-        @include border-radius;
-        padding: 20px 10px 10px;
+        @include border-radius(100px);
+        @include transition(all 0.3s);
+        opacity: 0;
+        visibility: hidden;
         ul{
+          padding: 20px 20px 10px;
           list-style-type: none;
           margin: 0;
-          padding: 0;
           text-align: center;
           line-height: 1;
           @include flexbox;
@@ -197,7 +205,8 @@
           margin: 0;
         }
         svg{
-          width: 32px;
+          height: 40px;
+          cursor: pointer;
         }
       }
     }
