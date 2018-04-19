@@ -3,3 +3,8 @@
   width: 100%;
   overflow-x: hidden;
 }
+
+main{
+  @include container();
+  position: relative;
+}

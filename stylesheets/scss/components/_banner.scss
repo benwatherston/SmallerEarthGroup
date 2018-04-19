@@ -1,0 +1,85 @@
+.banner{
+  @include flexbox();
+  position: relative;
+  min-height: 250px;
+  max-height: 500px;
+  overflow: hidden;
+  &__img{
+    width: 100%;
+    height: 100%;
+    img{
+      @include background-image;
+    }
+  }
+  &__content{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    @include flexbox();
+    @include align-items(center);
+    &--inner{
+      @include flex(0 1 60%);
+      @include xs{
+        @include flex(0 1 50%);
+      }
+    }
+    &.banner__content--right{
+      @include justify-content(flex-end);
+      .banner__text{
+        padding-left: 0;
+        @include s{
+          @include container-small;
+        }
+      }
+    }
+    &.banner__content--left{
+      @include justify-content(flex-start);
+      .banner__text{
+        padding-right: 0;
+        @include s{
+          @include container-small;
+        }
+      }
+    }
+  }
+  &__text{
+    @include flexbox();
+    @include flex-direction(column);
+    font-weight: bold;
+    font-size: 28px;
+    @include container-small;
+    color: #fff;
+    @include xs{
+      font-size: 30px;
+    }
+    @include s{
+      font-size: 38px;
+    }
+    @include m{
+      font-size: 46px;
+    }
+    @include l{
+      font-size: 54px;
+    }
+    @include xl{
+      font-size: 62px;
+    }
+    .big{
+      font-size: 80px;
+      @include xs{
+        font-size: 90px;
+      }
+      @include s{
+        font-size: 100px;
+      }
+      @include m{
+        font-size: 110px;
+      }
+      @include l{
+        font-size: 120px;
+      }
+    }
+  }
+}

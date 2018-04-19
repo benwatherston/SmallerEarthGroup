@@ -1,0 +1,30 @@
+.cta{
+  &__wrap{
+    @include flexbox;
+    @include container;
+    @include justify-content(center);
+    @include align-items(center);
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    @include s{
+      padding-top: 50px;
+      padding-bottom: 50px;    
+    }
+  }
+  &__text{
+    font-size: 50px;
+    font-weight: bold;
+    @include s{
+      font-size: 70px;
+    }
+  }
+  &--brand{
+    background: $brand;
+    color: white;
+  }
+  &--brand-2{
+    background: $brand-2;
+    color: white;
+  }
+}
