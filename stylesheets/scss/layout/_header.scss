@@ -1,20 +1,20 @@
 .header{
-  width: 100%;
   position: absolute;
+  width: 100%;
   z-index: 1;
   &__list--wrap{
-    @include flexbox;
-    @include justify-content(space-between);
     @include align-items(center);
     @include container();
-    padding-top: 20px;
+    @include flexbox;
+    @include justify-content(space-between);
+    padding-top: 40px;
   }
   &__list--item{
     cursor: pointer;
-    &-countdown{
-      display: none;
-      @include m{
-        display: inline-flex;
+    &-menu{
+      svg{
+        height: 40px;
+        width: 40px;
       }
     }
     &-logo{

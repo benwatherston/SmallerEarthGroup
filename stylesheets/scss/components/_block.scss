@@ -4,18 +4,18 @@
     @include flex-direction(column);
   }
   &__title{
+    @include container-small;
     background: $brand;
     color: white;
     font-size: 30px;
     line-height: 1;
-    padding: 40px;
-    @include container;
+    padding: 50px;
     &--wrap{
-      text-align: center;
-      margin-top: -10px;
+      left: 0;
+      margin-bottom: 20px;
       margin-left: -40px;
       margin-right: -40px;
-      left: 0;
+      text-align: center;
       right: 0;
       z-index: 1;
       @include s{
@@ -35,10 +35,10 @@
   }
   &__image{
     &--wrap{
-      width: 100%;
-      margin-top: -10px;
-      z-index: 1;
       margin-bottom: 20px;
+      margin-top: -30px;
+      width: 100%;
+      z-index: 1;
       @include s{
         @include flex(1 1 50%);
       }
@@ -50,30 +50,98 @@
   &__text{
     background: $brand-2;
     color: white;
-    padding: 10px;
     margin-bottom: 20px;
+    padding: 20px;
+    text-align: justify;
+    line-height: 1.4;
     @include s{
-      padding: 20px;
+      margin-bottom: 0px;
+      padding: 40px;
+      z-index: 1;
+    }
+    p{
+      margin-bottom: 1rem;
+      font-size: 12px;
+      @include s{
+        font-size: 14px;
+      }
+      @include m{
+        font-size: 16px;
+      }
+      @include l{
+        font-size: 18px;
+      }
+      &:first-child{
+        font-weight: bold;
+      }
+      &:last-child{
+        margin: 0;
+      }
     }
     &--wrap{
       @include s{
+        @include flexbox;
         @include flex(1 1 50%);
+        @include flex-direction(column);
+        @include justify-content(space-around);
       }
     }
   }
   &__link{
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    color: $brand-3;
+    font-weight: bold;
     margin-bottom: 20px;
+    padding: 10px;
     text-align: center;
-    a{
-      color: $brand-3;
-      font-weight: bold;
-      text-decoration: none;
+    text-decoration: none;
+    font-size: 16px;
+    @include s{
+      font-size: 18px;
+    }
+    svg{
+      margin-left: 5px;
+      *{
+        fill: $brand-3;
+      }
+    }
+  }
+  &__left{
+    .block__text{
+      @include s{
+        margin-left: -20px;
+      }
     }
   }
   &__right{
     .block__image--wrap{
       @include s{
         @include order(1);
+      }
+    }
+    .block__text{
+      @include s{
+        margin-right: -20px;
+      }
+    }
+  }
+  &__top{
+    .block__title--wrap{
+      margin-top: -10px;
+      @include s{
+        margin-top: -20px;
+      }
+    }
+  }
+  &__reverse{
+    .block{
+      &__title{
+        background: $brand-2;
+      }
+      &__text{
+        background: $brand;
       }
     }
   }

@@ -1,20 +1,20 @@
 .cta{
   &__wrap{
-    @include flexbox;
-    @include container;
-    @include justify-content(center);
     @include align-items(center);
-    text-align: center;
-    padding-top: 30px;
+    @include container;
+    @include flexbox;
+    @include justify-content(center);
     padding-bottom: 30px;
+    padding-top: 30px;
+    text-align: center;
     @include s{
+      padding-bottom: 50px;
       padding-top: 50px;
-      padding-bottom: 50px;    
     }
   }
   &__text{
+    @include font-heading;
     font-size: 50px;
-    font-weight: bold;
     @include s{
       font-size: 70px;
     }

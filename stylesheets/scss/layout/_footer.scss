@@ -1,0 +1,68 @@
+.footer{
+  @include container;
+  @include flexbox;
+  @include flex-direction(column);
+  @include flex-wrap(wrap);
+  @include align-items(center);
+  background: $black;
+  color: white;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  @include s{
+    @include flex-direction(row);
+  }
+  &__left{
+    @include align-items(center);
+    @include flexbox;
+    @include flex-direction(column);
+    @include order(3);
+    @include justify-content(space-evenly);
+    width: 100%;
+    @include s{
+      @include order(1);
+      width: auto;
+    }
+    &--top{
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(space-evenly);
+      width: 100%;
+    }
+    &--legal{
+      @include f-xs;
+    }
+  }
+  &__center{
+    @include order(1);
+    margin-bottom: 20px;
+    @include s{
+      @include order(2);
+    }
+    svg{
+      width: 100px;
+    }
+  }
+  &__right{
+    @include flexbox;
+    @include flex-direction(column);
+    @include order(2);
+    @include s{
+      @include order(3);
+    }
+    &--social{
+      @include flexbox;
+      @include justify-content(space-evenly);
+      margin-bottom: 20px;
+    }
+    &--cleversteam{
+      svg{
+        height: 39px;
+      }
+    }
+  }
+  &__bottom{
+    @include order(4);
+    @include f-xs;
+    @include flex(0 0 100%);
+  }
+}

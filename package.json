@@ -1,15 +1,26 @@
 {
   "name": "smallerearthgroup",
   "version": "1.0.0",
-  "description": "Small Earth Group suite of sites",
-  "main": "index.js",
+  "description": "Smaller Earth Suite of sites",
+  "main": "gulpfile.js",
   "scripts": {
-    "build": "babel --presets es2015 src -w -d javascripts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benwatherston/SmallerEarthGroup.git"
+  },
+  "author": "Ben Watherston",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benwatherston/SmallerEarthGroup/issues"
+  },
+  "homepage": "https://github.com/benwatherston/SmallerEarthGroup#readme",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1"
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-uglify": "^3.0.0"
   }
 }
