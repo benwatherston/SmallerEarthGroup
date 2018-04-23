@@ -9,3 +9,38 @@
   document.getElementById('speech--close').addEventListener("click", function() {
     document.getElementById('speech--wrap').classList.remove("active");
   }, false);
+
+
+
+  document.getElementById('navigation_open').addEventListener("click", function() {
+    document.querySelector('.navigation').classList.add("active");
+    document.querySelector('.overlay').classList.add("active");
+  }, false);
+
+
+  document.querySelector('#navigation_close').addEventListener("click", function() {
+    document.querySelector('.navigation').classList.remove("active");
+    document.querySelector('.overlay').classList.remove("active");
+  }, false);
+
+  document.querySelector('.overlay').addEventListener("click", function(e) {
+    document.querySelector('.navigation').classList.remove("active");
+    e.target.classList.remove("active");
+  }, false);
+
+
+  // NAVIGATION
+  const navItems = document.querySelectorAll('.navigation__nav--item_parent');
+  navItems.forEach( (item) => {
+    item.addEventListener("click", function(e){
+
+      const result = item.parentElement.classList.contains("active");
+
+      if(result){
+        item.parentElement.classList.remove("active");
+      } else {
+        navItems.forEach( (items) => { items.parentElement.classList.remove("active") })
+        item.parentElement.classList.add("active");
+      }
+    })
+  })

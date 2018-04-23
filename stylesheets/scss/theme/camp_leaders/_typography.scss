@@ -1,12 +1,26 @@
 @font-face {
   font-family: 'Helvetica neue';
-  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Md.eot'); /* IE9 Compat Modes */
-  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Md.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-       url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Md.svg#svgFontName') format('svg'); /* Legacy iOS */
+  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Roman.eot'); /* IE9 Compat Modes */
+  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Roman.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Roman.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'Helvetica neue bold';
+  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Bd.eot'); /* IE9 Compat Modes */
+  src: url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Bd.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../../../../fonts/camp_leaders/HelveticaNeueLTPro-Bd.svg#svgFontName') format('svg'); /* Legacy iOS */
 }
 
 *{
   font-family: "Helvetica neue", Arial, Helvetica, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6{
+  @include font-heading;
+  *{
+    @include font-heading;
+  }
 }
 
 h1{
@@ -30,10 +44,10 @@ h1{
 }
 
 h2{
-  font-size: 34px;
+  font-size: 40px;
   line-height: 0.9;
   @include xs{
-    font-size: 40px;
+    font-size: 42px;
   }
   @include s{
     font-size: 50px;

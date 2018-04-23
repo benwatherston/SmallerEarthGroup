@@ -5,6 +5,13 @@
   text-overflow: ellipsis;
 }
 
+@mixin user-select{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 // Font-size
 @mixin f-xs{
   font-size: 12px;

@@ -1,0 +1,173 @@
+.navigation{
+  @include transition(all 0.3s);
+  background: $brand;
+  left: 0;
+  max-height: 0;
+  overflow-y: hidden;
+  position: fixed;
+  top: 0%;
+  right: 0;
+  z-index: 11;
+  &__header{
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(space-between);
+    @include flex-wrap(wrap);
+    @include container;
+    @include s{
+      margin-bottom: 2rem;
+    }
+    &--logo{
+      margin-bottom: 2rem;
+      @include s{
+        margin: 0;
+      }
+      svg{
+        height: 50px;
+        @include s{
+          height: 60px;
+        }
+      }
+    }
+    &--right{
+      @include flexbox;
+    }
+    &--center{
+      @include flex(0 0 100%);
+      @include order(1);
+      margin-bottom: 2rem;
+      @include s{
+        @include order(0);
+        @include flex(1 1 auto);
+        margin-bottom: 0;
+        margin-left: 2rem;
+      }
+      @include m{
+        margin-left: 3rem;
+      }
+      .btn{
+        &:first-child{
+          margin-right: 1rem;
+        }
+      }
+    }
+    &--country{
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      color: white;
+      font-weight: bold;
+      text-align: center;
+    }
+  }
+  &__close{
+    margin-left: 10px;
+    svg{
+      height: 40px;
+      width: 40px;
+      cursor: pointer;
+    }
+  }
+  &__nav{
+    @include flexbox;
+    @include flex-wrap(wrap);
+    @include container;
+    @include s{
+    }
+    &--item{
+      @include flex(0 0 100%);
+      margin-bottom: 2rem;
+      @include xs{
+        @include flex(1 0 250px);
+        padding-right: 2rem;
+      }
+      &_parent{
+        @include font-heading;
+        color: white;
+        cursor: pointer;
+        font-size: 2rem;
+        letter-spacing: -2px;
+        position: relative;
+        text-decoration: none;
+        &:before, &:after{
+          background: $brand-2;
+          content: "";
+          height: 6px;
+          position: absolute;
+          top: 50%;
+          width: 0;
+          z-index: -1;
+          @include transition(all 0.3s)
+        }
+        &:before{
+          left: 50%;
+        }
+        &:after{
+          right: 50%;
+        }
+      }
+      &_child{
+        list-style-type: none;
+        margin-bottom: 20px;
+        a{
+          color: white;
+          text-decoration: none;
+        }
+        &-wrap{
+          @include transition(0.3s all);
+          margin: 2rem 0 0;
+          padding: 0;
+          max-height: 0;
+          overflow: hidden;
+        }
+      }
+      &.active{
+        .navigation__nav--item{
+          &_parent{
+            &:before, &:after{
+              width: calc(50% + 10px);
+            }
+          }
+          &_child-wrap{
+            max-height: 400px;
+          }
+        }
+      }
+    }
+  }
+  &__search{
+    @include container;
+    @include flexbox;
+    background: #ebe9e9;
+    &--text{
+      @include font-heading;
+      color: $brand;
+      font-size: 2rem;
+      letter-spacing: -2px;
+    }
+    &--input{
+      background: transparent;
+      outline: none;
+      border: none;
+      @include flex(1 1 auto);
+      -webkit-appearance: none;
+    }
+  }
+  &.active{
+    max-height: 100%;
+    overflow-y: scroll;
+    padding-top: 40px;
+  }
+}
+
+.country--change{
+  @include flex(0 0 40px);
+  border: 2px solid white;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: 16px;
+  height: 40px;
+  line-height: 36px;
+  width: 40px;
+  cursor: pointer;
+}

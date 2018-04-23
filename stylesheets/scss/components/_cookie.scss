@@ -2,19 +2,31 @@
   &__wrap{
     @include flexbox();
     @include justify-content(center);
-    padding: 10px;
     background: $brand-2;
     color: #fff;
+    padding: 10px;
   }
   &__inner{
-    @include flexbox();
     @include align-items(center);
-    @include f-s;
+    @include flexbox();
+    font-size: 11px;
     text-align: center;
+    @include s{
+      font-size: 12px;
+    }
+    @include m{
+      font-size: 13px;
+    }
+    @include l{
+      font-size: 14px;
+    }
   }
   &__close{
-    margin-right: 10px;
     cursor: pointer;
+    margin-right: 5px;
+    @include s{
+      margin-right: 10px;
+    }
   }
   &__text{
     @include flex(1 1  auto);
