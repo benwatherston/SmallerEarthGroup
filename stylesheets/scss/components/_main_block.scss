@@ -40,10 +40,14 @@
       width: 100%;
       z-index: 1;
       @include s{
+        position: relative;
         @include flex(1 1 50%);
       }
       img{
         @include background-image;
+        @include s{
+          position: absolute;
+        }
       }
     }
   }
@@ -84,6 +88,10 @@
         @include flex(1 1 50%);
         @include flex-direction(column);
         @include justify-content(space-around);
+        margin: 1rem 0;
+      }
+      @include l{
+        margin: 2rem 0;
       }
     }
   }

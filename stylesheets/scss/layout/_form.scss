@@ -1,0 +1,42 @@
+::placeholder {
+  color: $brand-2;
+  opacity: 1;
+}
+
+:-ms-input-placeholder {
+  color: $brand-2;
+}
+
+::-ms-input-placeholder {
+  color: $brand-2;
+}
+
+.form{
+  &__field{
+    @include flexbox();
+    margin: 0 0 1rem;
+    &:last-child{
+      margin: 0;
+    }
+    input:not([type="checkbox"]), textarea, select{
+      @include flex(1 1 100%);
+      border: none;
+      border-radius: 3px;
+      box-sizing: border-box;
+      color: $brand-2;
+      margin: 0;
+      outline: none;
+      padding: 12px 10px;
+      -webkit-appearance: none;
+    }
+    textarea{
+      min-height: 100px;
+      max-width: 100%;
+      min-width: 100%;
+    }
+    &--right{
+      @include flexbox;
+      @include justify-content(flex-end);
+    }
+  }
+}

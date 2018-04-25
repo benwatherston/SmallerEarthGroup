@@ -1,0 +1,18 @@
+.apply__block{
+  @include flexbox;
+  @include justify-content(space-between);
+  margin-bottom: 20px;
+  width: 100%;
+  &--btn{
+    @include flex(1 1 auto);
+  }
+  &--back{
+    @include flex(0 0 40px);
+    svg{
+      cursor: pointer;
+      fill: $brand-2;
+      height: 40px;
+      width: 40px;
+    }
+  }
+}

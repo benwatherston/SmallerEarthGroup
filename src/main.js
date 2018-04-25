@@ -1,46 +1,28 @@
-  document.getElementById('cookie__close').addEventListener("click", function() {
-    document.getElementById('cookie__wrap').style.display = "none";
-  }, false);
+// Remove Overlay + Open elements
+document.querySelector(".overlay").addEventListener(
+  "click",
+  function(e) {
+    document.querySelector(".navigation").classList.remove("active");
+    document.querySelector(".contact__modal--wrap").classList.remove("active");
+    unFreeze();
+  },
+  false
+);
 
-  document.getElementById('speech--open').addEventListener("click", function() {
-    document.getElementById('speech--wrap').classList.add("active");
-  }, false);
+// Escape key
+document.onkeydown = function(evt) {
+  evt = evt || window.event;
+  if (evt.keyCode == 27) {
+    document.querySelector(".navigation").classList.remove("active");
+    document.querySelector(".contact__modal--wrap").classList.remove("active");
+    unFreeze();
+  }
+};
 
-  document.getElementById('speech--close').addEventListener("click", function() {
-    document.getElementById('speech--wrap').classList.remove("active");
-  }, false);
-
-
-
-  document.getElementById('navigation_open').addEventListener("click", function() {
-    document.querySelector('.navigation').classList.add("active");
-    document.querySelector('.overlay').classList.add("active");
-  }, false);
-
-
-  document.querySelector('#navigation_close').addEventListener("click", function() {
-    document.querySelector('.navigation').classList.remove("active");
-    document.querySelector('.overlay').classList.remove("active");
-  }, false);
-
-  document.querySelector('.overlay').addEventListener("click", function(e) {
-    document.querySelector('.navigation').classList.remove("active");
-    e.target.classList.remove("active");
-  }, false);
-
-
-  // NAVIGATION
-  const navItems = document.querySelectorAll('.navigation__nav--item_parent');
-  navItems.forEach( (item) => {
-    item.addEventListener("click", function(e){
-
-      const result = item.parentElement.classList.contains("active");
-
-      if(result){
-        item.parentElement.classList.remove("active");
-      } else {
-        navItems.forEach( (items) => { items.parentElement.classList.remove("active") })
-        item.parentElement.classList.add("active");
-      }
-    })
-  })
+document.querySelector("#top").addEventListener(
+  "click",
+  function() {
+    document.body.scrollTop = document.documentElement.scrollTop = 0;
+  },
+  false
+);
