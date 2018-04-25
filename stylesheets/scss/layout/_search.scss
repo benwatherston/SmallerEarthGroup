@@ -1,0 +1,123 @@
+.navigation__search{
+  @include container;
+  @include align-items(center);
+  @include flexbox;
+  background: $light-grey;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  &--text{
+    @include flex(0 0 40px);
+    @include font-heading;
+    @include transition(0.3s all);
+    color: $brand;
+    font-size: 2rem;
+    letter-spacing: -2px;
+    overflow: hidden;
+    @include s{
+      @include flex(0 1 auto);
+    }
+    &-icon{
+      @include s{
+        display: none;
+      }
+      svg{
+        height: 40px;
+      }
+      *{
+        fill: $brand
+      }
+    }
+    &-text{
+      display: none;
+      @include s{
+        display: block;
+      }
+    }
+  }
+  &--input{
+    @include flex(1 1 auto);
+    @include font-heading;
+    @include transition(0.3s all);
+    background: transparent;
+    border: none;
+    border-left: 4px solid $brand;
+    color: transparent;
+    font-size: 24px;
+    height: 30px;
+    letter-spacing: -2px;
+    margin-left: 5px;
+    outline: none;
+    padding-left: 5px;
+    padding-right: 5px;
+    -webkit-appearance: none;
+  }
+}
+
+.navigation.active {
+  .navigation__search{
+    &--input{
+      @include animation(1s cursor-blink step-end infinite);
+    }
+    &.active{
+      .navigation__search{
+
+        &--text{
+          @include flex(0);
+          opacity: 0;
+          visibility: hidden;
+          width: 0;
+        }
+        &--input{
+          @include animation(none);
+          @include flex(1 1 100%);
+          color: $brand-2;
+        }
+      }
+    }
+  }
+}
+
+@keyframes cursor-blink {
+  from, to {
+    border-color: $brand;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@-moz-keyframes cursor-blink {
+  from, to {
+    border-color: $brand;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@-webkit-keyframes cursor-blink {
+  from, to {
+    border-color: $brand;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@-ms-keyframes cursor-blink {
+  from, to {
+    border-color: $brand;
+  }
+  50% {
+    border-color: transparent;
+  }
+}
+
+@-o-keyframes cursor-blink {
+  from, to {
+    border-color: $brand;
+  }
+  50% {
+    border-color: transparent;
+  }
+}

@@ -4,7 +4,17 @@
     @include justify-content(center);
     background: $brand-2;
     color: #fff;
+    display: none;
+    left: 0;
     padding: 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 5;
+    &.active{
+      @include flexbox();
+    }
   }
   &__inner{
     @include align-items(center);

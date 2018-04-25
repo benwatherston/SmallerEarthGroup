@@ -18,10 +18,6 @@
       margin-bottom: 2rem;
     }
     &--logo{
-      margin-bottom: 2rem;
-      @include s{
-        margin: 0;
-      }
       svg{
         height: 50px;
         @include s{
@@ -33,21 +29,30 @@
       @include flexbox;
     }
     &--center{
+      @include flexbox;
       @include flex(0 0 100%);
+      @include justify-content(space-between);
       @include order(1);
       margin-bottom: 2rem;
+      margin-top: 2rem;
+      @include xs{
+        @include justify-content(flex-start);
+      }
       @include s{
         @include order(0);
         @include flex(1 1 auto);
         margin-bottom: 0;
         margin-left: 2rem;
+        margin-top: 0;
       }
       @include m{
         margin-left: 3rem;
       }
       .btn{
         &:first-child{
-          margin-right: 1rem;
+          @include xs{
+            margin-right: 1rem;
+          }
         }
       }
     }
@@ -64,6 +69,7 @@
     margin-left: 10px;
     svg{
       height: 40px;
+      margin-top: 4px;
       width: 40px;
       cursor: pointer;
     }
@@ -76,10 +82,12 @@
     }
     &--item{
       @include flex(0 0 100%);
-      margin-bottom: 2rem;
       @include xs{
         @include flex(1 0 250px);
         padding-right: 2rem;
+      }
+      @include m{
+        @include flex(1 0 30%);
       }
       &_parent{
         @include font-heading;
@@ -114,7 +122,7 @@
           text-decoration: none;
         }
         &-wrap{
-          @include transition(0.3s all);
+          @include transition(0.5s all);
           margin: 2rem 0 0;
           padding: 0;
           max-height: 0;
@@ -135,26 +143,8 @@
       }
     }
   }
-  &__search{
-    @include container;
-    @include flexbox;
-    background: #ebe9e9;
-    &--text{
-      @include font-heading;
-      color: $brand;
-      font-size: 2rem;
-      letter-spacing: -2px;
-    }
-    &--input{
-      background: transparent;
-      outline: none;
-      border: none;
-      @include flex(1 1 auto);
-      -webkit-appearance: none;
-    }
-  }
   &.active{
-    max-height: 100%;
+    max-height: calc(100% - 40px);
     overflow-y: scroll;
     padding-top: 40px;
   }

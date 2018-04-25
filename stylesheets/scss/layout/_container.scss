@@ -8,3 +8,7 @@ main{
   @include container();
   position: relative;
 }
+
+.freeze{
+  overflow: hidden;
+}

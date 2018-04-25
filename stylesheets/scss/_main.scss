@@ -1,10 +1,14 @@
 @import 'utils/utils';
 
+@import 'components/apply_block';
 @import 'components/banner';
-@import 'components/block';
+@import 'components/main_block';
+@import 'components/contact-modal';
 @import 'components/cta';
 @import 'components/image';
 
-@import 'layout/navigation';
 @import 'layout/footer';
+@import 'layout/form';
+@import 'layout/navigation';
 @import 'layout/overlay';
+@import 'layout/search';
