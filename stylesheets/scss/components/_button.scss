@@ -45,7 +45,18 @@
   }
 }
 
+.btn--brand{
+  background: $brand;
+  color: white;
+  &:hover{
+    background: lighten($brand, 5%);
+  }
+}
+
 .btn--secondary{
   background: $brand-2;
   color: white;
+  &:hover{
+    background: lighten($brand-2, 5%);
+  }
 }

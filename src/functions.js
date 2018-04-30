@@ -1,9 +1,12 @@
+// Variables
+const body = document.querySelector("body");
+
 const freeze = function() {
-  document.querySelector(".overlay").classList.add("active");
-  document.querySelector("body").classList.add("freeze");
+  overlay.classList.add("active");
+  body.classList.add("freeze");
 };
 
 const unFreeze = function() {
-  document.querySelector(".overlay").classList.remove("active");
-  document.querySelector("body").classList.remove("freeze");
+  overlay.classList.remove("active");
+  body.classList.remove("freeze");
 };

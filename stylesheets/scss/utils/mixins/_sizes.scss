@@ -40,6 +40,27 @@
   }
 }
 
+@mixin minus-container{
+  margin-left: -40px;
+  margin-right: -40px;
+  @include s{
+    margin-left: -60px;
+    margin-right: -60px;
+  }
+  @include m{
+    margin-left: -80px;
+    margin-right: -80px;
+  }
+  @include l{
+    margin-left: -120px;
+    margin-right: -120px;
+  }
+  @include xl{
+    margin-left: -160px;
+    margin-right: -160px;
+  }
+}
+
 
 // margin
 @mixin m-xs{
