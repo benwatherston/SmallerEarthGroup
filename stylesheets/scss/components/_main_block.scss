@@ -37,6 +37,7 @@
     &--wrap{
       margin-bottom: 20px;
       margin-top: -30px;
+      position: relative;
       width: 100%;
       z-index: 1;
       @include s{
@@ -47,6 +48,33 @@
         @include background-image;
         @include s{
           position: absolute;
+        }
+      }
+    }
+    &--content{
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      box-sizing: border-box;
+      height: 100%;
+      padding: 20px;
+      width: 100%;
+      &-wrap{
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+      svg{
+        height: 80px;
+        width: 80px;
+        @include s{
+          height: 100px;
+          width: 100px;
         }
       }
     }
@@ -74,9 +102,6 @@
       }
       @include l{
         font-size: 18px;
-      }
-      &:first-child{
-        font-weight: bold;
       }
       &:last-child{
         margin: 0;
@@ -143,6 +168,20 @@
       }
     }
   }
+  &__job{
+    margin-top: -20px;
+    .block__title--wrap{
+      @include minus-container;
+      @include s{
+        @include minus-container;
+      }
+    }
+  }
+  &__header{
+    .block__title--wrap{
+      @include minus-container;
+    }
+  }
   &__reverse{
     .block{
       &__title{
@@ -150,6 +189,17 @@
       }
       &__text{
         background: $brand;
+      }
+    }
+  }
+  &__grey{
+    .block{
+      &__title{
+        background: $brand;
+      }
+      &__text{
+        background: $light-grey;
+        color: $brand-2;
       }
     }
   }

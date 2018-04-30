@@ -3,13 +3,14 @@
     @include flexbox();
     @include justify-content(center);
     background: $brand-2;
+    box-sizing: border-box;
     color: #fff;
     display: none;
     left: 0;
     padding: 10px;
     position: absolute;
     right: 0;
-    top: 0;
+    top: 00;
     width: 100%;
     z-index: 5;
     &.active{

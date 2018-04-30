@@ -1,0 +1,89 @@
+// Jobs Hero
+.hero{
+  &__content{
+    &--wrap{
+      &_job{
+        @include justify-content(flex-end);
+        padding-bottom: 40px;
+        @include xs{
+          @include justify-content(center);
+        }
+      }
+    }
+    &--job{
+      @include flexbox;
+      @include flex-direction(column);
+      .hero__button--wrap{
+        @include xs{
+          @include order(1);
+        }
+      }
+    }
+  }
+  &__title{
+    color: white;
+    margin-bottom: 20px;
+    h1{
+      font-size: 12vw;
+      @include xs{
+        font-size: 9vw;
+      }
+      @include m{
+        font-size: 8vw;
+      }
+      @include l{
+        font-size: 7.5vw;
+      }
+      @include xl{
+        font-size: 6vw;
+      }
+    }
+  }
+}
+
+// Jobs Navigation
+.jobs__navigation{
+  &--wrap{
+    @include flexbox;
+    @include minus-container;
+    background: $brand-2;
+    background: -moz-linear-gradient(left, darken($brand-2, 10%) 0%, $brand-2 50%, darken($brand-2, 10%));
+    background: -webkit-linear-gradient(left, darken($brand-2, 10%) 0%, $brand-2 50%, darken($brand-2, 10%) 100%);
+    background: linear-gradient(to right, darken($brand-2, 10%) 0%, $brand-2 50%, darken($brand-2, 10%) 100%);
+    position: relative;
+  }
+  &--inner{
+    @include flexbox;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    width: 100%;
+  }
+  &--arrow{
+    bottom: 5px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 15px solid $brand-2;
+    height: 0;
+    position: absolute;
+    right: calc(50% - 10px);
+    width: 0;
+    z-index: 9;
+  }
+  &--item{
+    @include flex(1);
+    text-align: center;
+    &.active{
+      font-weight: bold;
+      .jobs__navigation--item-inner{
+        color: white;
+      }
+    }
+    &-inner{
+      color: rgba(255,255,255,0.9);
+      display: inline-block;
+      padding: 1rem 1rem 36px;
+      text-decoration: none;
+    }
+  }
+}

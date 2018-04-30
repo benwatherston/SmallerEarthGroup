@@ -1,28 +1,42 @@
+// Variables
+const nav = document.querySelector(".navigation");
+const navOpen = document.querySelector("#navigation_open");
+const navClose = document.querySelector("#navigation_close");
+const navItems = document.querySelectorAll(".navigation__nav--item_parent");
+const navSearch = document.querySelector(".navigation__search");
+const navSearchInput = document.querySelector("#navigation__search--input");
+
 // Open Main Navigation
-document.querySelector("#navigation_open").addEventListener(
-  "click",
-  function() {
-    document.querySelector(".navigation").classList.add("active");
-    freeze();
-    if (window.outerWidth >= 1024) {
-      document.querySelector("#navigation__search--input").focus();
-    }
-  },
-  false
-);
+if (navOpen) {
+  navOpen.addEventListener(
+    "click",
+    function() {
+      nav.classList.add("active");
+      freeze();
+      if (window.outerWidth >= 1024) {
+        if (navSearchInput) {
+          navSearchInput.focus();
+        }
+      }
+    },
+    false
+  );
+}
 
 // Close Main Navigation
-document.querySelector("#navigation_close").addEventListener(
-  "click",
-  function() {
-    document.querySelector(".navigation").classList.remove("active");
-    unFreeze();
-  },
-  false
-);
+if (navClose) {
+  navClose.addEventListener(
+    "click",
+    function() {
+      nav.classList.remove("active");
+      unFreeze();
+    },
+    false
+  );
+}
 
 // Main Navigation items click event
-const navItems = document.querySelectorAll(".navigation__nav--item_parent");
+
 navItems.forEach(item => {
   item.addEventListener("click", function(e) {
     const result = item.parentElement.classList.contains("active");
@@ -39,12 +53,12 @@ navItems.forEach(item => {
 });
 
 // Search - hide search text when text is entered
-document
-  .querySelector("#navigation__search--input")
-  .addEventListener("input", function(e) {
+if (navSearchInput) {
+  navSearchInput.addEventListener("input", function(e) {
     if (e.target.value.length > 0) {
-      document.querySelector(".navigation__search").classList.add("active");
+      navSearch.classList.add("active");
     } else {
-      document.querySelector(".navigation__search").classList.remove("active");
+      navSearch.classList.remove("active");
     }
   });
+}

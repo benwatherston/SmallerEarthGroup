@@ -1,15 +1,21 @@
+// Variables
+const cookieClose = document.querySelector("#cookie__close");
+const cookieWrap = document.querySelector("#cookie__wrap");
+const getCookie = localStorage.getItem("cookie");
+
 // Cookie
-document.querySelector("#cookie__close").addEventListener(
-  "click",
-  function() {
-    document.querySelector("#cookie__wrap").style.display = "none";
-    localStorage.setItem("cookie", true);
-  },
-  false
-);
+if (cookieClose) {
+  cookieClose.addEventListener(
+    "click",
+    function() {
+      cookieWrap.style.display = "none";
+      localStorage.setItem("cookie", true);
+    },
+    false
+  );
+}
 
 // Check for cookie
-const getCookie = localStorage.getItem("cookie");
 if (!getCookie) {
-  document.querySelector("#cookie__wrap").classList.add("active");
+  cookieWrap.classList.add("active");
 }
