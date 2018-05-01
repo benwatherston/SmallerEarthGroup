@@ -44,7 +44,7 @@ h1{
 }
 
 h2{
-  font-size: 40px;
+  font-size: 36px;
   line-height: 0.9;
   @include xs{
     font-size: 42px;
@@ -60,5 +60,25 @@ h2{
   }
   @include xl{
     font-size: 80px;
+  }
+}
+
+h3{
+  font-size: 32px;
+  line-height: 0.9;
+  @include xs{
+    font-size: 38px;
+  }
+  @include s{
+    font-size: 42px;
+  }
+  @include m{
+    font-size: 48px;
+  }
+  @include l{
+    font-size: 56px;
+  }
+  @include xl{
+    font-size: 60px;
   }
 }

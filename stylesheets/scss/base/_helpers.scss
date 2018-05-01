@@ -1,0 +1,45 @@
+// Align
+.text--left{
+  text-align: left;
+}
+.text--center{
+  text-align: center;
+}
+.text--right{
+  text-align: right;
+}
+
+
+// Margin
+.m-b-10{
+  margin-bottom: 10px;
+}
+.m-b-20{
+  margin-bottom: 20px;
+}
+.m-b-30{
+  margin-bottom: 30px;
+}
+.m-b-40{
+  margin-bottom: 40px;
+}
+.m-b-50{
+  margin-bottom: 50px;
+}
+
+// Image - Object Position
+.image__left{
+  object-position: left !important;
+}
+.image__center{
+  object-position: center !important;
+}
+.image__right{
+  object-position: right !important;
+}
+.image__top{
+  object-position: top !important;
+}
+.image__bottom{
+  object-position: bottom !important;
+}

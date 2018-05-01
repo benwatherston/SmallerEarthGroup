@@ -3,17 +3,19 @@ const overlay = document.querySelector(".overlay");
 const backToTop = document.querySelector("#top");
 
 // Remove Overlay + Open elements
-overlay.addEventListener(
-  "click",
-  function(e) {
-    nav.classList.remove("active");
-    if (contactModal) {
-      contactModal.classList.remove("active");
-    }
-    unFreeze();
-  },
-  false
-);
+if (overlay) {
+  overlay.addEventListener(
+    "click",
+    function(e) {
+      nav.classList.remove("active");
+      if (contactModal) {
+        contactModal.classList.remove("active");
+      }
+      unFreeze();
+    },
+    false
+  );
+}
 
 // Escape key
 document.onkeydown = function(evt) {
