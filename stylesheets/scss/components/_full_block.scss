@@ -1,0 +1,33 @@
+.block{
+  &__full{
+    &--wrap{
+      @include flexbox;
+      @include flex-direction(column);
+    }
+    &--image{
+      width: 100%;
+      img{
+        @include background-image;
+      }
+    }
+    &--heading{
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      background: $brand;
+      color: white;
+      padding: 50px;
+      @include container-small;
+      margin-bottom: 30px;
+    }
+    &--content{
+      @include flexbox;
+      @include flex-direction(column);
+      @include justify-content(center);
+      @include container-small;
+    }
+    &--text{
+      text-align: center;
+    }
+  }
+}

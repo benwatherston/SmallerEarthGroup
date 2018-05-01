@@ -3,9 +3,10 @@
 @import 'components/apply_block';
 @import 'components/banner';
 @import 'components/main_block';
+@import 'components/full_block';
 @import 'components/contact-modal';
 @import 'components/cta';
-@import 'components/image';
+@import 'components/slider';
 
 @import 'layout/footer';
 @import 'layout/form';
@@ -14,7 +15,7 @@
 @import 'layout/search';
 
 @import 'pages/home';
-@import 'pages/jobs';
+@import 'pages/job-roles';
 
 @import 'vendor/magnific-popup';
 @import 'vendor/slick';

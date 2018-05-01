@@ -2,6 +2,7 @@
   &__wrap{
     @include flexbox;
     @include flex-direction(column);
+    margin: 30px 0;
   }
   &__title{
     @include container-small;
@@ -29,18 +30,20 @@
       @include flexbox;
       @include flex-direction(column);
       @include s{
+        margin-bottom: 60px;
         @include flex-direction(row);
       }
     }
   }
   &__image{
     &--wrap{
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       margin-top: -30px;
       position: relative;
       width: 100%;
       z-index: 1;
       @include s{
+        margin-bottom: -30px;
         position: relative;
         @include flex(1 1 50%);
       }
@@ -100,9 +103,6 @@
       @include m{
         font-size: 16px;
       }
-      @include l{
-        font-size: 18px;
-      }
       &:last-child{
         margin: 0;
       }
@@ -113,10 +113,6 @@
         @include flex(1 1 50%);
         @include flex-direction(column);
         @include justify-content(space-around);
-        margin: 1rem 0;
-      }
-      @include l{
-        margin: 2rem 0;
       }
     }
   }
@@ -168,8 +164,9 @@
       }
     }
   }
-  &__job{
+  &__header{
     margin-top: -20px;
+    margin-bottom: 30px;
     .block__title--wrap{
       @include minus-container;
       @include s{
@@ -200,6 +197,31 @@
       &__text{
         background: $light-grey;
         color: $brand-2;
+      }
+    }
+  }
+  // Slider
+  &__slider{
+    &--wrap{
+      margin-left: -40px;
+      margin-right: -40px;
+      @include s{
+        margin-left: 0;
+        margin-right: 0;
+      }
+      .block{
+        &__title--wrap{
+          margin-left: 0;
+          margin-right: 0;
+        }
+        &__content--wrap{
+          padding-left: 40px;
+          padding-right: 40px;
+          @include s{
+            padding-left: 0;
+            padding-right: 0;
+          }
+        }
       }
     }
   }
