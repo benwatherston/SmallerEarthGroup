@@ -1,6 +1,6 @@
 .banner{
   @include flexbox();
-  max-height: 500px;
+  max-height: 350px;
   margin-bottom: 20px;
   min-height: 250px;
   overflow: hidden;
@@ -22,14 +22,12 @@
     @include flexbox();
     &--inner{
       @include flex(0 1 60%);
-      @include xs{
-        @include flex(0 1 50%);
-      }
     }
     &.banner__content--right{
       @include justify-content(flex-end);
       .banner__text{
         padding-left: 0 !important;
+        text-align: right;
         @include s{
           @include container-small;
         }

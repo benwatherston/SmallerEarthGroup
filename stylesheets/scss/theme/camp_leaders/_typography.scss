@@ -18,14 +18,18 @@
 
 h1, h2, h3, h4, h5, h6{
   @include font-heading;
+  line-height: 1;
   *{
     @include font-heading;
   }
 }
 
 h1{
-  font-size: 38px;
-  line-height: 0.9;
+  font-size: 39px;
+  letter-spacing: -2px;
+  @include xxs{
+    font-size: 44px;
+  }
   @include xs{
     font-size: 54px;
   }
@@ -44,13 +48,16 @@ h1{
 }
 
 h2{
-  font-size: 36px;
-  line-height: 0.9;
+  font-size: 38px;
+  letter-spacing: -2px;
+  @include xxs{
+    font-size: 46px;
+  }
   @include xs{
-    font-size: 42px;
+    font-size: 48px;
   }
   @include s{
-    font-size: 50px;
+    font-size: 60px;
   }
   @include m{
     font-size: 60px;
@@ -65,7 +72,6 @@ h2{
 
 h3{
   font-size: 32px;
-  line-height: 0.9;
   @include xs{
     font-size: 38px;
   }
@@ -80,5 +86,24 @@ h3{
   }
   @include xl{
     font-size: 60px;
+  }
+}
+
+
+h4{
+  font-size: 20px;
+  letter-spacing: -1px;
+  @include xs{
+    font-size: 22px;
+  }
+  @include s{
+    font-size: 24px;
+  }
+  @include m{
+    font-size: 26px;
+    letter-spacing: -2px;
+  }
+  @include l{
+    font-size: 28px;
   }
 }

@@ -25,63 +25,6 @@
       }
     }
   }
-  &__bottom{
-
-    &--nav{
-      @include flexbox;
-      @include justify-content(space-between);
-      background: $light-grey;
-      margin-bottom: 40px;
-      margin-left: 40px;
-      margin-top: 20px;
-      margin-right: 40px;
-      padding: 10px 0;
-      @include s{
-        margin-left:0;
-        margin-right:0;
-        padding: 20px 0;
-      }
-      &-left, &-right{
-        @include flexbox;
-        @include flex(1 1 auto);
-        @include align-items(center);
-      }
-      &-left{
-        @include justify-content(flex-start);
-      }
-      &-right{
-        @include justify-content(flex-end);
-        text-align: right;
-      }
-    }
-    &--icon{
-      @include flex(0 1 50px);
-      text-align: center;
-      @include s{
-        @include flex(0 1 80px);
-      }
-      svg{
-        height: 15px;
-        *{
-          stroke: $brand-2;
-        }
-      }
-    }
-    &--text{
-      color: $brand-2;
-      font-size: 16px;
-      font-weight: bold;
-      @include xs{
-        font-size: 18px;
-      }
-      @include s{
-        font-size: 22px;
-      }
-      @include m{
-        font-size: 22px;
-      }
-    }
-  }
 }
 
 

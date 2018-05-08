@@ -2,7 +2,9 @@
   &__wrap{
     @include flexbox;
     @include flex-direction(column);
-    margin: 30px 0;
+    @include s{
+      margin: 30px 0;
+    }
   }
   &__title{
     @include container-small;
@@ -10,10 +12,10 @@
     color: white;
     font-size: 30px;
     line-height: 1;
-    padding: 50px;
+    padding: 40px;
     &--wrap{
       left: 0;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
       margin-left: -40px;
       margin-right: -40px;
       text-align: center;
@@ -32,13 +34,14 @@
       @include s{
         margin-bottom: 60px;
         @include flex-direction(row);
+        margin-top: -15px;
       }
     }
   }
   &__image{
     &--wrap{
-      margin-bottom: 30px;
-      margin-top: -30px;
+      margin-bottom: 20px;
+      // margin-top: -30px;
       position: relative;
       width: 100%;
       z-index: 1;
@@ -113,6 +116,7 @@
         @include flex(1 1 50%);
         @include flex-direction(column);
         @include justify-content(space-around);
+        margin-top: 30px;
       }
     }
   }
@@ -129,6 +133,7 @@
     font-size: 16px;
     @include s{
       font-size: 18px;
+      margin-bottom: 0;
     }
     svg{
       margin-left: 5px;
@@ -157,26 +162,29 @@
     }
   }
   &__top{
+    margin-top: 0;
     .block__title--wrap{
       margin-top: -10px;
       @include s{
         margin-top: -20px;
       }
     }
-  }
-  &__header{
-    margin-top: -20px;
-    margin-bottom: 30px;
-    .block__title--wrap{
-      @include minus-container;
-      @include s{
-        @include minus-container;
-      }
+    .block__content--wrap{
+      margin-top: -15px;
     }
   }
   &__header{
-    .block__title--wrap{
-      @include minus-container;
+    margin-top: 0px;
+    .block{
+      &__content--wrap{
+        margin-top: -15px;
+      }
+      &__title--wrap{
+        @include minus-container;
+        @include s{
+          @include minus-container;
+        }
+      }
     }
   }
   &__reverse{
@@ -197,6 +205,17 @@
       &__text{
         background: $light-grey;
         color: $brand-2;
+      }
+    }
+  }
+  &__white{
+    .block{
+      &__title{
+        background: white;
+      }
+      &__text{
+        background: $brand;
+        color: white;
       }
     }
   }

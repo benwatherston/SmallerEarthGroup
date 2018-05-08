@@ -1,0 +1,116 @@
+.range{
+  &__slider{
+    &--wrap{
+      @include flexbox;
+      @include border-radius;
+      background: $light-grey;
+      padding: 1rem 0;
+      margin: 0 0 1rem;
+    }
+    &--prev, &--next{
+      @include flex(0 0 40px);
+      text-align: center;
+      @include xs{
+        @include flex(0 0 50px);
+      }
+      svg{
+        cursor: pointer;
+        height: 20px;
+        *{
+          stroke: $dark-grey;
+        }
+      }
+    }
+    &--slider{
+      @include flexbox;
+      @include flex(1 1 auto);
+      @include justify-content(center);
+      @include align-items(center);
+    }
+
+    &--middle{
+      @include flexbox;
+      @include flex(1 1 auto);
+      margin: 0 5px;
+      @include xs{
+        margin: 0 1rem;
+      }
+      input[type="range"]{
+        outline: none;
+        @include appearance(none);
+        width: 100%;
+        &::-webkit-slider-thumb{
+          @include appearance(none);
+        }
+        &:focus{
+          outline: none;
+        }
+      }
+    }
+    &--start, &--end{
+      color: $brand;
+    }
+  }
+}
+
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient( 90deg, $light-grey, $light-grey 10px,   rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 20px );
+  border-bottom: 3px solid $light-grey;
+  border-top: 3px solid $light-grey;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  @include border-radius(50%);
+  background: $brand;
+  background: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29.86 31"><defs><path id="vk75a" d="M431.33 1365.7a8.23 8.23 0 0 1-11.97 0 9 9 0 0 1 0-12.39 8.2 8.2 0 0 1 11.97 0 9 9 0 0 1 0 12.38"></path><path id="vk75b" d="M424.8 1346.61h1.3V1344h-1.3z"></path><path id="vk75c" d="M436.3 1348.97l-.83-.86-1.68 1.73.84.88z"></path><path id="vk75d" d="M416.89 1349.84l-1.68-1.73-.84.86 1.68 1.75z"></path><path id="vk75e" d="M424.8 1375h1.3v-2.61h-1.3z"></path><path id="vk75f" d="M414.37 1370.01l.84.88 1.68-1.73-.84-.88z"></path><path id="vk75g" d="M410.41 1358.94v1.33h2.52v-1.33z"></path><path id="vk75h" d="M437.75 1358.94v1.33h2.52v-1.33z"></path><path id="vk75i" d="M433.79 1369.16l1.68 1.73.84-.88-1.68-1.73z"></path></defs><g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75a"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75b"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75c"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75d"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75e"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75f"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75g"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75h"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75i"></use></g></g></svg>');
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 30px;
+  margin-top: -13px;
+  width: 30px;
+  @include appearance(none);
+}
+input[type=range]::-moz-range-thumb {
+  @include border-radius(50%);
+  background: $brand;
+  cursor: pointer;
+  height: 20px;
+  margin-top: -10px;
+  width: 20px;
+  @include appearance(none);
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient( 90deg, $light-grey, $light-grey 10px,rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 20px );
+  border-bottom: 3px solid $light-grey;
+  border-top: 3px solid $light-grey;
+  box-sizing: border-box;
+  cursor: pointer;
+  outline: none;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 10px;
+  background: repeating-linear-gradient( 90deg, $light-grey, $light-grey 10px, rgba(0,0,0,0.1) 10px, rgba(0,0,0,0.1) 20px );
+  border-bottom: 3px solid $light-grey;
+  border-top: 3px solid $light-grey;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+input[type=range]::-ms-thumb {
+  @include border-radius(50%);
+  background: $brand;
+  background: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 29.86 31"><defs><path id="vk75a" d="M431.33 1365.7a8.23 8.23 0 0 1-11.97 0 9 9 0 0 1 0-12.39 8.2 8.2 0 0 1 11.97 0 9 9 0 0 1 0 12.38"></path><path id="vk75b" d="M424.8 1346.61h1.3V1344h-1.3z"></path><path id="vk75c" d="M436.3 1348.97l-.83-.86-1.68 1.73.84.88z"></path><path id="vk75d" d="M416.89 1349.84l-1.68-1.73-.84.86 1.68 1.75z"></path><path id="vk75e" d="M424.8 1375h1.3v-2.61h-1.3z"></path><path id="vk75f" d="M414.37 1370.01l.84.88 1.68-1.73-.84-.88z"></path><path id="vk75g" d="M410.41 1358.94v1.33h2.52v-1.33z"></path><path id="vk75h" d="M437.75 1358.94v1.33h2.52v-1.33z"></path><path id="vk75i" d="M433.79 1369.16l1.68 1.73.84-.88-1.68-1.73z"></path></defs><g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75a"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75b"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75c"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75d"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75e"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75f"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75g"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75h"></use></g><g transform="translate(-410.41 -1344)"><use fill="#{$brand}" xlink:href="#vk75i"></use></g></g></svg>');
+  background-repeat: no-repeat;
+  cursor: pointer;
+  height: 30px;
+  margin-top: -13px;
+  width: 30px;
+  @include appearance(none);
+}
