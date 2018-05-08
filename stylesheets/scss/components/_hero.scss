@@ -1,6 +1,6 @@
 .hero{
   &__wrap{
-    height: 60vh;
+    height: 80vh;
     min-height: 460px;
     position: relative;
     width: 100%;
@@ -17,9 +17,7 @@
       height: 520px;
     }
   }
-  &__wrap--home{
-    height: 100vh;
-  }
+
   &__image{
     height: 100%;
     width: 100%;
@@ -39,27 +37,15 @@
       padding-top: 120px;
       width: 100%;
       @include xs{
-        padding-top: 140px;
+        padding-top: 70px;
       }
     }
   }
   &__title{
     color: white;
     margin-bottom: 20px;
-    h1{
-      font-size: 10vw;
-      @include xs{
-        font-size: 8.5vw;
-      }
-      @include m{
-        font-size: 8vw;
-      }
-      @include l{
-        font-size: 7.5vw;
-      }
-      @include xl{
-        font-size: 6vw;
-      }
+    @include m{
+      margin-bottom: 40px;
     }
     span{
       display: block;
@@ -67,9 +53,10 @@
   }
   &__button{
     &:first-child{
-      margin: 0 0 20px;
+      margin-bottom: 15px;
       @include xs{
-        margin: 0 30px 0 0;
+        margin-bottom: 0px;
+        margin-right: 30px;
       }
     }
     &--wrap{

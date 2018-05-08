@@ -1,4 +1,9 @@
 // MEDIA QUERIES
+@mixin xxs{
+  @media (min-width: #{$xxs-width}){
+    @content;
+  }
+}
 @mixin xs{
   @media (min-width: #{$xs-width}){
     @content;

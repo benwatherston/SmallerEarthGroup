@@ -110,7 +110,7 @@ button.mfp-arrow {
   cursor: pointer;
   background: transparent;
   border: 0;
-  -webkit-appearance: none;
+  @include appearance(none);
   display: block;
   outline: none;
   padding: 0;

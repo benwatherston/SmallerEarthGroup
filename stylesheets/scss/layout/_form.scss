@@ -27,7 +27,7 @@
       margin: 0;
       outline: none;
       padding: 12px 10px;
-      -webkit-appearance: none;
+      @include appearance(none);
     }
     textarea{
       min-height: 100px;
