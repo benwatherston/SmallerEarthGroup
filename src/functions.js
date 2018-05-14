@@ -1,12 +1,12 @@
 // Variables
 const body = document.querySelector("body");
 
-const freeze = function() {
+const freeze = () => {
   overlay.classList.add("active");
   body.classList.add("freeze");
 };
 
-const unFreeze = function() {
+const unFreeze = () => {
   overlay.classList.remove("active");
   body.classList.remove("freeze");
 };

@@ -1,5 +1,5 @@
 .btn{
-  @include user-select;
+  @include user-select(none);
   border: 3px solid transparent;
   border-radius: 30px;
   box-sizing: border-box;

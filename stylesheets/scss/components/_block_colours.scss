@@ -1,0 +1,34 @@
+.block{
+  &__brand-2{
+    .block{
+      &__title{
+        background: $brand-2;
+      }
+      &__text{
+        background: $brand;
+      }
+    }
+  }
+  &__grey{
+    .block{
+      &__title{
+        background: $brand;
+      }
+      &__text{
+        background: $light-grey;
+        color: $brand-2;
+      }
+    }
+  }
+  &__white{
+    .block{
+      &__title{
+        background: white;
+      }
+      &__text{
+        background: $brand;
+        color: white;
+      }
+    }
+  }
+}

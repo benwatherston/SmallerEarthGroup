@@ -1,8 +1,8 @@
 .banner{
   @include flexbox();
   max-height: 350px;
-  margin-bottom: 20px;
-  min-height: 250px;
+  margin-bottom: $spacer-m;
+  // min-height: 250px;
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -21,7 +21,10 @@
     @include absolute;
     @include flexbox();
     &--inner{
-      @include flex(0 1 60%);
+      @include flex(0 1 70%);
+      @include s{
+        @include flex(0 1 60%);
+      }
     }
     &.banner__content--right{
       @include justify-content(flex-end);
@@ -50,7 +53,18 @@
     color: #fff;
     font-size: 28px;
     span{
-      display: block;
+      display: inline;
+      @include s{
+        display: block;
+      }
+    }
+  }
+  &.banner__app{
+    .banner__text{
+      text-align: left;
+    }
+    .banner__app--img{
+      max-width: 200px;
     }
   }
 }

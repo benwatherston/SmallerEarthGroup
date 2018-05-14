@@ -8,7 +8,9 @@
       margin: 0 0 1rem;
     }
     &--prev, &--next{
+      @include flexbox;
       @include flex(0 0 40px);
+      @include align-items(center);
       text-align: center;
       @include xs{
         @include flex(0 0 50px);

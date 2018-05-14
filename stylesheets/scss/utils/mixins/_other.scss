@@ -1,12 +1,20 @@
-@mixin user-select{
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+@mixin user-select($value){
+  -webkit-user-select: $value;
+  -khtml-user-select: $value;
+  -moz-user-select: $value;
+  -ms-user-select: $value;
+  user-select: $value;
 }
+
 
 @mixin appearance ($value) {
 	-webkit-appearance: $value;
 	-moz-appearance: $value;
 	appearance: $value;
 }
+
+@mixin backface-visibility ($value) {
+  -webkit-backface-visibility: $value;
+  backface-visibility: $value;
+}
+

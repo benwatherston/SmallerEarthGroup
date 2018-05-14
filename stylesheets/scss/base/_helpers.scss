@@ -1,3 +1,21 @@
+// THEME _theme.sass
+$colours: (
+  ('brand', $brand),
+  ('brand-2', $brand-2)
+);
+
+@each $colour, $value in $colours{
+  .color__#{$colour}{
+    color: #{$value};
+  }
+  .background__#{$colour}{
+    background: #{$value};
+  }
+  .border__#{$colour}{
+    border-color: #{$value};
+  }
+}
+
 // Align
 .text--left{
   text-align: left;

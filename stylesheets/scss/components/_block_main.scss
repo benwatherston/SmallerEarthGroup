@@ -3,7 +3,7 @@
     @include flexbox;
     @include flex-direction(column);
     @include s{
-      margin: 30px 0;
+      margin: 0 0 $spacer-m;
     }
   }
   &__title{
@@ -32,16 +32,14 @@
       @include flexbox;
       @include flex-direction(column);
       @include s{
-        margin-bottom: 60px;
+        margin-bottom: 30px;
         @include flex-direction(row);
-        margin-top: -15px;
       }
     }
   }
   &__image{
     &--wrap{
       margin-bottom: 20px;
-      // margin-top: -30px;
       position: relative;
       width: 100%;
       z-index: 1;
@@ -89,9 +87,10 @@
     background: $brand-2;
     color: white;
     margin-bottom: 20px;
-    padding: 20px;
-    text-align: justify;
     line-height: 1.4;
+    padding: 20px;
+    position: relative;
+    text-align: justify;
     @include s{
       margin-bottom: 0px;
       padding: 40px;
@@ -135,112 +134,51 @@
       font-size: 18px;
       margin-bottom: 0;
     }
+    span{
+      @include flex(1 1 auto);
+    }
     svg{
       margin-left: 5px;
+      @include flex(0 0 20px);
       *{
         fill: $brand-3;
       }
     }
   }
-  &__left{
-    .block__text{
-      @include s{
-        margin-left: -20px;
-      }
-    }
-  }
-  &__right{
-    .block__image--wrap{
-      @include s{
-        @include order(1);
-      }
-    }
-    .block__text{
-      @include s{
-        margin-right: -20px;
-      }
-    }
-  }
-  &__top{
-    margin-top: 0;
-    .block__title--wrap{
-      margin-top: -10px;
-      @include s{
-        margin-top: -20px;
-      }
-    }
-    .block__content--wrap{
-      margin-top: -15px;
-    }
-  }
-  &__header{
-    margin-top: 0px;
-    .block{
-      &__content--wrap{
-        margin-top: -15px;
-      }
-      &__title--wrap{
-        @include minus-container;
-        @include s{
-          @include minus-container;
-        }
-      }
-    }
-  }
-  &__reverse{
-    .block{
-      &__title{
-        background: $brand-2;
-      }
-      &__text{
-        background: $brand;
-      }
-    }
-  }
-  &__grey{
-    .block{
-      &__title{
-        background: $brand;
-      }
-      &__text{
-        background: $light-grey;
-        color: $brand-2;
-      }
-    }
-  }
-  &__white{
-    .block{
-      &__title{
-        background: white;
-      }
-      &__text{
-        background: $brand;
-        color: white;
-      }
-    }
-  }
-  // Slider
-  &__slider{
+  &__offer{
     &--wrap{
-      margin-left: -40px;
-      margin-right: -40px;
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include border-radius(50%);
+      @include transform(rotate(10deg));
+      @include shadow;
+      @include user-select(none);
+      background: $brand-3;
+      box-sizing: border-box;
+      color: white;
+      height: 90px;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      right: 10px;
+      top: -75px;
+      top: -120px;
+      width: 90px;
+      z-index: 1;
       @include s{
-        margin-left: 0;
-        margin-right: 0;
+        height: 100px;
+        padding: 10px;
+        top: -60px;
+        width: 100px;
       }
-      .block{
-        &__title--wrap{
-          margin-left: 0;
-          margin-right: 0;
-        }
-        &__content--wrap{
-          padding-left: 40px;
-          padding-right: 40px;
-          @include s{
-            padding-left: 0;
-            padding-right: 0;
-          }
-        }
+    }
+    &--inner{
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      @include s{
+        font-size: 14px;
       }
     }
   }

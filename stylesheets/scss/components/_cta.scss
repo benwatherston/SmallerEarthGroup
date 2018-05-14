@@ -15,7 +15,6 @@
   &__text{
     @include font-heading;
     font-size: 28px;
-    letter-spacing: -2px;
     @include s{
       font-size: 32px;
     }
@@ -29,18 +28,18 @@
       font-size: 48px;
     }
     &--big{
-      font-size: 32px;
+      font-size: 40px;
       @include s{
-        font-size: 38px;
+        font-size: 50px;
       }
       @include m{
-        font-size: 42px;
+        font-size: 70px;
       }
       @include l{
-        font-size: 48px;
+        font-size: 80px;
       }
       @include xl{
-        font-size: 56px;
+        font-size: 90px;
       }
     }
   }
