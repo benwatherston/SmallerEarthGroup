@@ -1,13 +1,16 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");
 const concat = require("gulp-concat");
+const imagemin = require("gulp-imagemin");
 const uglify = require("gulp-uglify");
 
+// MAIN.JS
 gulp.task("es6", () => {
   return gulp
     .src([
       "javascripts/vendor/jquery-3.3.1.js",
       "javascripts/vendor/slick.js",
+      "javascripts/vendor/jquery.magnific-popup.js",
       "src/functions.js",
       "src/main.js",
       "src/navigation.js",
@@ -29,6 +32,47 @@ gulp.task("es6", () => {
     .pipe(gulp.dest("javascripts"));
 });
 
+// TEMPLATES JS
+// - HOMEPAGE.JS
+gulp.task("homepage", () => {
+  return gulp
+    .src(["src/defer.js"])
+    .pipe(concat("homepage.js"))
+    .pipe(
+      babel({
+        presets: ["es2015"]
+      })
+    )
+    .pipe(
+      uglify().on("error", e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest("javascripts"));
+});
+
+// - DAY-AT-CAMP.JS
+gulp.task("day-at-camp", () => {
+  return gulp
+    .src(["src/defer.js", "src/template/day-at-camp.js"])
+    .pipe(concat("day-at-camp.js"))
+    .pipe(
+      babel({
+        presets: ["es2015"]
+      })
+    )
+    .pipe(
+      uglify().on("error", e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest("javascripts"));
+});
+
 gulp.task("default", ["es6"], () => {
+  gulp
+    .src("images/**/*")
+    .pipe(imagemin())
+    .pipe(gulp.dest("images"));
   gulp.watch("src/**/*.js", ["es6"]);
 });

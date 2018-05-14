@@ -1,0 +1,185 @@
+.block{
+  &__wrap{
+    @include flexbox;
+    @include flex-direction(column);
+    @include s{
+      margin: 0 0 $spacer-m;
+    }
+  }
+  &__title{
+    @include container-small;
+    background: $brand;
+    color: white;
+    font-size: 30px;
+    line-height: 1;
+    padding: 40px;
+    &--wrap{
+      left: 0;
+      margin-bottom: 0px;
+      margin-left: -40px;
+      margin-right: -40px;
+      text-align: center;
+      right: 0;
+      z-index: 1;
+      @include s{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
+  }
+  &__content{
+    &--wrap{
+      @include flexbox;
+      @include flex-direction(column);
+      @include s{
+        margin-bottom: 30px;
+        @include flex-direction(row);
+      }
+    }
+  }
+  &__image{
+    &--wrap{
+      margin-bottom: 20px;
+      position: relative;
+      width: 100%;
+      z-index: 1;
+      @include s{
+        margin-bottom: -30px;
+        position: relative;
+        @include flex(1 1 50%);
+      }
+      img{
+        @include background-image;
+        @include s{
+          position: absolute;
+        }
+      }
+    }
+    &--content{
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      box-sizing: border-box;
+      height: 100%;
+      padding: 20px;
+      width: 100%;
+      &-wrap{
+        position: absolute;
+        bottom: 0;
+        height: 100%;
+        left: 0;
+        right: 0;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+      svg{
+        height: 80px;
+        width: 80px;
+        @include s{
+          height: 100px;
+          width: 100px;
+        }
+      }
+    }
+  }
+  &__text{
+    background: $brand-2;
+    color: white;
+    margin-bottom: 20px;
+    line-height: 1.4;
+    padding: 20px;
+    position: relative;
+    text-align: justify;
+    @include s{
+      margin-bottom: 0px;
+      padding: 40px;
+      z-index: 1;
+    }
+    p{
+      margin-bottom: 1rem;
+      font-size: 12px;
+      @include s{
+        font-size: 14px;
+      }
+      @include m{
+        font-size: 16px;
+      }
+      &:last-child{
+        margin: 0;
+      }
+    }
+    &--wrap{
+      @include s{
+        @include flexbox;
+        @include flex(1 1 50%);
+        @include flex-direction(column);
+        @include justify-content(space-around);
+        margin-top: 30px;
+      }
+    }
+  }
+  &__link{
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    color: $brand-3;
+    font-weight: bold;
+    margin-bottom: 20px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    @include s{
+      font-size: 18px;
+      margin-bottom: 0;
+    }
+    span{
+      @include flex(1 1 auto);
+    }
+    svg{
+      margin-left: 5px;
+      @include flex(0 0 20px);
+      *{
+        fill: $brand-3;
+      }
+    }
+  }
+  &__offer{
+    &--wrap{
+      @include flexbox;
+      @include align-items(center);
+      @include justify-content(center);
+      @include border-radius(50%);
+      @include transform(rotate(10deg));
+      @include shadow;
+      @include user-select(none);
+      background: $brand-3;
+      box-sizing: border-box;
+      color: white;
+      height: 90px;
+      line-height: 1;
+      padding: 5px;
+      position: absolute;
+      right: 10px;
+      top: -75px;
+      top: -120px;
+      width: 90px;
+      z-index: 1;
+      @include s{
+        height: 100px;
+        padding: 10px;
+        top: -60px;
+        width: 100px;
+      }
+    }
+    &--inner{
+      font-size: 12px;
+      font-weight: bold;
+      text-align: center;
+      @include s{
+        font-size: 14px;
+      }
+    }
+  }
+}

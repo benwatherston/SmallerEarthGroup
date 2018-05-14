@@ -1,15 +1,32 @@
 .apply__block{
   @include flexbox;
   @include justify-content(space-between);
-  margin-bottom: 20px;
+  @include align-items(center);
+  margin-bottom: $spacer-m;
   width: 100%;
   &--btn{
-    @include flex(1 1 auto);
+    @include flex(0 1 300px);
+    margin-right: 20px;
+    padding-bottom: 9px;
+    padding-top: 9px;
+    @include xxs{
+      margin-right: 40px;
+    }
+    @include xs{
+      margin-right: 60px;
+    }
+    @include s{
+      margin-right: 80px;
+    }
+    @include m{
+      margin-right: 100px;
+    }
   }
   &--back{
     @include flex(0 0 40px);
     svg{
       cursor: pointer;
+      display: block;
       fill: $brand-2;
       height: 40px;
       width: 40px;

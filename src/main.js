@@ -34,7 +34,11 @@ if (backToTop) {
   backToTop.addEventListener(
     "click",
     function() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
+      // document.body.scrollTop = document.documentElement.scrollTop = 0;
+      window.scroll({
+        top: 0,
+        behavior: "smooth"
+      });
     },
     false
   );

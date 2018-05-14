@@ -1,0 +1,49 @@
+.block{
+  &__left{
+    .block__text{
+      @include s{
+        margin-left: -20px;
+      }
+    }
+  }
+  &__right{
+    .block__image--wrap{
+      @include s{
+        @include order(1);
+      }
+    }
+    .block__text{
+      @include s{
+        margin-right: -20px;
+      }
+    }
+  }
+  // block__top used to overlap hero image
+  &__top{
+    margin-top: 0;
+    .block__title--wrap{
+      margin-top: -10px;
+      @include s{
+        margin-top: -20px;
+      }
+    }
+  }
+  // block__header used underneath the job navigation bar
+  &__header{
+    margin-top: 0px;
+    .block{
+      &__title--wrap{
+        @include minus-container;
+        @include s{
+          @include minus-container;
+        }
+      }
+    }
+  }
+  // block__title used when block has a title, image overlaps title
+  &__has--title{
+    .block__content--wrap{
+      margin-top: -15px;
+    }
+  }
+}

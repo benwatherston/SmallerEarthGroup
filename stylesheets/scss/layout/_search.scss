@@ -11,7 +11,6 @@
     @include transition(0.3s all);
     color: $brand;
     font-size: 2rem;
-    letter-spacing: -2px;
     overflow: hidden;
     @include s{
       @include flex(0 1 auto);
@@ -44,7 +43,6 @@
     color: transparent;
     font-size: 24px;
     height: 30px;
-    letter-spacing: -2px;
     margin-left: 5px;
     outline: none;
     padding-left: 5px;
