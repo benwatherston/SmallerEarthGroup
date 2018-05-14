@@ -1,0 +1,1 @@
+"use strict";$(function(){$(".video--iframe").magnificPopup({type:"iframe"})}),$(function(){$(".block__slider--wrap").slick({infinite:!0,slidesToShow:1,slidesToScroll:1,prevArrow:$(".slick-prev"),nextArrow:$(".slick-next"),adaptiveHeight:!0})});

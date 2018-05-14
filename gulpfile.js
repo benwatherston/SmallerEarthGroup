@@ -69,6 +69,60 @@ gulp.task("day-at-camp", () => {
     .pipe(gulp.dest("javascripts"));
 });
 
+// - ROLES-AT-CAMP.JS
+gulp.task("roles-at-camp", () => {
+  return gulp
+    .src(["src/defer.js", "src/template/roles-at-camp.js"])
+    .pipe(concat("roles-at-camp.js"))
+    .pipe(
+      babel({
+        presets: ["es2015"]
+      })
+    )
+    .pipe(
+      uglify().on("error", e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest("javascripts"));
+});
+
+// - THE-EXPERIENCE.JS
+gulp.task("the-experience", () => {
+  return gulp
+    .src(["src/defer.js", "src/template/the-experience.js"])
+    .pipe(concat("the-experience.js"))
+    .pipe(
+      babel({
+        presets: ["es2015"]
+      })
+    )
+    .pipe(
+      uglify().on("error", e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest("javascripts"));
+});
+
+// - CAMP-ACTIVITIES.JS
+gulp.task("camp-activities", () => {
+  return gulp
+    .src(["src/defer.js", "src/template/camp-activities.js"])
+    .pipe(concat("camp-activities.js"))
+    .pipe(
+      babel({
+        presets: ["es2015"]
+      })
+    )
+    .pipe(
+      uglify().on("error", e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest("javascripts"));
+});
+
 gulp.task("default", ["es6"], () => {
   gulp
     .src("images/**/*")
