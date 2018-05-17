@@ -91,8 +91,26 @@ h3{
 
 
 h4{
+  font-size: 24px;
+  @include xs{
+    font-size: 26px;
+  }
+  @include s{
+    font-size: 28px;
+  }
+  @include m{
+    font-size: 32px;
+  }
+  @include l{
+    font-size: 36px;
+  }
+  @include xl{
+    font-size: 40px;
+  }
+}
+
+h5{
   font-size: 20px;
-  letter-spacing: -1px;
   @include xs{
     font-size: 22px;
   }
@@ -101,9 +119,30 @@ h4{
   }
   @include m{
     font-size: 26px;
-    letter-spacing: -2px;
   }
   @include l{
+    font-size: 28px;
+  }
+  @include xl{
+    font-size: 30px;
+  }
+}
+
+h6{
+  font-size: 18px;
+  @include xs{
+    font-size: 20px;
+  }
+  @include s{
+    font-size: 22px;
+  }
+  @include m{
+    font-size: 24px;
+  }
+  @include l{
+    font-size: 26px;
+  }
+  @include xl{
     font-size: 28px;
   }
 }
