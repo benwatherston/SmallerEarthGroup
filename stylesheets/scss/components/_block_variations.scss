@@ -4,17 +4,32 @@
       @include s{
         margin-left: -20px;
       }
+      @include m{
+        margin-left: -40px;
+      }
     }
   }
   &__right{
-    .block__image--wrap{
-      @include s{
-        @include order(1);
+    .block{
+      &__image--wrap{
+        @include s{
+          @include order(1);
+        }
       }
-    }
-    .block__text{
-      @include s{
-        margin-right: -20px;
+      &__offer{
+        &--wrap{
+          @include transform(rotate(-10deg));
+          right: auto;
+          left: 10px;
+        }
+      }
+      &__text{
+        @include s{
+          margin-right: -20px;
+        }
+        @include m{
+          margin-right: -40px;
+        }
       }
     }
   }
@@ -44,6 +59,28 @@
   &__has--title{
     .block__content--wrap{
       margin-top: -15px;
+    }
+  }
+  &__skill{
+    @include s{
+      &.block__left{
+        .block__offer{
+          &--wrap{
+            right: auto;
+            left: -65px;
+            top: calc(45% - 60px);
+          }
+        }
+      }
+      &.block__right{
+        .block__offer{
+          &--wrap{
+            right: -60px;
+            left: auto;
+            top: calc(45% - 65px);
+          }
+        }
+      }
     }
   }
 }

@@ -123,10 +123,14 @@ gulp.task("camp-activities", () => {
     .pipe(gulp.dest("javascripts"));
 });
 
-gulp.task("default", ["es6"], () => {
+// IMAGE MINIFY
+gulp.task("image", () => {
   gulp
     .src("images/**/*")
     .pipe(imagemin())
     .pipe(gulp.dest("images"));
+});
+
+gulp.task("default", ["es6"], () => {
   gulp.watch("src/**/*.js", ["es6"]);
 });
