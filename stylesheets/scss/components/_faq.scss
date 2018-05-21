@@ -1,0 +1,87 @@
+.faq{
+  &__wrap{
+    width: 100%;
+    margin-bottom: $spacer-m;
+  }
+  &__heading{
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+    @include container;
+    background: $brand;
+    color: white;
+    margin-bottom: $spacer-m;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+  &__inner{
+    @include flexbox;
+    @include flex-direction(column);
+  }
+  &__top{
+    @include flexbox;
+    @include justify-content(space-between);
+    margin-bottom: $spacer-l;
+  }
+  &__question{
+    @include flex(1);
+    @include font-heading;
+    text-align: center;
+    background: $brand-2;
+    color: white;
+    font-size: 1.2rem;
+    padding: 20px;
+    position: relative;
+    @include s{
+      font-size: 2rem;
+      padding: 40px;
+    }
+    &:after{
+      content: "";
+      position: absolute;
+      left: 15%;
+      border-left: 20px solid transparent;
+      border-top: 30px solid $brand-2;
+      border-right: 20px solid transparent;
+      bottom: -30px;
+    }
+  }
+  &__answer{
+    @include container;
+    background: $light-grey;
+    box-sizing: border-box;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+  }
+  &__prev, &__next{
+    @include flexbox;
+    @include align-items(center);
+    @include flex(0 0 40px);
+    @include s{
+      @include flex(0 0 60px);
+    }
+    @include m{
+      @include flex(0 0 80px);
+    }
+    @include l{
+      @include flex(0 0 120px);
+    }
+    @include xl{
+      @include flex(0 0 160px);
+    }
+    svg{
+      height: 30px;
+      @include s{
+        height: 50px;
+      }
+      *{
+        stroke: $brand;
+      }
+    }
+  }
+  &__next{
+    @include justify-content(flex-end);
+    text-align: right;
+  }
+}

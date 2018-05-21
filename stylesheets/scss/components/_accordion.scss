@@ -6,25 +6,56 @@
     @include align-items(center);
     @include container-small;
     @include justify-content(center);
+    @include user-select(none);
     background: $brand;
     color: white;
+    cursor: pointer;
     padding-bottom: 1rem;
     padding-top: 1rem;
+    svg{
+      @include transition(all 0.3s);
+      height: 30px;
+      padding-left: 1rem;
+    }
   }
   &__content{
-    @include container-small;
+    @include transition(padding 0.35s, max-height 0.3s);
     background: $light-grey;
     color: $brand-2;
-    padding-bottom: 20px;
-    padding-top: 20px;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 20px;
     @include s{
-      padding-bottom: 40px;
-      padding-top: 40px;
+      padding: 0px 40px;
+    }
+    @include m{
+      padding: 0px 60px;
     }
     p{
       margin-bottom: 1rem;
       &:last-child{
         margin-bottom: 0;
+      }
+    }
+  }
+  &.active{
+    .accordion{
+      &__header{
+        svg{
+          @include transform(scaleY(-1));
+        }
+      }
+      &__content{
+        max-height: 1000px;
+        overflow: visible;
+        padding: 20px;
+        @include s{
+          padding: 20px 40px;
+        }
+        @include m{
+          padding: 30px 60px;
+        }
+        
       }
     }
   }

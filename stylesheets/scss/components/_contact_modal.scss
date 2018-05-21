@@ -19,8 +19,9 @@
     *{
       font-size: 14px;
     }
-    input{
+    input, textarea{
       width: 100%;
+      background: white;
     }
     select{
       @include font-heading;

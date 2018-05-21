@@ -1,13 +1,19 @@
 .banner{
   @include flexbox();
-  max-height: 350px;
   margin-bottom: $spacer-m;
-  // min-height: 250px;
+  max-height: 400px;
+  min-height: 300px;
   overflow: hidden;
   position: relative;
   width: 100%;
     a{
       width: 100%;
+    }
+    .play{
+      width: 80px;
+      @include s{
+        width: 100px;
+      }
     }
   &__img{
     height: 100%;
@@ -67,4 +73,19 @@
       max-width: 200px;
     }
   }
+  &.banner__brochure{
+    color: white;
+    .banner__brochure--form{
+      @include flexbox;
+      @include justify-content(space-between);
+    }
+    input[type='text'].banner__brochure--form-input{
+      background: white;
+      border-radius: 30px;
+      margin-right: 2rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+  }
 }
+

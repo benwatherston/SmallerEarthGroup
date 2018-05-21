@@ -123,6 +123,24 @@ gulp.task("camp-activities", () => {
     .pipe(gulp.dest("javascripts"));
 });
 
+// - SKILLS.JS
+gulp.task("skills", () => {
+  return gulp
+    .src(["src/template/skills.js"])
+    .pipe(concat("skills.js"))
+    .pipe(
+      babel({
+        presets: ["es2015"]
+      })
+    )
+    .pipe(
+      uglify().on("error", e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest("javascripts"));
+});
+
 // IMAGE MINIFY
 gulp.task("image", () => {
   gulp
