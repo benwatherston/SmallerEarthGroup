@@ -871,103 +871,76 @@ ServerSignature Off
 #
 # https://httpd.apache.org/docs/current/mod/mod_brotli.html#precompressed
 
-# <IfModule mod_headers.c>
+<IfModule mod_headers.c>
 
-#     RewriteCond %{HTTP:Accept-Encoding} br
-#     RewriteCond %{REQUEST_FILENAME}\.br -f
-#     RewriteRule \.(css|ics|js|json|html|svg)$ %{REQUEST_URI}.br [L]
+     RewriteCond %{HTTP:Accept-Encoding} br
+     RewriteCond %{REQUEST_FILENAME}\.br -f
+     RewriteRule \.(css|ics|js|json|html|svg)$ %{REQUEST_URI}.br [L]
 
 #     # Prevent mod_deflate double gzip
-#     RewriteRule \.br$ - [E=no-gzip:1]
+     RewriteRule \.br$ - [E=no-gzip:1]
 
-#     <FilesMatch "\.br$">
+     <FilesMatch "\.br$">
 
-#         <IfModule mod_mime.c>
+         <IfModule mod_mime.c>
 #             # Serve correct content types
-#             AddType text/css              css.br
-#             AddType text/calendar         ics.br
-#             AddType text/javascript       js.br
-#             AddType application/json      json.br
-#             AddType text/html             html.br
-#             AddType image/svg+xml         svg.br
+             AddType text/css              css.br
+             AddType text/calendar         ics.br
+             AddType text/javascript       js.br
+             AddType application/json      json.br
+             AddType text/html             html.br
+             AddType image/svg+xml         svg.br
 
 #             # Serve correct content charset
-#             AddCharset utf-8 .css.br \
-#                              .ics.br \
-#                              .js.br \
-#                              .json.br
-#         </IfModule>
+             AddCharset utf-8 .css.br \
+                              .ics.br \
+                              .js.br \
+                              .json.br
+         </IfModule>
 
 #         # Force proxies to cache brotlied and non-brotlied files separately
 #         Header append Vary Accept-Encoding
 
-#     </FilesMatch>
+     </FilesMatch>
 
 #     # Serve correct encoding type
-#     AddEncoding br .br
+     AddEncoding br .br
 
-# </IfModule>
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | GZip pre-compressed content                                        |
 # ----------------------------------------------------------------------
 
-# Serve gzip compressed CSS, JS, HTML, SVG, ICS and JSON files
-# if they exist and if the client accepts gzip encoding.
-#
-# (!) To make this part relevant, you need to generate encoded
-# files by your own. Enabling this part will not auto-generate
-# gziped files.
-#
-# https://httpd.apache.org/docs/current/mod/mod_deflate.html#precompressed
-#
-# (1)
-# Removing default MIME Type for .gz files allowing to add custom
-# sub-types.
-# You may prefer using less generic extensions such as .html_gz in
-# order to keep default behavior regarding .gz files.
-# https://httpd.apache.org/docs/current/mod/mod_mime.html#removetype
 
-# <IfModule mod_headers.c>
+ <IfModule mod_headers.c>
+    # Serve gzip compressed CSS files if they exist
+    # and the client accepts gzip.
+    RewriteCond "%{HTTP:Accept-encoding}" "gzip"
+    RewriteCond "%{REQUEST_FILENAME}\.gz" -s
+    RewriteRule "^(.*)\.css" "$1\.css\.gz" [QSA]
 
-#     RewriteCond %{HTTP:Accept-Encoding} gzip
-#     RewriteCond %{REQUEST_FILENAME}\.gz -f
-#     RewriteRule \.(css|ics|js|json|html|svg)$ %{REQUEST_URI}.gz [L]
+    # Serve gzip compressed JS files if they exist
+    # and the client accepts gzip.
+    RewriteCond "%{HTTP:Accept-encoding}" "gzip"
+    RewriteCond "%{REQUEST_FILENAME}\.gz" -s
+    RewriteRule "^(.*)\.js" "$1\.js\.gz" [QSA]
 
-#     # Prevent mod_deflate double gzip
-#     RewriteRule \.gz$ - [E=no-gzip:1]
 
-#     <FilesMatch "\.gz$">
+    # Serve correct content types, and prevent mod_deflate double gzip.
+    RewriteRule "\.css\.gz$" "-" [T=text/css,E=no-gzip:1]
+    RewriteRule "\.js\.gz$" "-" [T=text/javascript,E=no-gzip:1]
 
-#         # Serve correct content types
-#         <IfModule mod_mime.c>
-#             # (1)
-#             RemoveType gz
 
-#             # Serve correct content types
-#             AddType text/css              css.gz
-#             AddType text/calendar         ics.gz
-#             AddType text/javascript       js.gz
-#             AddType application/json      json.gz
-#             AddType text/html             html.gz
-#             AddType image/svg+xml         svg.gz
+    <FilesMatch "(\.js\.gz|\.css\.gz)$">
+      # Serve correct encoding type.
+      Header append Content-Encoding gzip
 
-#             # Serve correct content charset
-#             AddCharset utf-8 .css.gz \
-#                              .ics.gz \
-#                              .js.gz \
-#                              .json.gz
-#         </IfModule>
-
-#         # Force proxies to cache gzipped and non-gzipped files separately
-#         Header append Vary Accept-Encoding
-
-#     </FilesMatch>
-
-#     # Serve correct encoding type
-#     AddEncoding gzip .gz
-
-# </IfModule>
+      # Force proxies to cache gzipped &
+      # non-gzipped css/js files separately.
+      Header append Vary Accept-Encoding
+    </FilesMatch>
+</IfModule>
 
 # ----------------------------------------------------------------------
 # | Content transformation                                             |
