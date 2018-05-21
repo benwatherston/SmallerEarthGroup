@@ -5,6 +5,7 @@ $(function() {
     slidesToScroll: 1,
     prevArrow: $(".slick-prev"),
     nextArrow: $(".slick-next"),
-    lazyLoad: "ondemand"
+    lazyLoad: "ondemand",
+    dots: true
   });
 });
