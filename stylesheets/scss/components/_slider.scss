@@ -3,6 +3,8 @@
     @include flexbox;
     @include align-items(center);
     @include justify-content(space-between);
+    padding-left: 20px;
+    padding-right: 20px;
     &--title{
       @include flexbox;
       @include justify-content(center);

@@ -10,12 +10,12 @@
     @include flexbox;
     @include flex-wrap(nowrap);
     @include align-items(center);
-    @include container;
     background: $brand;
     color: white;
     font-size: 30px;
     line-height: 1;
     padding: 40px;
+    @include container;
     h2{
       @include flex(1);
     }
@@ -151,13 +151,14 @@
     color: $brand-3;
     font-weight: bold;
     margin-bottom: 20px;
-    padding: 10px;
+    padding: 0 10px 10px;
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     @include s{
       font-size: 18px;
       margin-bottom: 0;
+      padding: 10px;
     }
     span{
       @include flex(0 1 auto);

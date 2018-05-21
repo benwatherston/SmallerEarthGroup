@@ -39,13 +39,17 @@
   }
   &--wrap{
     @include transition(all 0.3s);
-    left: 40px;
+    left: 25px;
     opacity: 0;
     position: absolute;
-    right: 40px;
+    right: 25px;
     top: 40px;
     visibility: hidden;
     z-index: 10;
+    @include xxs{
+      left: 40px;
+      right: 40px;
+    }
     @include xs{
       display: none;
     }

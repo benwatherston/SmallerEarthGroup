@@ -5,14 +5,20 @@
       @include border-radius;
       background: $light-grey;
       padding: 1rem 0;
-      margin: 0 0 1rem;
+      margin: 0 0 20px;
     }
     &--prev, &--next{
       @include flexbox;
-      @include flex(0 0 40px);
+      @include flex(0 0 25px);
       @include align-items(center);
       text-align: center;
+      @include xxs{
+        @include flex(0 0 30px);
+      }
       @include xs{
+        @include flex(0 0 40px);
+      }
+      @include s{
         @include flex(0 0 50px);
       }
       svg{
@@ -30,10 +36,15 @@
       @include align-items(center);
     }
 
+    &--start, &--end{
+      font-size: 18px;
+      font-weight: bold;
+    }
+
     &--middle{
       @include flexbox;
       @include flex(1 1 auto);
-      margin: 0 5px;
+      margin: 0 10px;
       @include xs{
         margin: 0 1rem;
       }
@@ -47,6 +58,9 @@
         &:focus{
           outline: none;
         }
+      }
+      #day_slider{
+        padding: 0;
       }
     }
     &--start, &--end{

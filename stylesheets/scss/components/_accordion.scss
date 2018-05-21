@@ -1,6 +1,9 @@
 .accordion{
   width: 100%;
-  margin-bottom: $spacer-m;
+  margin-bottom: 20px;
+  @include s{
+    margin-bottom: $spacer-m;
+  }
   &__header{
     @include flexbox;
     @include align-items(center);
@@ -14,8 +17,12 @@
     padding-top: 1rem;
     svg{
       @include transition(all 0.3s);
-      height: 30px;
-      padding-left: 1rem;
+      height: 20px;
+      padding-left: 0.5rem;
+      @include s{
+        height: 30px;
+        padding-left: 1rem;
+      }
     }
   }
   &__content{

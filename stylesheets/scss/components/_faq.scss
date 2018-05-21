@@ -1,7 +1,11 @@
 .faq{
   &__wrap{
-    width: 100%;
-    margin-bottom: $spacer-m;
+    margin-left: -20px;
+    margin-right: -20px;
+    margin-bottom: 20px;
+    @include s{
+      margin-bottom: $spacer-m;
+    }
   }
   &__heading{
     @include flexbox;
@@ -10,9 +14,12 @@
     @include container;
     background: $brand;
     color: white;
-    margin-bottom: $spacer-m;
+    margin-bottom: 20px;
     padding-bottom: 20px;
     padding-top: 20px;
+    @include s{
+      margin-bottom: $spacer-m;
+    }
   }
   &__inner{
     @include flexbox;
@@ -21,7 +28,12 @@
   &__top{
     @include flexbox;
     @include justify-content(space-between);
-    margin-bottom: $spacer-l;
+    margin-bottom: $spacer-m;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include s{
+      margin-bottom: $spacer-l;
+    }
   }
   &__question{
     @include flex(1);
@@ -29,9 +41,12 @@
     text-align: center;
     background: $brand-2;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     padding: 20px;
     position: relative;
+    @include xs{
+      font-size: 1.2rem;
+    }
     @include s{
       font-size: 2rem;
       padding: 40px;
@@ -40,11 +55,22 @@
       content: "";
       position: absolute;
       left: 15%;
-      border-left: 20px solid transparent;
-      border-top: 30px solid $brand-2;
-      border-right: 20px solid transparent;
-      bottom: -30px;
+      border-left: 14px solid transparent;
+      border-top: 20px solid $brand-2;
+      border-right: 14px solid transparent;
+      bottom: -20px;
+      @include s{
+        left: 10%;
+        border-left: 20px solid transparent;
+        border-top: 30px solid $brand-2;
+        border-right: 20px solid transparent;
+        bottom: -30px;
+      }
     }
+  }
+  &__bottom{
+    padding-left: 20px;
+    padding-right: 20px;
   }
   &__answer{
     @include container;
@@ -57,7 +83,10 @@
   &__prev, &__next{
     @include flexbox;
     @include align-items(center);
-    @include flex(0 0 40px);
+    @include flex(0 0 30px);
+    @include xs{
+      @include flex(0 0 40px);
+    }
     @include s{
       @include flex(0 0 60px);
     }

@@ -126,7 +126,7 @@ gulp.task("camp-activities", () => {
 // - SKILLS.JS
 gulp.task("skills", () => {
   return gulp
-    .src(["src/template/skills.js"])
+    .src(["src/defer.js", "src/template/skills.js"])
     .pipe(concat("skills.js"))
     .pipe(
       babel({

@@ -1,6 +1,10 @@
 @mixin container{
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  @include xs{
+    padding-left: 40px;
+    padding-right: 40px;
+  }
   @include s{
     padding-left: 60px;
     padding-right: 60px;
@@ -41,8 +45,12 @@
 }
 
 @mixin minus-container{
-  margin-left: -40px;
-  margin-right: -40px;
+  margin-left: -20px;
+  margin-right: -20px;
+  @include xs{
+    margin-left: -40px;
+    margin-right: -40px;
+  }
   @include s{
     margin-left: -60px;
     margin-right: -60px;
