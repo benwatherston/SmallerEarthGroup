@@ -28,7 +28,7 @@
   &__top{
     @include flexbox;
     @include justify-content(space-between);
-    margin-bottom: $spacer-m;
+    margin-bottom: 30px;
     padding-left: 20px;
     padding-right: 20px;
     @include s{

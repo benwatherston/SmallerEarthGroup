@@ -13,7 +13,7 @@
     font-size: 2rem;
     overflow: hidden;
     @include s{
-      @include flex(0 1 auto);
+      @include flex(0 0 auto);
     }
     &-icon{
       @include s{
@@ -21,6 +21,7 @@
       }
       svg{
         height: 40px;
+        display: block;
       }
       *{
         fill: $brand
@@ -48,6 +49,27 @@
     padding: 0;
     width: 100%;
     @include appearance(none);
+    margin: 0;
+    padding: 0;
+  }
+  &--input::-webkit-search-decoration,
+  &--input::-webkit-search-cancel-button,
+  &--input::-webkit-search-results-button,
+  &--input::-webkit-search-results-decoration {
+    display: none;
+  }
+}
+
+#search__submit{
+  @include border-radius(50%);
+  height: 40px;
+  display: block;
+  circle{
+    @include transition(all 0.3s);
+    fill: $grey;
+  }
+  path{
+    fill: white;
   }
 }
 
@@ -69,6 +91,12 @@
           @include animation(none);
           @include flex(1 1 100%);
           color: $brand-2;
+          padding: 0;
+        }
+      }
+      #search__submit{
+        circle{
+          fill: $primary;
         }
       }
     }

@@ -9,7 +9,7 @@
       @include flexbox;
       @include justify-content(center);
       color: $brand;
-      padding: 3rem 0;
+      padding: 3rem 0 1.5rem;
       text-align: center;
     }
     &--prev, &--next{
@@ -17,7 +17,7 @@
       text-align: center;
       .slick{
         &-prev, &-next{
-          padding: 3rem 0;
+          padding: 3rem 0 1.5rem;
         }
       }
       svg{
@@ -36,4 +36,37 @@
     display: block;
     width: 100%;
   }
+  &-dots{
+    @include flexbox;
+    @include justify-content(center);
+    @include align-items(center);
+    @include flex-wrap(nowrap);
+    font-size: 0;
+    line-height: 0;
+    color: transparent;
+    border: 0;
+    outline: none;
+    background: transparent;
+    button{
+      font-size: 0;
+      line-height: 0;
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding: 5px;
+      cursor: pointer;
+      color: transparent;
+      border: 0;
+      outline: none;
+      background: transparent;
+      @include border-radius(50%);
+      border: 1px solid $brand-2;
+    }
+    li.slick-active{
+      button{
+        background: $brand-2;
+      }
+    }
+  }
 }
+

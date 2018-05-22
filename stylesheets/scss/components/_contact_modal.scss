@@ -4,7 +4,9 @@
   @include transform(scale(0));
   background: $brand;
   box-sizing: border-box;
+  opacity: 0;
   padding: 40px 20px 20px;
+  visibility: hidden;
   width: 100%;
   &--close{
     left: -16px;
@@ -59,6 +61,7 @@
       .contact__modal{
         @include transform(scale(1));
         opacity: 1;
+        visibility: visible;
       }
     }
   }
