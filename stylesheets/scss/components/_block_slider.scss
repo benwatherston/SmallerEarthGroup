@@ -7,6 +7,7 @@
       margin-right: 0;
     }
     .block{
+<<<<<<< HEAD
       &__title{
         padding-left: 40px;
         padding-right: 40px;
@@ -14,6 +15,11 @@
           margin-left: 0;
           margin-right: 0;
         }
+=======
+      &__title--wrap{
+        margin-left: 0;
+        margin-right: 0;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       }
       &__content--wrap{
         padding-left: 40px;
@@ -26,6 +32,7 @@
     }
   }
 }
+<<<<<<< HEAD
 
 .slider__dots{
   &--wrap{
@@ -49,3 +56,5 @@
     }
   }
 }
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792

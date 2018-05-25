@@ -1,1 +1,5 @@
+<<<<<<< HEAD
 <svg class="icon__chevron--left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 26.61 48.42"><path d="M24.4 46.21l-22.19-22 22.19-22"/></svg>
+=======
+<svg viewBox="0 0 29 50" xmlns="http://www.w3.org/2000/svg"><path d="M25.8 2.6L3 23.432 25.8 47" stroke-width="4.461" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round"/></svg>
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792

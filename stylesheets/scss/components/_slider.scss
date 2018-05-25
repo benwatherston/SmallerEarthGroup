@@ -3,13 +3,20 @@
     @include flexbox;
     @include align-items(center);
     @include justify-content(space-between);
+<<<<<<< HEAD
     padding-left: 20px;
     padding-right: 20px;
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     &--title{
       @include flexbox;
       @include justify-content(center);
       color: $brand;
+<<<<<<< HEAD
       padding: 3rem 0 1.5rem;
+=======
+      padding: 3rem 0;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       text-align: center;
     }
     &--prev, &--next{
@@ -17,7 +24,11 @@
       text-align: center;
       .slick{
         &-prev, &-next{
+<<<<<<< HEAD
           padding: 3rem 0 1.5rem;
+=======
+          padding: 3rem 0;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
         }
       }
       svg{
@@ -36,6 +47,7 @@
     display: block;
     width: 100%;
   }
+<<<<<<< HEAD
   &-dots{
     @include flexbox;
     @include justify-content(center);
@@ -70,3 +82,6 @@
   }
 }
 
+=======
+}
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792

@@ -10,20 +10,29 @@
     @include flexbox;
     @include flex-wrap(nowrap);
     @include align-items(center);
+<<<<<<< HEAD
+=======
+    @include container;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     background: $brand;
     color: white;
     font-size: 30px;
     line-height: 1;
+<<<<<<< HEAD
     padding: 40px 20px;
     @include s{
       padding: 40px;
     }
+=======
+    padding: 40px;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     h2{
       @include flex(1);
     }
     &--wrap{
       left: 0;
       margin-bottom: 0px;
+<<<<<<< HEAD
       margin-left: -20px;
       margin-right: -20px;
       text-align: center;
@@ -33,6 +42,13 @@
         margin-left: -40px;
         margin-right: -40px;
       }
+=======
+      margin-left: -40px;
+      margin-right: -40px;
+      text-align: center;
+      right: 0;
+      z-index: 1;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       @include s{
         margin-left: 0;
         margin-right: 0;
@@ -157,21 +173,33 @@
     color: $brand-3;
     font-weight: bold;
     margin-bottom: 20px;
+<<<<<<< HEAD
     padding: 0 10px 10px;
+=======
+    padding: 10px;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     text-align: center;
     text-decoration: none;
     font-size: 16px;
     @include s{
       font-size: 18px;
       margin-bottom: 0;
+<<<<<<< HEAD
       padding: 10px;
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     }
     span{
       @include flex(0 1 auto);
     }
     svg{
+<<<<<<< HEAD
       margin-left: 1rem;
       @include flex(0 0 28px);
+=======
+      margin-left: 5px;
+      @include flex(0 0 20px);
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       *{
         fill: $brand-3;
       }
@@ -194,7 +222,10 @@
       padding: 5px;
       position: absolute;
       right: 10px;
+<<<<<<< HEAD
       text-decoration: none;
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       top: -75px;
       width: 90px;
       z-index: 1;

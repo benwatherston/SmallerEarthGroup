@@ -9,7 +9,10 @@ h1, h2, h3, h4, h5, h6, p{
 
 p{
   font-size: 12px;
+<<<<<<< HEAD
   line-height: 1.4;
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   @include xs{
     font-size: 14px;
   }

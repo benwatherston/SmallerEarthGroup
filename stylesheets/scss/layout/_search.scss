@@ -13,7 +13,11 @@
     font-size: 2rem;
     overflow: hidden;
     @include s{
+<<<<<<< HEAD
       @include flex(0 0 auto);
+=======
+      @include flex(0 1 auto);
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     }
     &-icon{
       @include s{
@@ -21,7 +25,10 @@
       }
       svg{
         height: 40px;
+<<<<<<< HEAD
         display: block;
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       }
       *{
         fill: $brand
@@ -46,6 +53,7 @@
     height: 30px;
     margin-left: 5px;
     outline: none;
+<<<<<<< HEAD
     padding: 0;
     width: 100%;
     @include appearance(none);
@@ -70,6 +78,11 @@
   }
   path{
     fill: white;
+=======
+    padding-left: 5px;
+    padding-right: 5px;
+    @include appearance(none);
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   }
 }
 
@@ -91,12 +104,15 @@
           @include animation(none);
           @include flex(1 1 100%);
           color: $brand-2;
+<<<<<<< HEAD
           padding: 0;
         }
       }
       #search__submit{
         circle{
           fill: $primary;
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
         }
       }
     }

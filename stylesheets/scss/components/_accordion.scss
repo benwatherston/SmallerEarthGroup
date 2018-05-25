@@ -1,14 +1,19 @@
 .accordion{
   width: 100%;
+<<<<<<< HEAD
   margin-bottom: 20px;
   @include s{
     margin-bottom: $spacer-m;
   }
+=======
+  margin-bottom: $spacer-m;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   &__header{
     @include flexbox;
     @include align-items(center);
     @include container-small;
     @include justify-content(center);
+<<<<<<< HEAD
     @include user-select(none);
     background: $brand;
     color: white;
@@ -41,6 +46,22 @@
     }
     @include m{
       padding: 0px 60px;
+=======
+    background: $brand;
+    color: white;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+  }
+  &__content{
+    @include container-small;
+    background: $light-grey;
+    color: $brand-2;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    @include s{
+      padding-bottom: 40px;
+      padding-top: 40px;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     }
     p{
       margin-bottom: 1rem;
@@ -49,6 +70,7 @@
       }
     }
   }
+<<<<<<< HEAD
   &.active{
     .accordion{
       &__header{
@@ -70,4 +92,6 @@
       }
     }
   }
+=======
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
 }

@@ -18,6 +18,7 @@ $colours: (
 
 // Align
 .text--left{
+<<<<<<< HEAD
   text-align: left !important;
 }
 .text--center{
@@ -25,6 +26,15 @@ $colours: (
 }
 .text--right{
   text-align: right !important;
+=======
+  text-align: left;
+}
+.text--center{
+  text-align: center;
+}
+.text--right{
+  text-align: right;
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
 }
 
 

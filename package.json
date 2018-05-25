@@ -17,11 +17,20 @@
   },
   "homepage": "https://github.com/benwatherston/SmallerEarthGroup#readme",
   "devDependencies": {
+<<<<<<< HEAD
     "babel-core": "^6.26.3",
     "babel-preset-es2015": "^6.24.1",
     "gulp": "^4.0.0",
     "gulp-babel": "^7.0.1",
     "gulp-concat": "^2.6.1",
+=======
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^4.1.0",
+>>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     "gulp-uglify": "^3.0.0"
   }
 }
