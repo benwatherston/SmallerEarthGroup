@@ -6,19 +6,13 @@
     @include s{
       margin-bottom: $spacer-m;
     }
-  }
-  &__heading{
-    @include flexbox;
-    @include align-items(center);
-    @include justify-content(center);
-    @include container;
-    background: $brand;
-    color: white;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    @include s{
-      margin-bottom: $spacer-m;
+    &.faq__brand-2{
+      .faq__question{
+        background: $brand-2;
+        &:after{
+          border-top-color: $brand-2;
+        }
+      }
     }
   }
   &__inner{
@@ -38,8 +32,9 @@
   &__question{
     @include flex(1);
     @include font-heading;
+    @include user-select(text);
     text-align: center;
-    background: $brand-2;
+    background: $brand;
     color: white;
     font-size: 1.1rem;
     padding: 20px;
@@ -56,13 +51,13 @@
       position: absolute;
       left: 15%;
       border-left: 14px solid transparent;
-      border-top: 20px solid $brand-2;
+      border-top: 20px solid $brand;
       border-right: 14px solid transparent;
       bottom: -20px;
       @include s{
         left: 10%;
         border-left: 20px solid transparent;
-        border-top: 30px solid $brand-2;
+        border-top: 30px solid $brand;
         border-right: 20px solid transparent;
         bottom: -30px;
       }
@@ -74,11 +69,20 @@
   }
   &__answer{
     @include container;
+    @include user-select(text);
     background: $light-grey;
     box-sizing: border-box;
     padding-bottom: 20px;
     padding-top: 20px;
     width: 100%;
+    color: $brand-2;
+    font-weight: bold;
+    p{
+      margin-bottom: 1rem;
+      &:last-child{
+        margin: 0;
+      }
+    }
   }
   &__prev, &__next{
     @include flexbox;

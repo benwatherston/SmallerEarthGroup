@@ -84,49 +84,4 @@
       }
     }
   }
-  &__testimonial{
-    .block__image--wrap{
-      margin: 0;
-    }
-    .block__text{
-      background: $brand-2;
-      margin: -10px 10px 0 10px;
-      z-index: 1;
-      &:after{
-        content: "";
-        position: absolute;
-        right: 30px;
-        bottom: -30px;
-        border-bottom: 30px solid transparent;
-        border-left: 30px solid $brand-2;
-
-        @include s{
-          right: 40px;
-          bottom: -40px;
-          border-bottom: 40px solid transparent;
-          border-left: 40px solid $brand-2;
-        }
-      }
-    }
-    &--text{
-      color: $brand;
-      padding: 20px 80px 20px 10px;
-      @include s{ 
-        padding: 20px 100px 0 20px;
-      }
-      &-heading{
-        @include font-heading;
-        font-size: 1rem;
-        @include s{
-          font-size: 1.2rem;
-        }
-      }
-      &-subheading{
-        font-size: 1rem;
-        @include s{
-          font-size: 1.2rem;
-        }
-      }
-    }
-  }
 }

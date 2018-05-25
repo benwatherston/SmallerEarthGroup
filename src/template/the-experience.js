@@ -1,10 +1,10 @@
 $(function() {
-  $(".block__slider--wrap").slick({
+  $('.block__slider--wrap').slick({
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
-    prevArrow: $(".slick-prev"),
-    nextArrow: $(".slick-next"),
+    prevArrow: $('.slick-prev'),
+    nextArrow: $('.slick-next'),
     adaptiveHeight: true
   });
 });

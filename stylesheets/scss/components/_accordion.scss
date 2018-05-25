@@ -17,12 +17,16 @@
     padding-top: 1rem;
     svg{
       @include transition(all 0.3s);
-      height: 20px;
+      @include flex(0 0 40px);
+      @include transform(scaleY(-1));
+      height: 22px;
       padding-left: 0.5rem;
       @include s{
-        height: 30px;
         padding-left: 1rem;
       }
+    }
+    h4{
+      @include flex(1 1 auto);
     }
   }
   &__content{
@@ -49,7 +53,7 @@
     .accordion{
       &__header{
         svg{
-          @include transform(scaleY(-1));
+          @include transform(scaleY(1));
         }
       }
       &__content{

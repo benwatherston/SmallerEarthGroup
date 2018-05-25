@@ -105,6 +105,13 @@
   }
 }
 
+@mixin margin{
+  margin-bottom: 20px;
+  @include s{
+    margin-bottom: 50px;
+  }
+}
+
 
 // Padding
 @mixin p-xs{

@@ -12,3 +12,10 @@ main{
 .freeze{
   overflow: hidden;
 }
+
+.margin{
+  margin-bottom: 20px;
+  @include s{
+    margin-bottom: 50px;
+  }
+}

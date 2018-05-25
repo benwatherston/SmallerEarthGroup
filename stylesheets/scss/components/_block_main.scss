@@ -14,19 +14,25 @@
     color: white;
     font-size: 30px;
     line-height: 1;
-    padding: 40px;
-    @include container;
+    padding: 40px 20px;
+    @include s{
+      padding: 40px;
+    }
     h2{
       @include flex(1);
     }
     &--wrap{
       left: 0;
       margin-bottom: 0px;
-      margin-left: -40px;
-      margin-right: -40px;
+      margin-left: -20px;
+      margin-right: -20px;
       text-align: center;
       right: 0;
       z-index: 1;
+      @include xs{
+        margin-left: -40px;
+        margin-right: -40px;
+      }
       @include s{
         margin-left: 0;
         margin-right: 0;
@@ -164,8 +170,8 @@
       @include flex(0 1 auto);
     }
     svg{
-      margin-left: 5px;
-      @include flex(0 0 20px);
+      margin-left: 1rem;
+      @include flex(0 0 28px);
       *{
         fill: $brand-3;
       }
@@ -188,6 +194,7 @@
       padding: 5px;
       position: absolute;
       right: 10px;
+      text-decoration: none;
       top: -75px;
       width: 90px;
       z-index: 1;

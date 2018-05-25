@@ -1,0 +1,21 @@
+.heading{
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+  color: white;
+  margin-bottom: 20px;
+  text-align: center;
+  margin-left: -20px;
+  margin-right: -20px;
+  padding: 40px 20px;
+  @include xs{
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+  @include s{
+    padding: 40px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: $spacer-m;
+  }
+}

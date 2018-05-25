@@ -1,15 +1,15 @@
 // Variables
-const cookieClose = document.querySelector("#cookie__close");
-const cookieWrap = document.querySelector("#cookie__wrap");
-const getCookie = localStorage.getItem("cookie");
+const cookieClose = document.querySelector('#cookie__close');
+const cookieWrap = document.querySelector('#cookie__wrap');
+const getCookie = localStorage.getItem('cookie');
 
 // Cookie
 if (cookieClose) {
   cookieClose.addEventListener(
-    "click",
-    function() {
-      cookieWrap.style.display = "none";
-      localStorage.setItem("cookie", true);
+    'click',
+    () => {
+      cookieWrap.style.display = 'none';
+      localStorage.setItem('cookie', true);
     },
     false
   );
@@ -17,5 +17,5 @@ if (cookieClose) {
 
 // Check for cookie
 if (!getCookie) {
-  cookieWrap.classList.add("active");
+  cookieWrap.classList.add('active');
 }

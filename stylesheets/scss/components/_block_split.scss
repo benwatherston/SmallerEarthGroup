@@ -1,0 +1,54 @@
+.block{
+  &__split{
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include justify-content(center);
+    @include align-items(center);
+    @include margin;
+    background: $light-grey;
+    @include s{
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+    }
+    &--big, &--small{
+      @include flex(1 1 auto);
+      box-sizing: border-box;
+      @include s{
+        @include flex(0 0 50%);
+      }
+    }
+    &--big{
+      text-align: center;
+      color: $brand;
+      padding: 20px;
+      @include s{
+        padding: 40px 0 40px 40px;
+      }
+    }
+    &--small{
+      text-align: justify;
+      color: $brand-2;
+      padding: 20px;
+      @include s{
+        padding: 40px;
+      }
+      p{
+        font-size: 12px;
+        margin-bottom: 1rem;
+        &:last-child{
+          font-size: 14px;
+          margin-bottom: 0;
+        }
+      }
+    }
+    &.block__left{
+      @include s{
+        .block__split--big{
+          @include order(1);
+          padding: 40px 40px 40px 0;
+        }
+      }
+    }
+  }
+}

@@ -36,14 +36,13 @@
       height: 100%;
       padding-top: 120px;
       width: 100%;
-      @include xs{
-        padding-top: 70px;
-      }
     }
   }
   &__title{
     color: white;
-    margin-bottom: 20px;
+    @include xs{
+      margin-bottom: 20px;
+    }
     @include m{
       margin-bottom: 40px;
     }
