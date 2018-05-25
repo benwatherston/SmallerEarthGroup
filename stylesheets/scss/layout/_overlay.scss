@@ -1,10 +1,6 @@
 .overlay{
   @include transition(all 0.3s);
-<<<<<<< HEAD
   background: transparent;
-=======
-  background: rgba(0,0,0,0.7);
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   bottom: 0;
   left: 0;
   opacity: 0;
@@ -15,10 +11,7 @@
   z-index: 10;
   cursor: pointer;
   &.active{
-<<<<<<< HEAD
     background: rgba(0,0,0,0.7);
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     opacity: 1;
     visibility: visible;
   }

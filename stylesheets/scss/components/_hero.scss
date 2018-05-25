@@ -36,23 +36,13 @@
       height: 100%;
       padding-top: 120px;
       width: 100%;
-<<<<<<< HEAD
-=======
-      @include xs{
-        padding-top: 70px;
-      }
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     }
   }
   &__title{
     color: white;
-<<<<<<< HEAD
     @include xs{
       margin-bottom: 20px;
     }
-=======
-    margin-bottom: 20px;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     @include m{
       margin-bottom: 40px;
     }

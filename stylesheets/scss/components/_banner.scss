@@ -1,29 +1,20 @@
 .banner{
   @include flexbox();
-<<<<<<< HEAD
   margin-bottom: $spacer-m;
   max-height: 400px;
   min-height: 300px;
-=======
-  max-height: 350px;
-  margin-bottom: $spacer-m;
-  // min-height: 250px;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   overflow: hidden;
   position: relative;
   width: 100%;
     a{
       width: 100%;
     }
-<<<<<<< HEAD
     .play{
       width: 80px;
       @include s{
         width: 100px;
       }
     }
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   &__img{
     height: 100%;
     width: 100%;
@@ -82,7 +73,6 @@
       max-width: 200px;
     }
   }
-<<<<<<< HEAD
   &.banner__brochure{
     color: white;
     .banner__brochure--form{
@@ -99,6 +89,3 @@
   }
 }
 
-=======
-}
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792

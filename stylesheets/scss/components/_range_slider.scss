@@ -5,7 +5,6 @@
       @include border-radius;
       background: $light-grey;
       padding: 1rem 0;
-<<<<<<< HEAD
       margin: 0 0 20px;
     }
     &--prev, &--next{
@@ -20,16 +19,6 @@
         @include flex(0 0 40px);
       }
       @include s{
-=======
-      margin: 0 0 1rem;
-    }
-    &--prev, &--next{
-      @include flexbox;
-      @include flex(0 0 40px);
-      @include align-items(center);
-      text-align: center;
-      @include xs{
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
         @include flex(0 0 50px);
       }
       svg{
@@ -47,7 +36,6 @@
       @include align-items(center);
     }
 
-<<<<<<< HEAD
     &--start, &--end{
       font-size: 18px;
       font-weight: bold;
@@ -57,12 +45,6 @@
       @include flexbox;
       @include flex(1 1 auto);
       margin: 0 10px;
-=======
-    &--middle{
-      @include flexbox;
-      @include flex(1 1 auto);
-      margin: 0 5px;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       @include xs{
         margin: 0 1rem;
       }
@@ -77,12 +59,9 @@
           outline: none;
         }
       }
-<<<<<<< HEAD
       #day_slider{
         padding: 0;
       }
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     }
     &--start, &--end{
       color: $brand;

@@ -1,16 +1,9 @@
 .footer{
-<<<<<<< HEAD
   @include flexbox;
-=======
-  @include container;
-  @include flexbox;
-  @include flex-direction(column);
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   @include flex-wrap(wrap);
   @include align-items(center);
   background: $black;
   color: white;
-<<<<<<< HEAD
   padding: 40px;
   @include xs{
     padding-left: 60px;
@@ -19,13 +12,6 @@
   @include s{
     @include container;
     @include flex-wrap(nowrap);
-=======
-  padding-bottom: 40px;
-  padding-top: 40px;
-  @include s{
-    @include flex-wrap(nowrap);
-    @include flex-direction(row);
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   }
   &__left{
     @include align-items(center);
@@ -34,10 +20,7 @@
     @include order(3);
     @include justify-content(space-evenly);
     @include flex(1 0 100%);
-<<<<<<< HEAD
     margin: 0 auto;
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     max-width: 240px;
     width: 100%;
     @include xxs{
@@ -79,14 +62,9 @@
   }
   &__center{
     @include order(1);
-<<<<<<< HEAD
     @include flex(1 0 100%);
     margin: 0 auto;
     margin-bottom: 2rem;
-=======
-    margin-bottom: 2rem;
-    @include flex(1 0 100%);
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     text-align: center;
     @include s{
       @include order(2);
@@ -109,10 +87,7 @@
     @include flex-direction(column);
     @include order(2);
     @include flex(1 0 100%);
-<<<<<<< HEAD
     margin: 0 auto;
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     max-width: 240px;
     width: 100%;
     @include xxs{

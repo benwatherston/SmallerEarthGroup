@@ -11,7 +11,6 @@
   color: $brand-2;
 }
 
-<<<<<<< HEAD
 input:not([type="checkbox"]):not([type="submit"]):not([type="radio"]), textarea, select{
   @include flex(1 1 100%);
   border: none;
@@ -28,8 +27,6 @@ textarea{
   min-width: 100%;
 }
 
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
 .form{
   &__field{
     @include flexbox();
@@ -37,25 +34,6 @@ textarea{
     &:last-child{
       margin: 0;
     }
-<<<<<<< HEAD
-=======
-    input:not([type="checkbox"]), textarea, select{
-      @include flex(1 1 100%);
-      border: none;
-      border-radius: 3px;
-      box-sizing: border-box;
-      color: $brand-2;
-      margin: 0;
-      outline: none;
-      padding: 12px 10px;
-      @include appearance(none);
-    }
-    textarea{
-      min-height: 100px;
-      max-width: 100%;
-      min-width: 100%;
-    }
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     &--right{
       @include flexbox;
       @include justify-content(flex-end);

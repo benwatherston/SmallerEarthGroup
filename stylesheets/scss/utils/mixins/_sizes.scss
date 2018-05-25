@@ -1,15 +1,10 @@
 @mixin container{
-<<<<<<< HEAD
   padding-left: 20px;
   padding-right: 20px;
   @include xs{
     padding-left: 40px;
     padding-right: 40px;
   }
-=======
-  padding-left: 40px;
-  padding-right: 40px;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   @include s{
     padding-left: 60px;
     padding-right: 60px;
@@ -50,17 +45,12 @@
 }
 
 @mixin minus-container{
-<<<<<<< HEAD
   margin-left: -20px;
   margin-right: -20px;
   @include xs{
     margin-left: -40px;
     margin-right: -40px;
   }
-=======
-  margin-left: -40px;
-  margin-right: -40px;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   @include s{
     margin-left: -60px;
     margin-right: -60px;
@@ -115,7 +105,6 @@
   }
 }
 
-<<<<<<< HEAD
 @mixin margin{
   margin-bottom: 20px;
   @include s{
@@ -123,8 +112,6 @@
   }
 }
 
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
 
 // Padding
 @mixin p-xs{

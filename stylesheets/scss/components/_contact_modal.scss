@@ -4,13 +4,9 @@
   @include transform(scale(0));
   background: $brand;
   box-sizing: border-box;
-<<<<<<< HEAD
   opacity: 0;
   padding: 40px 20px 20px;
   visibility: hidden;
-=======
-  padding: 40px 20px 20px;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
   width: 100%;
   &--close{
     left: -16px;
@@ -25,14 +21,9 @@
     *{
       font-size: 14px;
     }
-<<<<<<< HEAD
     input, textarea{
       width: 100%;
       background: white;
-=======
-    input{
-      width: 100%;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     }
     select{
       @include font-heading;
@@ -50,7 +41,6 @@
   }
   &--wrap{
     @include transition(all 0.3s);
-<<<<<<< HEAD
     left: 25px;
     opacity: 0;
     position: absolute;
@@ -62,15 +52,6 @@
       left: 40px;
       right: 40px;
     }
-=======
-    left: 40px;
-    opacity: 0;
-    position: absolute;
-    right: 40px;
-    top: 40px;
-    visibility: hidden;
-    z-index: 10;
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
     @include xs{
       display: none;
     }
@@ -80,10 +61,7 @@
       .contact__modal{
         @include transform(scale(1));
         opacity: 1;
-<<<<<<< HEAD
         visibility: visible;
-=======
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
       }
     }
   }

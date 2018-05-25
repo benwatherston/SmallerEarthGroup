@@ -1,5 +1,1 @@
-<<<<<<< HEAD
 <svg class="icon__play" viewBox="0 0 103 103" xmlns="http://www.w3.org/2000/svg"><g transform="translate(3 3)" fill="none" fill-rule="evenodd"><circle stroke="#FFF" stroke-width="6" cx="48.5" cy="48.5" r="48.5"/><path fill="#FFF" d="M38 23v51l34-25.5z"/></g></svg>
-=======
-<svg viewBox="0 0 103 103" xmlns="http://www.w3.org/2000/svg"><g transform="translate(3 3)" fill="none" fill-rule="evenodd"><circle stroke="#FFF" stroke-width="6" cx="48.5" cy="48.5" r="48.5"/><path fill="#FFF" d="M38 23v51l34-25.5z"/></g></svg>
->>>>>>> 4013ce3be012f2508d28a49341ac85d475f10792
