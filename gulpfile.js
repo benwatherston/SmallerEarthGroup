@@ -174,6 +174,28 @@ gulp.task('image', () => {
     .pipe(gulp.dest('images'));
 });
 
-gulp.task('default', ['es6'], () => {
-  gulp.watch('src/**/*.js', ['es6']);
-});
+gulp.task(
+  'default',
+  [
+    'es6',
+    'homepage',
+    'day-at-camp',
+    'roles-at-camp',
+    'the-experience',
+    'camp-activities',
+    'skills',
+    'types-of-camp'
+  ],
+  () => {
+    gulp.watch('src/**/*.js', [
+      'es6',
+      'homepage',
+      'day-at-camp',
+      'roles-at-camp',
+      'the-experience',
+      'camp-activities',
+      'skills',
+      'types-of-camp'
+    ]);
+  }
+);
