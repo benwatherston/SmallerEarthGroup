@@ -6,6 +6,9 @@
           padding-top: 140px;
         }
       }
+      .hero__title{
+        margin-bottom: 20px;
+      }
     }
   }
   &__offer{
@@ -64,6 +67,7 @@
         display: none;
       }
       #speech--close{
+        @include transition(all 0.3s);
         @include transform(scale(0));
         height: 0;
         opacity: 0;
@@ -86,6 +90,7 @@
           visibility: hidden;
         }
         .hero__speech--menu__wrap{
+          @include transition(all 0.3s);
           opacity: 1;
           visibility: visible;
         }
@@ -108,7 +113,6 @@
     &--menu{
       &__wrap{
         @include border-radius(100px);
-        @include transition(all 0.3s);
         background: $brand;
         bottom: 70px;
         opacity: 0;

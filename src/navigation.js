@@ -36,7 +36,6 @@ if (navClose) {
 }
 
 // Main Navigation items click event
-
 navItems.forEach(item => {
   item.addEventListener('click', e => {
     const result = item.parentElement.classList.contains('active');

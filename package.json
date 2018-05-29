@@ -30,6 +30,7 @@
     "beeper": "^1.1.1",
     "date-format": "^1.2.0",
     "fancy-log": "^1.3.2",
+    "gulp-sourcemaps": "^2.6.4",
     "lodash.template": "^4.4.0",
     "minimist": "^1.2.0",
     "replace-ext": "^1.0.0",

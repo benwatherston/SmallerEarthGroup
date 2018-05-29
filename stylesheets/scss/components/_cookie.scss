@@ -38,6 +38,10 @@
     @include s{
       margin-right: 10px;
     }
+    svg{
+      display: block;
+      width: 25px;
+    }
   }
   &__text{
     @include flex(1 1  auto);

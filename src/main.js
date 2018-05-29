@@ -1,6 +1,6 @@
 // Variables
 const overlay = document.querySelector('.overlay');
-const backToTop = document.querySelector('#top');
+const backToTop = document.querySelector('#back-to-top');
 
 // Remove Overlay + Open elements
 if (overlay) {

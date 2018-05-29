@@ -8,7 +8,7 @@ $(function() {
     prevArrow: $('.slick-prev'),
     nextArrow: $('.slick-next'),
     waitForAnimate: 1,
-    lazyLoad: 'ondemand'
+    lazyLoad: 'progressive'
   });
 
   updateRangeSlider();

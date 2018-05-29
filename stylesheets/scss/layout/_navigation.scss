@@ -23,6 +23,9 @@
         @include s{
           height: 60px;
         }
+        *{
+          fill: white;
+        }
       }
     }
     &--right{

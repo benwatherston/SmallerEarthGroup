@@ -3,6 +3,7 @@ const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
+const sourcemaps = require('gulp-sourcemaps');
 
 // MAIN.JS
 gulp.task('es6', () => {
@@ -17,6 +18,7 @@ gulp.task('es6', () => {
       'src/cookie.js',
       'src/day-slider.js'
     ])
+    .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
     .pipe(
       babel({
@@ -28,6 +30,7 @@ gulp.task('es6', () => {
         console.log(e);
       })
     )
+    .pipe(sourcemaps.write('./maps'))
     .pipe(gulp.dest('javascripts'));
 });
 
