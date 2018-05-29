@@ -5,6 +5,18 @@ const imagemin = require('gulp-imagemin');
 const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 
+const tasks = [
+  'es6',
+  'homepage',
+  'day-at-camp',
+  'roles-at-camp',
+  'the-experience',
+  'camp-activities',
+  'skills',
+  'types-of-camp',
+  'individual-roles'
+];
+
 // MAIN.JS
 gulp.task('es6', () => {
   return gulp
@@ -35,7 +47,6 @@ gulp.task('es6', () => {
 });
 
 // TEMPLATES JS
-// - HOMEPAGE.JS
 gulp.task('homepage', () => {
   return gulp
     .src(['src/defer.js', 'src/template/homepage.js'])
@@ -53,7 +64,6 @@ gulp.task('homepage', () => {
     .pipe(gulp.dest('javascripts'));
 });
 
-// - DAY-AT-CAMP.JS
 gulp.task('day-at-camp', () => {
   return gulp
     .src(['src/defer.js', 'src/template/day-at-camp.js'])
@@ -71,7 +81,6 @@ gulp.task('day-at-camp', () => {
     .pipe(gulp.dest('javascripts'));
 });
 
-// - ROLES-AT-CAMP.JS
 gulp.task('roles-at-camp', () => {
   return gulp
     .src([
@@ -93,7 +102,6 @@ gulp.task('roles-at-camp', () => {
     .pipe(gulp.dest('javascripts'));
 });
 
-// - THE-EXPERIENCE.JS
 gulp.task('the-experience', () => {
   return gulp
     .src(['src/defer.js', 'src/template/the-experience.js'])
@@ -111,7 +119,6 @@ gulp.task('the-experience', () => {
     .pipe(gulp.dest('javascripts'));
 });
 
-// - CAMP-ACTIVITIES.JS
 gulp.task('camp-activities', () => {
   return gulp
     .src(['src/defer.js', 'src/template/camp-activities.js'])
@@ -129,7 +136,6 @@ gulp.task('camp-activities', () => {
     .pipe(gulp.dest('javascripts'));
 });
 
-// - SKILLS.JS
 gulp.task('skills', () => {
   return gulp
     .src(['src/defer.js', 'src/template/skills.js'])
@@ -147,7 +153,6 @@ gulp.task('skills', () => {
     .pipe(gulp.dest('javascripts'));
 });
 
-// - TYPES-OD-CAMP.JS
 gulp.task('types-of-camp', () => {
   return gulp
     .src([
@@ -169,6 +174,23 @@ gulp.task('types-of-camp', () => {
     .pipe(gulp.dest('javascripts'));
 });
 
+gulp.task('individual-roles', () => {
+  return gulp
+    .src(['src/defer.js', 'src/template/individual-roles.js'])
+    .pipe(concat('individual-roles.js'))
+    .pipe(
+      babel({
+        presets: ['es2015']
+      })
+    )
+    .pipe(
+      uglify().on('error', e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest('javascripts'));
+});
+
 // IMAGE MINIFY
 gulp.task('image', () => {
   gulp
@@ -177,28 +199,6 @@ gulp.task('image', () => {
     .pipe(gulp.dest('images'));
 });
 
-gulp.task(
-  'default',
-  [
-    'es6',
-    'homepage',
-    'day-at-camp',
-    'roles-at-camp',
-    'the-experience',
-    'camp-activities',
-    'skills',
-    'types-of-camp'
-  ],
-  () => {
-    gulp.watch('src/**/*.js', [
-      'es6',
-      'homepage',
-      'day-at-camp',
-      'roles-at-camp',
-      'the-experience',
-      'camp-activities',
-      'skills',
-      'types-of-camp'
-    ]);
-  }
-);
+gulp.task('default', tasks, () => {
+  gulp.watch('src/**/*.js', tasks);
+});

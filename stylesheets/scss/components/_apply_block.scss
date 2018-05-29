@@ -21,6 +21,9 @@
     @include m{
       margin-right: 100px;
     }
+    .btn{
+      min-width: 100%;
+    }
   }
   &--back{
     @include flex(0 0 40px);

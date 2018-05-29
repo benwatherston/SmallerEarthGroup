@@ -19,6 +19,7 @@ $(function() {
     prevArrow: $('.slick-prev'),
     nextArrow: $('.slick-next'),
     adaptiveHeight: true,
-    waitForAnimate: 1
+    waitForAnimate: 1,
+    dots: true
   });
 });

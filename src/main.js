@@ -8,9 +8,6 @@ if (overlay) {
     'click',
     e => {
       nav.classList.remove('active');
-      if (contactModal) {
-        contactModal.classList.remove('active');
-      }
       unFreeze();
     },
     false

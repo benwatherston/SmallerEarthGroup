@@ -164,8 +164,8 @@
   @include justify-content(center);
   background: lighten($black, 5%);
   text-align: center;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
+  padding-bottom: 10px;
+  padding-top: 10px;
 }
 
 .footer__link{

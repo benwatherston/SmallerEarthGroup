@@ -41,26 +41,28 @@
     @include justify-content(center);
     @include align-items(center);
     @include flex-wrap(nowrap);
+    background: transparent;
+    border: 0;
+    color: transparent;
     font-size: 0;
     line-height: 0;
-    color: transparent;
-    border: 0;
     outline: none;
-    background: transparent;
+    padding: 1rem 0 0;
     button{
+      background: transparent;
+      border: 0;
+      border: 1px solid $brand-2;
+      color: transparent;
+      cursor: pointer;
+      display: block;
       font-size: 0;
       line-height: 0;
-      display: block;
-      width: 20px;
-      height: 20px;
-      padding: 5px;
-      cursor: pointer;
-      color: transparent;
-      border: 0;
+      height: 10px;
+      margin: 0 3px;
       outline: none;
-      background: transparent;
+      padding: 5px;
+      width: 10px;
       @include border-radius(50%);
-      border: 1px solid $brand-2;
     }
     li.slick-active{
       button{

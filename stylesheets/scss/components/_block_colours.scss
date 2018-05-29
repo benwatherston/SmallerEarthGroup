@@ -50,6 +50,9 @@
           @include s{
             padding: 40px 0px 40px 40px;
           }
+          @include m{
+            padding: 60px 0px 60px 60px;
+          }
         }
       }
       &__right{
@@ -57,6 +60,9 @@
           margin-right: 0;
           @include s{
             padding: 40px 40px 40px 0px;
+          }
+          @include m{
+            padding: 60px 60px 60px 0px;
           }
         }
       }

@@ -58,6 +58,18 @@ if (contactClose) {
   );
 }
 
+if (overlay) {
+  overlay.addEventListener(
+    'click',
+    e => {
+      if (contactModal) {
+        contactModal.classList.remove('active');
+      }
+    },
+    false
+  );
+}
+
 // Close Contact Modal on resize
 body.onresize = () => {
   if (contactModalActive && window.outerWidth >= 480) {
