@@ -19,7 +19,7 @@ $(function() {
     prevArrow: $('.slick-prev'),
     nextArrow: $('.slick-next'),
     adaptiveHeight: true,
-    waitForAnimate: 1,
+    waitForAnimate: false,
     dots: true
   });
 });
