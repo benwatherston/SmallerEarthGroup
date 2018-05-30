@@ -31,26 +31,32 @@
       border-color: white;
       color: white;
       background: transparent;
-      &:hover{
-        background: white;
-        color: $brand;
+      @include s{
+        &:hover{
+          background: white;
+          color: $brand;
+        }
       }
     }
     &--white-2{
       border-color: white;
       color: white;
       background: transparent;
-      &:hover{
-        background: white;
-        color: $brand-2;
+      @include s{
+        &:hover{
+          background: white;
+          color: $brand-2;
+        }
       }
     }
     &--secondary{
       border-color: $brand-2;
       color: $brand-2;
-      &:hover{
-        background: $brand-2;
-        color: white;
+      @include s{
+        &:hover{
+          background: $brand-2;
+          color: white;
+        }
       }
     }
   }
@@ -59,23 +65,29 @@
 .btn--primary{
   background: $primary;
   color: white;
-  &:hover{
-    background: lighten($primary, 5%);
+  @include s{
+    &:hover{
+      background: lighten($primary, 5%);
+    }
   }
 }
 
 .btn--brand{
   background: $brand;
   color: white;
-  &:hover{
-    background: lighten($brand, 5%);
+  @include s{
+    &:hover{
+      background: lighten($brand, 5%);
+    }
   }
 }
 
 .btn--secondary{
   background: $brand-2;
   color: white;
-  &:hover{
-    background: lighten($brand-2, 5%);
+  @include s{
+    &:hover{
+      background: lighten($brand-2, 5%);
+    }
   }
 }

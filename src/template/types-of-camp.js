@@ -6,6 +6,7 @@ $(function() {
     prevArrow: $('.slick-prev'),
     nextArrow: $('.slick-next'),
     lazyLoad: 'progressive',
-    adaptiveHeight: true
+    adaptiveHeight: true,
+    dots: false
   });
 });

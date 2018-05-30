@@ -49,6 +49,7 @@
     outline: none;
     padding: 1rem 0 0;
     button{
+      @include transition(all 0.3s);
       background: transparent;
       border: 0;
       border: 1px solid $brand-2;
@@ -60,7 +61,6 @@
       height: 10px;
       margin: 0 3px;
       outline: none;
-      padding: 5px;
       width: 10px;
       @include border-radius(50%);
     }

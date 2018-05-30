@@ -1,6 +1,6 @@
 .banner{
   @include flexbox();
-  margin-bottom: $spacer-m;
+  @include margin;
   max-height: 400px;
   min-height: 300px;
   overflow: hidden;

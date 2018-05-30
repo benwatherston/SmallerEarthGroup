@@ -121,7 +121,11 @@ gulp.task('the-experience', () => {
 
 gulp.task('camp-activities', () => {
   return gulp
-    .src(['src/defer.js', 'src/template/camp-activities.js'])
+    .src([
+      'src/defer.js',
+      'src/template/camp-activities.js',
+      'src/custom-slider.js'
+    ])
     .pipe(concat('camp-activities.js'))
     .pipe(
       babel({

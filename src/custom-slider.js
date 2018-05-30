@@ -19,22 +19,24 @@ $('.block__slider--wrap').on('init', function(
     for (var index = 0; index < slick.slideCount; index++) {
       createDot(index);
     }
+  });
+  const allDots = document.querySelectorAll('.slider__dots--item');
 
-    const allDots = document.querySelectorAll('.slider__dots--item');
-
-    allDots.forEach(singleDot => {
-      singleDot.addEventListener(
-        'click',
-        () => {
-          $('.block__slider--wrap').slick(
-            'slickGoTo',
-            this.getAttribute('data-slide'),
-            0
-          );
-        },
-        false
-      );
-    });
+  allDots.forEach(singleDot => {
+    singleDot.addEventListener(
+      'click',
+      e => {
+        if (e.target.classList.contains('active')) {
+          return false;
+        }
+        $('.block__slider--wrap').slick(
+          'slickGoTo',
+          e.target.getAttribute('data-slide'),
+          0
+        );
+      },
+      false
+    );
   });
 });
 
