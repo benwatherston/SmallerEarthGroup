@@ -5,7 +5,9 @@
   margin-bottom: $spacer-m;
   width: 100%;
   &--btn{
+    @include flexbox;
     @include flex(0 1 300px);
+    @include justify-content(center);
     margin-right: 20px;
     padding-bottom: 9px;
     padding-top: 9px;
@@ -22,7 +24,16 @@
       margin-right: 100px;
     }
     .btn{
-      min-width: 100%;
+      @include flex(1 1 100%);
+      &:first-child{
+        margin-right: 15px;
+        @include s{
+          margin-right: 30px;
+        }
+      }
+    }
+    &.long{
+      @include flex(0 1 600px);
     }
   }
   &--back{

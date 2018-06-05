@@ -2,6 +2,8 @@
   &__wrap{
     &--home{
       .hero__content--wrap{
+        @include justify-content(space-between);
+        padding-bottom: 0;
         @include xs{
           padding-top: 140px;
         }
@@ -51,12 +53,7 @@
       }
     }
   }
-  &__content{
-    &--home{
-      @include flexbox;
-      @include flex-direction(column);
-    }
-  }
+
   &__speech{
     &--wrap{
       bottom: 40px;
@@ -67,27 +64,33 @@
         display: none;
       }
       #speech--close{
-        @include transition(all 0.3s);
-        @include transform(scale(0));
-        height: 0;
-        opacity: 0;
-        overflow: hidden;
-        visibility: hidden;
-      }
-      &.active{
-        #speech--close{
-          @include transform(scale(1));
-          height: auto;
-          opacity: 1;
-          overflow: visible;
-          visibility: visible;
-        }
-        #speech--open{
+        svg{
+          @include transition(all 0.3s);
           @include transform(scale(0));
           height: 0;
           opacity: 0;
           overflow: hidden;
           visibility: hidden;
+        }
+      }
+      &.active{
+        #speech--close{
+          svg{
+            @include transform(scale(1));
+            height: auto;
+            opacity: 1;
+            overflow: visible;
+            visibility: visible;
+          }
+        }
+        #speech--open{
+          svg{
+            @include transform(scale(0));
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            visibility: hidden;
+          }
         }
         .hero__speech--menu__wrap{
           @include transition(all 0.3s);

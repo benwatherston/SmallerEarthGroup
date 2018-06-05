@@ -1,7 +1,8 @@
 // THEME _theme.sass
 $colours: (
   ('brand', $brand),
-  ('brand-2', $brand-2)
+  ('brand-2', $brand-2),
+  ('light-grey', $light-grey)
 );
 
 @each $colour, $value in $colours{

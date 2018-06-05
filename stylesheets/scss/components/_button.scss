@@ -27,6 +27,28 @@
     min-width: 160px;
   }
   &__ghost{
+    &--primary{
+      border-color: $primary;
+      color: $primary;
+      background: transparent;
+      @include s{
+        &:hover{
+          background: $primary;
+          color: white;
+        }
+      }
+    }
+    &--brand{
+      border-color: $brand;
+      color: $brand;
+      background: transparent;
+      @include s{
+        &:hover{
+          background: $brand;
+          color: white;
+        }
+      }
+    }
     &--white{
       border-color: white;
       color: white;

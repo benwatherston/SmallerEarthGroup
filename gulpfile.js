@@ -6,7 +6,7 @@ const uglify = require('gulp-uglify');
 const sourcemaps = require('gulp-sourcemaps');
 
 const tasks = [
-  'es6',
+  'main',
   'homepage',
   'day-at-camp',
   'roles-at-camp',
@@ -14,11 +14,12 @@ const tasks = [
   'camp-activities',
   'skills',
   'types-of-camp',
-  'individual-roles'
+  'individual-roles',
+  'returning-to-camp'
 ];
 
 // MAIN.JS
-gulp.task('es6', () => {
+gulp.task('main', () => {
   return gulp
     .src([
       'javascripts/vendor/jquery-3.3.1.js',
@@ -28,7 +29,8 @@ gulp.task('es6', () => {
       'src/main.js',
       'src/navigation.js',
       'src/cookie.js',
-      'src/day-slider.js'
+      'src/accordion.js',
+      'src/block-collapse.js'
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))
@@ -83,11 +85,7 @@ gulp.task('day-at-camp', () => {
 
 gulp.task('roles-at-camp', () => {
   return gulp
-    .src([
-      'src/defer.js',
-      'src/template/roles-at-camp.js',
-      'src/custom-slider.js'
-    ])
+    .src(['src/defer.js', 'src/sliders/custom.js'])
     .pipe(concat('roles-at-camp.js'))
     .pipe(
       babel({
@@ -121,11 +119,7 @@ gulp.task('the-experience', () => {
 
 gulp.task('camp-activities', () => {
   return gulp
-    .src([
-      'src/defer.js',
-      'src/template/camp-activities.js',
-      'src/custom-slider.js'
-    ])
+    .src(['src/defer.js', 'src/sliders/custom.js'])
     .pipe(concat('camp-activities.js'))
     .pipe(
       babel({
@@ -142,7 +136,7 @@ gulp.task('camp-activities', () => {
 
 gulp.task('skills', () => {
   return gulp
-    .src(['src/defer.js', 'src/template/skills.js'])
+    .src(['src/defer.js', 'src/sliders/faq.js'])
     .pipe(concat('skills.js'))
     .pipe(
       babel({
@@ -180,8 +174,30 @@ gulp.task('types-of-camp', () => {
 
 gulp.task('individual-roles', () => {
   return gulp
-    .src(['src/defer.js', 'src/template/individual-roles.js'])
+    .src(['src/defer.js', 'src/sliders/faq.js'])
     .pipe(concat('individual-roles.js'))
+    .pipe(
+      babel({
+        presets: ['es2015']
+      })
+    )
+    .pipe(
+      uglify().on('error', e => {
+        console.log(e);
+      })
+    )
+    .pipe(gulp.dest('javascripts'));
+});
+
+gulp.task('returning-to-camp', () => {
+  return gulp
+    .src([
+      'src/defer.js',
+      'src/template/camp-activities.js',
+      'src/custom-slider.js',
+      'src/sliders/faq.js'
+    ])
+    .pipe(concat('returning-to-camp.js'))
     .pipe(
       babel({
         presets: ['es2015']

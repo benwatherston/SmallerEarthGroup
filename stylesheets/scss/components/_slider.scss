@@ -64,6 +64,9 @@
       width: 10px;
       @include border-radius(50%);
     }
+    li{
+      margin: 0;
+    }
     li.slick-active{
       button{
         background: $brand-2;

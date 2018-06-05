@@ -1,27 +1,3 @@
-// Jobs Hero
-.hero{
-  &__content{
-    &--wrap{
-      &_job{
-        @include justify-content(flex-end);
-        padding-bottom: 90px;
-        @include xs{
-          @include justify-content(center);
-        }
-      }
-    }
-    &--job{
-      @include flexbox;
-      @include flex-direction(column);
-      .hero__button--wrap{
-        @include xs{
-          @include order(1);
-        }
-      }
-    }
-  }
-}
-
 // Jobs Navigation
 .jobs__navigation{
   &--wrap{

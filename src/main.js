@@ -1,6 +1,7 @@
 // Variables
 const overlay = document.querySelector('.overlay');
 const backToTop = document.querySelector('#back-to-top');
+const styleguideTop = document.querySelector('#styleguide-top');
 
 // Remove Overlay + Open elements
 if (overlay) {
@@ -29,6 +30,20 @@ document.onkeydown = evt => {
 // Back to top
 if (backToTop) {
   backToTop.addEventListener(
+    'click',
+    () => {
+      window.scroll({
+        top: 0,
+        behavior: 'smooth'
+      });
+    },
+    false
+  );
+}
+
+// Back to top
+if (styleguideTop) {
+  styleguideTop.addEventListener(
     'click',
     () => {
       window.scroll({

@@ -26,16 +26,27 @@
     }
   }
   &__content{
+    @include flexbox;
+    @include flex-direction(column);
+    .hero__button--wrap{
+      @include xs{
+        @include order(1);
+      }
+    }
     &--wrap{
       @include container;
       @include absolute;
       @include flexbox();
       @include flex-direction(column);
-      @include justify-content(space-between);
+      @include justify-content(flex-end);
       box-sizing: border-box;
       height: 100%;
       padding-top: 120px;
+      padding-bottom: 90px;
       width: 100%;
+      @include xs{
+        @include justify-content(center);
+      }
     }
   }
   &__title{

@@ -24,6 +24,15 @@
         }
       }
     }
+    .block__returner{
+      margin-left: 20px;
+      margin-right: 20px;
+      margin-bottom: 0;
+      @include s{
+        margin-left: 0;
+        margin-right: 0;
+      }
+    }
   }
 }
 

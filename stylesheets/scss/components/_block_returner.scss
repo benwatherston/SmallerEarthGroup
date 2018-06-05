@@ -1,0 +1,88 @@
+.block{
+  &__returner{
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex-wrap(wrap);
+    @include margin;
+    position: relative;
+    padding: 20px 20px 0;
+    @include s{
+      @include flex-direction(row);
+      @include flex-wrap(nowrap);
+      padding: 40px 40px 0;
+    }
+    &:before{
+      content: "";
+      background: $light-grey;
+      height: 35%;
+      left: 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+      z-index: 0;
+    }
+    &--big{
+      @include flex(1);
+      background: $brand;
+      box-sizing: border-box;
+      margin-bottom: 20px;
+      padding: 20px;
+      color: white;
+      z-index: 1;
+      @include s{
+        @include flex(1 1 60%);
+        margin-bottom: 0;
+        margin-right: 10px;
+      }
+      h1,h2,h3,h4,h5,h6{
+        text-align: center;
+        margin-bottom: 20px;
+      }
+    }
+    &--small{
+      @include flexbox;
+      @include flex-direction(column);
+      @include flex-wrap(wrap);
+      z-index: 1;
+      @include s{
+        @include flex(1 1 40%);
+        margin-left: 10px;
+      }
+      &__image{
+        margin-bottom: 20px;
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        img{
+          @include background-image;
+        }
+      }
+      &__text{
+        @include flex(1);
+        background: $brand-2;
+        box-sizing: border-box;
+        color: white;
+        padding: 20px;
+        h1,h2,h3,h4,h5,h6{
+          text-align: center;
+          margin-bottom: 20px;
+        }
+      }
+    }
+    .block__offer--wrap{
+      left: 10px;
+      right: auto;
+      top: -10px;
+      @include s{
+        left: 20px;
+        top: -20px;
+      }
+    }
+  &.has--offer{
+    margin-top: 10px;
+    @include s{
+      margin-top: 20px;
+    }
+  }
+  }
+}

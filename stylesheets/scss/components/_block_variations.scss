@@ -84,4 +84,51 @@
       }
     }
   }
+  &__collapse{
+    .block{
+      &__title{
+        @include container-small;
+        position: relative;
+        cursor: pointer;
+        h1,h2,h3,h4,h5,h6{
+          width: 100%;
+        }
+        svg{
+          @include transition(all 0.3s);
+          @include transform(scaleY(-1));
+          height: 22px;
+          width: 32px;
+          position: absolute;
+          right: 10px;
+          @include s{
+            right: 20px;
+          }
+          @include m{
+            right: 30px;
+          }
+          @include l{
+            right: 40px;
+          }
+        }
+      }
+      &__content--wrap{
+        @include transition(all 0.3s);
+        max-height: 0;
+        overflow: hidden;
+      }
+    }
+    &.active{
+      .block{
+        &__title{
+          svg{
+            @include transform(scaleY(1));
+          }
+        }
+        &__content--wrap{
+          max-height: 1000px;
+          overflow: visible;
+        }
+      }
+    }
+  }
 }

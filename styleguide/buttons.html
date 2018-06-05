@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Buttons - Style Guide</title>
+  <link rel="stylesheet" href="../stylesheets/scss/theme/camp_leaders/head.css">
+  <!-- blazy -->
+  <script>(function (t, e){"function"==typeof define && define.amd ? define(e) : "object"==typeof exports ? module.exports=e() : t.Blazy=e()})(this, function (){function t(t){var o=t._util; o.elements=c(t.options), o.count=o.elements.length, o.destroyed && (o.destroyed=!1, t.options.container && p(t.options.container, function (t){u(t, "scroll", o.validateT)}), u(window, "resize", o.saveViewportOffsetT), u(window, "resize", o.validateT), u(window, "scroll", o.validateT) ), e(t)}function e(t){for (var e=t._util, n=0; n < e.count; n++){var s, i=e.elements[n], a=i; s=t.options; var c=a.getBoundingClientRect(); s.container && g && (a=a.closest(s.containerClass)) ? (a=a.getBoundingClientRect(), s=!!o(a, m) && o( c,{top: a.top - s.offset, right: a.right + s.offset, bottom: a.bottom + s.offset, left: a.left - s.offset})) : s=o(c, m), (s || r(i, t.options.successClass)) && (t.load(i), e.elements.splice(n, 1), e.count--, n--)}0===e.count && t.destroy()}function o(t, e){return t.right >=e.left && t.bottom >=e.top && t.left <=e.right && t.top <=e.bottom}function n(t, e, o){if (!r(t, o.successClass) && (e || o.loadInvisible || 0 < t.offsetWidth && 0 < t.offsetHeight)) if (e=t.getAttribute(v) || t.getAttribute(o.src)){e=e.split(o.separator); var n=e[h && 1 < e.length ? 1 : 0], c=t.getAttribute(o.srcset), l="img"===t.nodeName.toLowerCase(), d=(e=t.parentNode) && "picture"===e.nodeName.toLowerCase(); if (l || void 0===t.src){var m=new Image, g=function (){o.error && o.error(t, "invalid"), a(t, o.errorClass), f(m, "error", g), f(m, "load", w)}, w=function (){l ? d || i(t, n, c) : t.style.backgroundImage='url("' + n + '")', s(t, o), f(m, "load", w), f(m, "error", g)}; d && (m=t, p(e.getElementsByTagName("source"), function (t){var e=o.srcset, n=t.getAttribute(e); n && (t.setAttribute("srcset", n), t.removeAttribute(e))})), u(m, "error", g), u(m, "load", w), i(m, n, c)}else t.src=n, s(t, o)}else "video"===t.nodeName.toLowerCase() ? (p(t.getElementsByTagName("source"), function (t){var e=o.src, n=t.getAttribute(e); n && (t.setAttribute("src", n), t.removeAttribute(e))}), t.load(), s(t, o)) : (o.error && o.error(t, "missing"), a(t, o.errorClass))}function s(t, e){a(t, e.successClass), e.success && e.success(t), t.removeAttribute(e.src), t.removeAttribute(e.srcset), p(e.breakpoints, function (e){t.removeAttribute(e.src)})}function i(t, e, o){o && t.setAttribute("srcset", o), t.src=e}function r(t, e){return -1 !==(" " + t.className + " ").indexOf(" " + e + " ")}function a(t, e){r(t, e) || (t.className +=" " + e)}function c(t){var e=[]; t=t.root.querySelectorAll(t.selector); for (var o=t.length; o--; e.unshift(t[o])); return e}function l(t){m.bottom=(window.innerHeight || document.documentElement.clientHeight) + t, m.right=(window.innerWidth || document.documentElement.clientWidth) + t}function u(t, e, o){t.attachEvent ? t.attachEvent && t.attachEvent("on" + e, o) : t.addEventListener(e, o,{capture: !1, passive: !0})}function f(t, e, o){t.detachEvent ? t.detachEvent && t.detachEvent("on" + e, o) : t.removeEventListener(e, o,{capture: !1, passive: !0})}function p(t, e){if (t && e) for (var o=t.length, n=0; n < o && !1 !==e(t[n], n); n++);}function d(t, e, o){var n=0; return function (){var s=+new Date; s - n < e || (n=s, t.apply(o, arguments))}}var v, m, h, g; return function (o){if (!document.querySelectorAll){var s=document.createStyleSheet(); document.querySelectorAll=function (t, e, o, n, i){for (i=document.all, e=[], t=t.replace(/\[for\b/gi, "[htmlFor").split(","), o=t.length; o--;){for (s.addRule(t[o], "k:v"), n=i.length; n--;) i[n].currentStyle.k && e.push(i[n]); s.removeRule(0)}return e}}var i=this, r=i._util={}; r.elements=[], r.destroyed=!0, i.options=o ||{}, i.options.error=i.options.error || !1, i.options.offset=i.options.offset || 100, i.options.root=i.options.root || document, i.options.success=i.options.success || !1, i.options.selector=i.options.selector || ".b-lazy", i.options.separator=i.options.separator || "|", i.options.containerClass=i.options.container, i.options.container=!!i.options.containerClass && document.querySelectorAll(i.options.containerClass), i.options.errorClass=i.options.errorClass || "b-error", i.options.breakpoints=i.options.breakpoints || !1, i.options.loadInvisible=i.options.loadInvisible || !1, i.options.successClass=i.options.successClass || "b-loaded", i.options.validateDelay=i.options.validateDelay || 25, i.options.saveViewportOffsetDelay=i.options.saveViewportOffsetDelay || 50, i.options.srcset=i.options .srcset || "data-srcset", i.options.src=v=i.options.src || "data-src", g=Element.prototype.closest, h=1 < window.devicePixelRatio, m={}, m.top=0 - i.options.offset, m.left=0 - i.options.offset, i.revalidate=function (){t(i)}, i.load=function (t, e){var o=this.options; void 0===t.length ? n(t, e, o) : p(t, function (t){n(t, e, o)})}, i.destroy=function (){var t=this._util; this.options.container && p(this.options.container, function (e){f(e, "scroll", t.validateT)}), f(window, "scroll", t.validateT), f(window, "resize", t.validateT), f(window, "resize", t.saveViewportOffsetT), t.count=0, t.elements.length=0, t.destroyed=!0}, r.validateT=d(function (){e(i)}, i.options.validateDelay, i), r.saveViewportOffsetT=d(function (){l(i.options.offset)}, i.options.saveViewportOffsetDelay, i), l(i.options.offset), p(i.options.breakpoints, function (t){if (t.width >=window.screen.width) return v=t.src, !1}), setTimeout(function (){t(i)})}}); var bLazy=new Blazy({}); </script>
+</head>
+
+<body>
+
+  <div class="site__wrapper site__wrapper--styleguide">
+
+    <div class="styleguide">
+
+      <ul>
+        <li>
+          <a href="/styleguide.html">Home</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/accordion.html">Accordion</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/banners.html">Banners</a>
+        </li>
+      </ul>
+
+
+      <ul>
+        <li>
+          <a href="/styleguide/blocks.html">Blocks</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="#back-to-top">Bottom Bar</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a class="active" href="/styleguide/buttons.html">Buttons</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/hero.html">Hero</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/sliders.html">Sliders</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/typography.html">Typography</a>
+        </li>
+      </ul>
+
+    </div>
+
+    <div class="styleguide__content">
+
+      <!-- TYPOGRAPHY -->
+
+      <h3 id="typography" class="styleguide--heading">Buttons</h3>
+      <h4 id="typography-headings" class="styleguide--subheading">Buttons - Solid</h4>
+      <main>
+        <a href="#" class="btn btn--primary">Button</a>
+        <a href="#" class="btn btn--brand">Button</a>
+        <a href="#" class="btn btn--secondary">Button</a>
+<pre>
+<div class="comment">// Solid buttons</div>
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn--primary</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn--brand</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn--secondary</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+</pre>
+      </main>
+
+      <h4 id="typography-headings" class="styleguide--subheading">Buttons - Ghost</h4>
+      <main class="example__grey">
+        <a href="#" class="btn btn__ghost--primary">Button</a>
+        <a href="#" class="btn btn__ghost--brand">Button</a>
+        <a href="#" class="btn btn__ghost--secondary">Button</a>
+        <a href="#" class="btn btn__ghost--white">Button</a>
+        <a href="#" class="btn btn__ghost--white-2">Button</a>
+
+<pre>
+<div class="comment">// Ghost buttons</div>
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn__ghost--primary</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn__ghost--brand</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn__ghost--secondary</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn__ghost--white</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+
+&#x3C;a href=&#x22;#&#x22; class=&#x22;<b>btn btn__ghost--white-2</b>&#x22;&#x3E;Button&#x3C;/a&#x3E;
+</pre>
+      </main>
+
+
+
+
+      <!-- TYPOGRAPHY END -->
+
+      <!-- MAIN END -->
+
+
+    </div>
+
+  </div>
+  <!-- SITE WRAPPER END -->
+
+
+
+  <div class="styleguide--top" id="styleguide-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 23.6C5.6 23.6.4 18.4.4 12 .4 5.6 5.6.4 12 .4 18.4.4 23.6 5.6 23.6 12c0 6.4-5.2 11.6-11.6 11.6zm0-22.2C6.1 1.4 1.4 6.1 1.4 12c0 5.9 4.8 10.6 10.6 10.6 5.9 0 10.6-4.8 10.6-10.6 0-5.9-4.7-10.6-10.6-10.6z"></path>
+      <path d="M15.1 14.1L12 11l-3.1 3.1-.7-.7L12 9.6l3.8 3.8z"></path>
+    </svg>
+  </div>
+
+  <link rel="stylesheet" href="../stylesheets/scss/theme/camp_leaders/main.css">
+  <script src="../javascripts/main.js"></script>
+  <script src="../javascripts/homepage.js" defer></script>
+
+</body>
+
+</html>

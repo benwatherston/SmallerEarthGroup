@@ -13,6 +13,7 @@
     background: $brand;
     color: white;
     cursor: pointer;
+    text-align: center;
     padding-bottom: 1rem;
     padding-top: 1rem;
     svg{
@@ -68,6 +69,11 @@
         }
         
       }
+    }
+  }
+  &.accordion__brand-2{
+    .accordion__header{
+      background: $brand-2;
     }
   }
 }
