@@ -77,4 +77,28 @@
       }
     }
   }
+  &__block{
+    background: $brand;
+    height: 50vh;
+    min-height: 350px;
+    .hero{
+      &__content{
+        @include align-items(center);
+        @include justify-content(center);
+        text-align: center;
+        &--wrap{
+          @include justify-content(center);
+        }
+      }
+      &__title{
+        margin-bottom: 0;
+        span{
+          display: inline;
+          @include s{
+            display: block;
+          }
+        }
+      }
+    }
+  }
 }

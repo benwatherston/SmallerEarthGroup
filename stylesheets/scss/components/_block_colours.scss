@@ -2,10 +2,17 @@
   &__brand-2{
     .block{
       &__title{
-        background: $brand-2;
+        background: $brand;
       }
       &__text{
-        background: $brand;
+        background: $brand-2;
+      }
+    }
+    &.block__full{
+      .block__text{
+        &:before{
+          background: $brand-2;
+        }
       }
     }
   }
@@ -19,15 +26,11 @@
         color: $brand-2;
       }
     }
-  }
-  &__white{
-    .block{
-      &__title{
-        background: white;
-      }
-      &__text{
-        background: $brand;
-        color: white;
+    &.block__full{
+      .block__text{
+        &:before{
+          background: $light-grey;
+        }
       }
     }
   }

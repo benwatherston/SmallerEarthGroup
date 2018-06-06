@@ -1,0 +1,97 @@
+.apply{
+  &__wrapper{
+    @include container;
+    @include margin;
+    background: $light-grey;
+    margin-top: -20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    @include s{
+      margin-top: -40px;
+      padding-bottom: 40px;
+      padding-top: 40px;
+    }
+    ::placeholder {
+      color: $brand;
+    }
+    :-ms-input-placeholder {
+      color: $brand;
+    }
+    ::-ms-input-placeholder {
+      color: $brand;
+    }
+  }
+  &__title{
+    text-align: center;
+    margin-bottom: 20px;
+    @include s{
+      margin-bottom: 40px;
+    }
+  }
+  &__text{
+    margin-bottom: 20px;
+    @include s{
+      margin-bottom: 40px;
+    }
+    p{
+      color: $brand-2;
+      margin-bottom: 1rem;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__form{
+    @include flexbox;
+    @include flex-wrap(wrap);
+    input:not([type="checkbox"]):not([type="submit"]):not([type="radio"]), textarea, select{
+      @include border-radius(30px);
+      background: white;
+      color: $brand-2;
+      font-size: 16px;
+      padding: 12px 30px;
+      margin-bottom: 20px;
+      &:last-child{
+        @include s{
+          margin-bottom: 0;
+        }
+      }
+    }
+    input[type='submit']{
+      font-size: 16px;
+    }
+    &--inner{
+      @include flexbox;
+      @include flex-direction(column);
+      @include flex(1 0 100%);
+    }
+    &--step-1{
+      @include s{
+        @include flex-wrap(nowrap);
+        @include align-items(flex-end);
+      }
+      .apply__form--inner{
+        @include s{
+          @include flex(1 1 auto);
+        }
+        &__right{
+          @include s{
+            @include flex(0 1 200px);
+          }
+          @include m{
+            @include flex(0 1 300px);
+          }
+        }
+      }
+
+      input[type='submit']{
+        @include s{
+          margin-left: 20px;
+        }
+        @include m{
+          margin-left: 40px;
+        }
+      }
+    }
+  }
+}

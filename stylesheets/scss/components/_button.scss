@@ -9,7 +9,7 @@
   font-weight: bold;
   line-height: 1.5;
   min-width: 100px;
-  padding: 5px 10px;
+  padding: 6px 10px;
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
@@ -23,7 +23,7 @@
   }
   @include m{
     font-size: 16px;
-    padding: 5px 25px;
+    padding: 6px 25px;
     min-width: 160px;
   }
   &__ghost{

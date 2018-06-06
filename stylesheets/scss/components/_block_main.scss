@@ -10,7 +10,7 @@
     @include flexbox;
     @include flex-wrap(nowrap);
     @include align-items(center);
-    background: $brand;
+    background: $brand-2;
     color: white;
     font-size: 30px;
     line-height: 1;
@@ -111,7 +111,7 @@
     }
   }
   &__text{
-    background: $brand-2;
+    background: $brand;
     color: white;
     margin-bottom: 20px;
     line-height: 1.4;
@@ -131,8 +131,8 @@
       text-align: left;
     }
     p{
-      margin-bottom: 1rem;
       font-size: 12px;
+      margin-bottom: 1rem;
       @include s{
         font-size: 14px;
       }

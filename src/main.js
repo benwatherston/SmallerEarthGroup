@@ -2,6 +2,7 @@
 const overlay = document.querySelector('.overlay');
 const backToTop = document.querySelector('#back-to-top');
 const styleguideTop = document.querySelector('#styleguide-top');
+const code = document.querySelectorAll('pre textarea');
 
 // Remove Overlay + Open elements
 if (overlay) {
@@ -53,4 +54,25 @@ if (styleguideTop) {
     },
     false
   );
+}
+
+if (code) {
+  code.forEach(c => {
+    c.style.height = `${c.scrollHeight}px`;
+    c.addEventListener('click', e => {
+      const copyText = e.target.innerText;
+      const codeParent = e.target.parentElement;
+      const msg = document.createElement('span');
+
+      e.target.select();
+      document.execCommand('copy');
+
+      msg.classList.add('message');
+      msg.textContent = 'Code Copied';
+      codeParent.appendChild(msg);
+      setTimeout(function() {
+        codeParent.removeChild(msg);
+      }, 5000);
+    });
+  });
 }

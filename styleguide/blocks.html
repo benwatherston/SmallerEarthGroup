@@ -1,0 +1,1310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Blocks - Style Guide</title>
+  <link rel="stylesheet" href="../stylesheets/scss/theme/camp_leaders/head.css">
+  <!-- blazy -->
+  <script>(function (t, e){"function"==typeof define && define.amd ? define(e) : "object"==typeof exports ? module.exports=e() : t.Blazy=e()})(this, function (){function t(t){var o=t._util; o.elements=c(t.options), o.count=o.elements.length, o.destroyed && (o.destroyed=!1, t.options.container && p(t.options.container, function (t){u(t, "scroll", o.validateT)}), u(window, "resize", o.saveViewportOffsetT), u(window, "resize", o.validateT), u(window, "scroll", o.validateT) ), e(t)}function e(t){for (var e=t._util, n=0; n < e.count; n++){var s, i=e.elements[n], a=i; s=t.options; var c=a.getBoundingClientRect(); s.container && g && (a=a.closest(s.containerClass)) ? (a=a.getBoundingClientRect(), s=!!o(a, m) && o( c,{top: a.top - s.offset, right: a.right + s.offset, bottom: a.bottom + s.offset, left: a.left - s.offset})) : s=o(c, m), (s || r(i, t.options.successClass)) && (t.load(i), e.elements.splice(n, 1), e.count--, n--)}0===e.count && t.destroy()}function o(t, e){return t.right >=e.left && t.bottom >=e.top && t.left <=e.right && t.top <=e.bottom}function n(t, e, o){if (!r(t, o.successClass) && (e || o.loadInvisible || 0 < t.offsetWidth && 0 < t.offsetHeight)) if (e=t.getAttribute(v) || t.getAttribute(o.src)){e=e.split(o.separator); var n=e[h && 1 < e.length ? 1 : 0], c=t.getAttribute(o.srcset), l="img"===t.nodeName.toLowerCase(), d=(e=t.parentNode) && "picture"===e.nodeName.toLowerCase(); if (l || void 0===t.src){var m=new Image, g=function (){o.error && o.error(t, "invalid"), a(t, o.errorClass), f(m, "error", g), f(m, "load", w)}, w=function (){l ? d || i(t, n, c) : t.style.backgroundImage='url("' + n + '")', s(t, o), f(m, "load", w), f(m, "error", g)}; d && (m=t, p(e.getElementsByTagName("source"), function (t){var e=o.srcset, n=t.getAttribute(e); n && (t.setAttribute("srcset", n), t.removeAttribute(e))})), u(m, "error", g), u(m, "load", w), i(m, n, c)}else t.src=n, s(t, o)}else "video"===t.nodeName.toLowerCase() ? (p(t.getElementsByTagName("source"), function (t){var e=o.src, n=t.getAttribute(e); n && (t.setAttribute("src", n), t.removeAttribute(e))}), t.load(), s(t, o)) : (o.error && o.error(t, "missing"), a(t, o.errorClass))}function s(t, e){a(t, e.successClass), e.success && e.success(t), t.removeAttribute(e.src), t.removeAttribute(e.srcset), p(e.breakpoints, function (e){t.removeAttribute(e.src)})}function i(t, e, o){o && t.setAttribute("srcset", o), t.src=e}function r(t, e){return -1 !==(" " + t.className + " ").indexOf(" " + e + " ")}function a(t, e){r(t, e) || (t.className +=" " + e)}function c(t){var e=[]; t=t.root.querySelectorAll(t.selector); for (var o=t.length; o--; e.unshift(t[o])); return e}function l(t){m.bottom=(window.innerHeight || document.documentElement.clientHeight) + t, m.right=(window.innerWidth || document.documentElement.clientWidth) + t}function u(t, e, o){t.attachEvent ? t.attachEvent && t.attachEvent("on" + e, o) : t.addEventListener(e, o,{capture: !1, passive: !0})}function f(t, e, o){t.detachEvent ? t.detachEvent && t.detachEvent("on" + e, o) : t.removeEventListener(e, o,{capture: !1, passive: !0})}function p(t, e){if (t && e) for (var o=t.length, n=0; n < o && !1 !==e(t[n], n); n++);}function d(t, e, o){var n=0; return function (){var s=+new Date; s - n < e || (n=s, t.apply(o, arguments))}}var v, m, h, g; return function (o){if (!document.querySelectorAll){var s=document.createStyleSheet(); document.querySelectorAll=function (t, e, o, n, i){for (i=document.all, e=[], t=t.replace(/\[for\b/gi, "[htmlFor").split(","), o=t.length; o--;){for (s.addRule(t[o], "k:v"), n=i.length; n--;) i[n].currentStyle.k && e.push(i[n]); s.removeRule(0)}return e}}var i=this, r=i._util={}; r.elements=[], r.destroyed=!0, i.options=o ||{}, i.options.error=i.options.error || !1, i.options.offset=i.options.offset || 100, i.options.root=i.options.root || document, i.options.success=i.options.success || !1, i.options.selector=i.options.selector || ".b-lazy", i.options.separator=i.options.separator || "|", i.options.containerClass=i.options.container, i.options.container=!!i.options.containerClass && document.querySelectorAll(i.options.containerClass), i.options.errorClass=i.options.errorClass || "b-error", i.options.breakpoints=i.options.breakpoints || !1, i.options.loadInvisible=i.options.loadInvisible || !1, i.options.successClass=i.options.successClass || "b-loaded", i.options.validateDelay=i.options.validateDelay || 25, i.options.saveViewportOffsetDelay=i.options.saveViewportOffsetDelay || 50, i.options.srcset=i.options .srcset || "data-srcset", i.options.src=v=i.options.src || "data-src", g=Element.prototype.closest, h=1 < window.devicePixelRatio, m={}, m.top=0 - i.options.offset, m.left=0 - i.options.offset, i.revalidate=function (){t(i)}, i.load=function (t, e){var o=this.options; void 0===t.length ? n(t, e, o) : p(t, function (t){n(t, e, o)})}, i.destroy=function (){var t=this._util; this.options.container && p(this.options.container, function (e){f(e, "scroll", t.validateT)}), f(window, "scroll", t.validateT), f(window, "resize", t.validateT), f(window, "resize", t.saveViewportOffsetT), t.count=0, t.elements.length=0, t.destroyed=!0}, r.validateT=d(function (){e(i)}, i.options.validateDelay, i), r.saveViewportOffsetT=d(function (){l(i.options.offset)}, i.options.saveViewportOffsetDelay, i), l(i.options.offset), p(i.options.breakpoints, function (t){if (t.width >=window.screen.width) return v=t.src, !1}), setTimeout(function (){t(i)})}}); var bLazy=new Blazy({}); </script>
+</head>
+
+<body>
+
+  <div class="site__wrapper site__wrapper--styleguide">
+
+    <div class="styleguide">
+
+      <ul>
+        <li>
+          <a href="/styleguide.html">Home</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/accordion.html">Accordion</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/banners.html">Banners</a>
+        </li>
+      </ul>
+
+
+      <ul>
+        <li>
+          <a class="active" href="/styleguide/blocks.html">Blocks</a>
+          <ul>
+            <li><a href="#main">Main Block</a></li>
+            <li><a href="#title">Title Block</a></li>
+            <li><a href="#split">Split Block</a></li>
+            <li><a href="#full">Full Width Block</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="#back-to-top">Bottom Bar</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/buttons.html">Buttons</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/hero.html">Hero</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/sliders.html">Sliders</a>
+        </li>
+      </ul>
+
+      <ul>
+        <li>
+          <a href="/styleguide/typography.html">Typography</a>
+        </li>
+      </ul>
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="styleguide__content">
+
+
+
+      <h3 class="styleguide--heading">Blocks</h3>
+      <h4 id="main" class="styleguide--subheading">Main Block - left - default</h4>
+      <main>
+
+<div class="block__wrap block__left">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+<div class="comment">// Block left default colour</div>
+&#x3C;div class=&#x22;block__wrap <b>block__left</b>&#x22;&#x3E;
+  &#x3C;div class=&#x22;block__content--wrap&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22; class=&#x22;block__image--wrap&#x22;&#x3E;
+      &#x3C;img src=&#x22;&#x22; alt=&#x22;&#x22;&#x3E;
+    &#x3C;/a&#x3E;
+    &#x3C;div class=&#x22;block__text--wrap&#x22;&#x3E;
+      &#x3C;div class=&#x22;block__text&#x22;&#x3E;
+        &#x3C;p&#x3E;&#x3C;strong&#x3E;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?&#x3C;/strong&#x3E;&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.&#x3C;/p&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Main Block - right - default</h4>
+<main>
+    <div class="block__wrap block__right">
+        <div class="block__content--wrap">
+          <a href="#" class="block__image--wrap">
+            <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+          </a>
+          <div class="block__text--wrap">
+            <div class="block__text">
+              <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<pre>
+<div class="comment">// Block right default colour</div>
+&#x3C;div class=&#x22;block__wrap <b>block__right</b>&#x22;&#x3E;
+  &#x3C;div class=&#x22;block__content--wrap&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22; class=&#x22;block__image--wrap&#x22;&#x3E;
+      &#x3C;img src=&#x22;&#x22; alt=&#x22;&#x22;&#x3E;
+    &#x3C;/a&#x3E;
+    &#x3C;div class=&#x22;block__text--wrap&#x22;&#x3E;
+      &#x3C;div class=&#x22;block__text&#x22;&#x3E;
+        &#x3C;p&#x3E;&#x3C;strong&#x3E;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?&#x3C;/strong&#x3E;&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.&#x3C;/p&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+
+</main>
+
+
+<h4 class="styleguide--subheading">Main Block - left - brand colour</h4>
+<main>
+
+<div class="block__wrap block__left block__brand-2">
+<div class="block__content--wrap">
+<a href="#" class="block__image--wrap">
+<img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+</a>
+<div class="block__text--wrap">
+<div class="block__text">
+  <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+</div>
+</div>
+</div>
+</div>
+
+<pre>
+<div class="comment">// Block left brand colour</div>
+&#x3C;div class=&#x22;block__wrap <b>block__left block__brand-2</b>&#x22;&#x3E;
+  &#x3C;div class=&#x22;block__content--wrap&#x22;&#x3E;
+    &#x3C;a href=&#x22;#&#x22; class=&#x22;block__image--wrap&#x22;&#x3E;
+      &#x3C;img src=&#x22;&#x22; alt=&#x22;&#x22;&#x3E;
+    &#x3C;/a&#x3E;
+    &#x3C;div class=&#x22;block__text--wrap&#x22;&#x3E;
+      &#x3C;div class=&#x22;block__text&#x22;&#x3E;
+        &#x3C;p&#x3E;&#x3C;strong&#x3E;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?&#x3C;/strong&#x3E;&#x3C;/p&#x3E;
+        &#x3C;p&#x3E;Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.&#x3C;/p&#x3E;
+      &#x3C;/div&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Main Block - right - brand colour</h4>
+<main>
+<div class="block__wrap block__right block__brand-2">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+<div class="comment">// Block right brand colour</div>
+&#x3C;div class=&#x22;block__wrap <b>block__right block__brand-2</b>&#x22;&#x3E;
+&#x3C;div class=&#x22;block__content--wrap&#x22;&#x3E;
+  &#x3C;a href=&#x22;#&#x22; class=&#x22;block__image--wrap&#x22;&#x3E;
+    &#x3C;img src=&#x22;&#x22; alt=&#x22;&#x22;&#x3E;
+  &#x3C;/a&#x3E;
+  &#x3C;div class=&#x22;block__text--wrap&#x22;&#x3E;
+    &#x3C;div class=&#x22;block__text&#x22;&#x3E;
+      &#x3C;p&#x3E;&#x3C;strong&#x3E;Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?&#x3C;/strong&#x3E;&#x3C;/p&#x3E;
+      &#x3C;p&#x3E;Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.&#x3C;/p&#x3E;
+    &#x3C;/div&#x3E;
+  &#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+&#x3C;/div&#x3E;
+</pre>
+
+</main>
+
+
+
+
+<h4 class="styleguide--subheading">Main Block - left - grey</h4>
+<main>
+
+<div class="block__wrap block__left block__grey">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <div class="comment">// Block left grey colour</div>
+<textarea>
+<div class="block__wrap block__left block__grey">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Main Block - right - grey</h4>
+<main>
+<div class="block__wrap block__right block__grey">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <div class="comment">// Block right grey colour</div>
+<textarea>
+<div class="block__wrap block__right block__grey">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+
+</main>
+
+
+<h4 class="styleguide--subheading">Main Block - left - blank</h4>
+<main>
+
+<div class="block__wrap block__left block__blank">
+<div class="block__content--wrap">
+<a href="#" class="block__image--wrap">
+<img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+</a>
+<div class="block__text--wrap">
+<div class="block__text">
+  <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+</div>
+</div>
+</div>
+</div>
+
+<pre>
+<div class="comment">// Block left no colour</div>
+<textarea>
+<div class="block__wrap block__left block__blank">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Main Block - right - blank</h4>
+<main>
+<div class="block__wrap block__right block__blank">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <div class="comment">// Block right no colour</div>
+<textarea>
+<div class="block__wrap block__right block__blank">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- TITLE -->
+<h4 id="title"  class="styleguide--subheading">Title Block - left</h4>
+<main>
+
+  <pre>
+    <div class="comment">// Block left with title</div>
+<textarea>
+<div class="block__wrap block__left block__has--title">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Title Block - right</h4>
+<main>
+    <div class="block__wrap block__right block__has--title">
+        <div class="block__title--wrap">
+          <div class="block__title">
+            <h2>The ultimate summer job.</h2>
+          </div>
+        </div>
+        <div class="block__content--wrap">
+          <a href="#" class="block__image--wrap">
+            <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+          </a>
+          <div class="block__text--wrap">
+            <div class="block__text">
+              <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+<pre>
+<div class="comment">// Block right with title</div>
+<textarea>
+<div class="block__wrap block__right block__has--title">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+
+</main>
+
+
+<h4 class="styleguide--subheading">Title Block - left - reverse colours</h4>
+<main>
+
+<div class="block__wrap block__left block__has--title block__brand-2">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <div class="comment">// Block left with title</div>
+<textarea>
+<div class="block__wrap block__left block__has--title block__brand-2">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Title Block - right - reverse colours</h4>
+<main>
+    <div class="block__wrap block__right block__has--title block__brand-2">
+        <div class="block__title--wrap">
+          <div class="block__title">
+            <h2>The ultimate summer job.</h2>
+          </div>
+        </div>
+        <div class="block__content--wrap">
+          <a href="#" class="block__image--wrap">
+            <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+          </a>
+          <div class="block__text--wrap">
+            <div class="block__text">
+              <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre>
+        <div class="comment">// Block right with title</div>
+<textarea>
+<div class="block__wrap block__right block__has--title block__brand-2">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+
+</main>
+
+
+
+
+
+<h4 class="styleguide--subheading">Title Block - left - grey</h4>
+<main>
+
+<div class="block__wrap block__left block__has--title block__grey">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <div class="comment">// Block left with title</div>
+<textarea>
+<div class="block__wrap block__left block__has--title block__grey">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Title Block - right - grey</h4>
+<main>
+    <div class="block__wrap block__right block__has--title block__grey">
+        <div class="block__title--wrap">
+          <div class="block__title">
+            <h2>The ultimate summer job.</h2>
+          </div>
+        </div>
+        <div class="block__content--wrap">
+          <a href="#" class="block__image--wrap">
+            <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+          </a>
+          <div class="block__text--wrap">
+            <div class="block__text">
+              <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <pre>
+        <div class="comment">// Block right with title</div>
+        
+<textarea>
+<div class="block__wrap block__right block__has--title block__grey">
+  <div class="block__title--wrap">
+    <div class="block__title">
+      <h2>The ultimate summer job.</h2>
+    </div>
+  </div>
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <p><strong>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae perferendis, est reiciendis porro nobis illum exercitationem! Autem quod aliquam deserunt ipsum aperiam incidunt, optio, aut quo, sapiente sint aspernatur. Voluptate?</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+    </div>
+  </div>
+</div>
+</textarea>
+
+</pre>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Block Split -->
+
+<h4  id="split"  class="styleguide--subheading">Split Block - left</h4>
+<main>
+<div class="block__split">
+    <div class="block__split--big">
+      <h2>You know the campers the best</h2>
+    </div>
+    <div class="block__split--small">
+      <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+    </div>
+  </div>
+  
+  <pre>
+    <div class="comment">// Block left split in half</div>
+    <textarea>
+<div class="block__split">
+  <div class="block__split--big">
+    <h2>You know the campers the best</h2>
+  </div>
+  <div class="block__split--small">
+    <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+  </div>
+</div>
+  </textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Split Block - right</h4>
+<main>
+
+<div class="block__split block__right">
+  <div class="block__split--big">
+    <h2>You know the campers the best</h2>
+  </div>
+  <div class="block__split--small">
+    <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+  </div>
+</div>
+
+
+<pre>
+  <div class="comment">// Block right split in half</div>
+  <textarea>
+<div class="block__split block__right">
+  <div class="block__split--big">
+    <h2>You know the campers the best</h2>
+  </div>
+  <div class="block__split--small">
+    <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+  </div>
+</div>
+</textarea>
+</pre>
+
+</main>
+
+<h4  id="split"  class="styleguide--subheading">Split Block - left - brand 2 colour</h4>
+<main>
+<div class="block__split block__brand block__brand-2">
+    <div class="block__split--big">
+      <h2>You know the campers the best</h2>
+    </div>
+    <div class="block__split--small">
+      <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+    </div>
+  </div>
+  
+  <pre>
+    <div class="comment">// Block left split in half</div>
+    <textarea>
+<div class="block__split block__brand block__brand-2">
+  <div class="block__split--big">
+    <h2>You know the campers the best</h2>
+  </div>
+  <div class="block__split--small">
+    <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+  </div>
+</div>
+  </textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Split Block - right - brand 2 colour</h4>
+<main>
+
+<div class="block__split block__right block__brand-2">
+  <div class="block__split--big">
+    <h2>You know the campers the best</h2>
+  </div>
+  <div class="block__split--small">
+    <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+  </div>
+</div>
+
+
+<pre>
+  <div class="comment">// Block right split in half</div>
+  <textarea>
+      <div class="block__split block__right block__brand-2">
+        <div class="block__split--big">
+          <h2>You know the campers the best</h2>
+        </div>
+        <div class="block__split--small">
+          <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+        </div>
+      </div>
+  </textarea>
+</pre>
+
+</main>
+
+<h4  id="split"  class="styleguide--subheading">Split Block - left - grey</h4>
+<main>
+<div class="block__split block__brand block__grey">
+    <div class="block__split--big">
+      <h2>You know the campers the best</h2>
+    </div>
+    <div class="block__split--small">
+      <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+    </div>
+  </div>
+  
+  <pre>
+    <div class="comment">// Block left split in half</div>
+    <textarea>
+        <div class="block__split block__brand block__grey">
+            <div class="block__split--big">
+              <h2>You know the campers the best</h2>
+            </div>
+            <div class="block__split--small">
+              <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+            </div>
+          </div>
+  </textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Split Block - right - grey</h4>
+<main>
+
+<div class="block__split block__right block__grey">
+  <div class="block__split--big">
+    <h2>You know the campers the best</h2>
+  </div>
+  <div class="block__split--small">
+    <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+  </div>
+</div>
+
+
+<pre>
+  <div class="comment">// Block right split in half</div>
+  
+  <textarea>
+<div class="block__split block__right block__grey">
+  <div class="block__split--big">
+    <h2>You know the campers the best</h2>
+  </div>
+  <div class="block__split--small">
+    <p><strong>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse deleniti hic quae! Nulla obcaecati consequatur veniam similique! Maiores fugiat, facilis sunt deleniti ipsum voluptatibus exercitationem. Error vitae nulla adipisci fugit.</strong></p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam dicta animi molestias praesentium sed expedita non dolores provident consequuntur voluptatum vero illum saepe, reiciendis sint ullam illo totam aspernatur eaque.</p>
+  </div>
+</div>
+</textarea>
+  
+</pre>
+
+</main>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- BLOCK FULL -->
+
+<h4 id="full" class="styleguide--subheading">Full Width Block - left</h4>
+<main>
+
+<div class="block__wrap block__left block__full">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <h3 class="text--center">Types of Camp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+      <a href="#" class="block__link">
+        <span>Find out more about life at camp</span>
+        <!-- arrow-right.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <div class="comment">// Block left full width background</div>
+  <textarea>
+<div class="block__wrap block__left block__full">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <h3 class="text--center">Types of Camp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+      <a href="#" class="block__link">
+        <span>Find out more about life at camp</span>
+        <!-- arrow-right.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Full Width Block - right</h4>
+<main>
+
+<div class="block__wrap block__right block__full">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <h3 class="text--center">Types of Camp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+      <a href="#" class="block__link">
+        <span>Find out more about life at camp</span>
+        <!-- arrow-right.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+<pre>
+  <div class="comment">// Block right full width background</div>
+  <textarea>
+<div class="block__wrap block__right block__full">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <h3 class="text--center">Types of Camp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+      <a href="#" class="block__link">
+        <span>Find out more about life at camp</span>
+        <!-- arrow-right.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+
+</main>
+
+
+
+<h4 id="full" class="styleguide--subheading">Full Width Block - left - brand 2 colour</h4>
+<main>
+
+<div class="block__wrap block__left block__full block__brand-2">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <h3 class="text--center">Types of Camp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+      <a href="#" class="block__link">
+        <span>Find out more about life at camp</span>
+        <!-- arrow-right.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+
+<pre>
+  <div class="comment">// Block left full width background</div>
+  <textarea>
+<div class="block__wrap block__left block__full block__brand-2">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <h3 class="text--center">Types of Camp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+      <a href="#" class="block__link">
+        <span>Find out more about life at camp</span>
+        <!-- arrow-right.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+</main>
+
+<h4 class="styleguide--subheading">Full Width Block - right - brand 2 colour</h4>
+<main>
+
+    <div class="block__wrap block__right block__full block__brand-2">
+        <div class="block__content--wrap">
+          <a href="#" class="block__image--wrap">
+            <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+          </a>
+          <div class="block__text--wrap">
+            <div class="block__text">
+              <h3 class="text--center">Types of Camp</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+            </div>
+            <a href="#" class="block__link">
+              <span>Find out more about life at camp</span>
+              <!-- arrow-right.svg -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+<pre>
+<div class="comment">// Block right full width background</div>
+<textarea>
+<div class="block__wrap block__right block__full block__brand-2">
+    <div class="block__content--wrap">
+      <a href="#" class="block__image--wrap">
+        <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+      </a>
+      <div class="block__text--wrap">
+        <div class="block__text">
+          <h3 class="text--center">Types of Camp</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+        </div>
+        <a href="#" class="block__link">
+          <span>Find out more about life at camp</span>
+          <!-- arrow-right.svg -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</textarea>
+</pre>
+
+</main>
+
+<h4 class="styleguide--subheading">Full Width Block - left - grey</h4>
+<main>
+
+    <div class="block__wrap block__left block__full block__grey">
+        <div class="block__content--wrap">
+          <a href="#" class="block__image--wrap">
+            <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+          </a>
+          <div class="block__text--wrap">
+            <div class="block__text">
+              <h3 class="text--center">Types of Camp</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+            </div>
+            <a href="#" class="block__link">
+              <span>Find out more about life at camp</span>
+              <!-- arrow-right.svg -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+<pre>
+<div class="comment">// Block left full width background</div>
+<textarea>
+<div class="block__wrap block__left block__full block__grey">
+  <div class="block__content--wrap">
+    <a href="#" class="block__image--wrap">
+      <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+    </a>
+    <div class="block__text--wrap">
+      <div class="block__text">
+        <h3 class="text--center">Types of Camp</h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+      </div>
+      <a href="#" class="block__link">
+        <span>Find out more about life at camp</span>
+        <!-- arrow-right.svg -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+      </a>
+    </div>
+  </div>
+</div>
+</textarea>
+</pre>
+
+</main>
+
+
+<h4 class="styleguide--subheading">Full Width Block - right - grey</h4>
+<main>
+
+    <div class="block__wrap block__right block__full block__grey">
+        <div class="block__content--wrap">
+          <a href="#" class="block__image--wrap">
+            <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+          </a>
+          <div class="block__text--wrap">
+            <div class="block__text">
+              <h3 class="text--center">Types of Camp</h3>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+            </div>
+            <a href="#" class="block__link">
+              <span>Find out more about life at camp</span>
+              <!-- arrow-right.svg -->
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+
+<pre>
+<div class="comment">// Block right full width background</div>
+<textarea>
+<div class="block__wrap block__right block__full block__grey">
+    <div class="block__content--wrap">
+      <a href="#" class="block__image--wrap">
+        <img src="../images/camp_leaders/day-at-camp/man.jpg" alt="">
+      </a>
+      <div class="block__text--wrap">
+        <div class="block__text">
+          <h3 class="text--center">Types of Camp</h3>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut beatae amet reiciendis alias distinctio harum, nihil sit architecto, officia expedita tenetur odit unde incidunt quidem. Sint maiores ut reiciendis minus.</p>
+        </div>
+        <a href="#" class="block__link">
+          <span>Find out more about life at camp</span>
+          <!-- arrow-right.svg -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 35.59 22.7"><path d="M23.39 20l8-8.66-8-8.62a1.66 1.66 0 0 1 0-2.26 1.43 1.43 0 0 1 2-.08l.08.08 10.12 10.86-10.1 10.92a1.43 1.43 0 0 1-2 .08l-.08-.08a1.66 1.66 0 0 1-.02-2.24z"></path><path d="M32 12.77H1.18A1.35 1.35 0 0 1 0 11.3a1.35 1.35 0 0 1 1.18-1.47H32a1.35 1.35 0 0 1 1.18 1.47A1.35 1.35 0 0 1 32 12.77"></path></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</textarea>
+</pre>
+
+</main>
+
+
+
+
+      <!-- MAIN END -->
+
+
+    </div>
+
+  </div>
+  <!-- SITE WRAPPER END -->
+
+
+
+  <div class="styleguide--top" id="styleguide-top">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M12 23.6C5.6 23.6.4 18.4.4 12 .4 5.6 5.6.4 12 .4 18.4.4 23.6 5.6 23.6 12c0 6.4-5.2 11.6-11.6 11.6zm0-22.2C6.1 1.4 1.4 6.1 1.4 12c0 5.9 4.8 10.6 10.6 10.6 5.9 0 10.6-4.8 10.6-10.6 0-5.9-4.7-10.6-10.6-10.6z"></path>
+      <path d="M15.1 14.1L12 11l-3.1 3.1-.7-.7L12 9.6l3.8 3.8z"></path>
+    </svg>
+  </div>
+
+  <link rel="stylesheet" href="../stylesheets/scss/theme/camp_leaders/main.css">
+  <script src="../javascripts/main.js"></script>
+  <script src="../javascripts/homepage.js" defer></script>
+
+</body>
+
+</html>

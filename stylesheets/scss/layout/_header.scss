@@ -9,15 +9,20 @@
     @include align-items(center);
     @include container();
     @include flexbox;
-    @include justify-content(space-between);
+    @include justify-content(flex-end);
     padding-top: 40px;
   }
   &__list--item{
     cursor: pointer;
+    margin-right: 10px;
+    @include s{
+      margin-right: 20px;
+    }
     path, rect{
       fill: white;
     }
     &-menu{
+      margin: 0;
       svg{
         display: block;
         height: 40px;
@@ -25,6 +30,7 @@
       }
     }
     &-logo{
+      margin-right: auto;
       img, svg{
         height: 50px;
         @include s{

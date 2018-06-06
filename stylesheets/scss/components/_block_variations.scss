@@ -84,6 +84,7 @@
       }
     }
   }
+  // Accordion style block
   &__collapse{
     .block{
       &__title{
@@ -127,6 +128,69 @@
         &__content--wrap{
           max-height: 1000px;
           overflow: visible;
+        }
+      }
+    }
+  }
+  &__full{
+    .block{
+      &__text{
+        @include s{
+          background: transparent;
+          margin: 0;
+          &:before{
+            content: "";
+            background: $brand;
+            height: 100%;
+            left: -100%;
+            position: absolute;
+            top: 0;
+            width: 200%;
+            z-index: -1;
+          }
+        }
+        &--wrap{
+          @include s{
+            margin-top: 0;
+          }
+        }
+      }
+      &__image{
+        &--wrap{
+          z-index: 2;
+          img{
+            box-sizing: border-box;
+            @include s{
+              padding: 40px 0 0 40px;
+            }
+            @include m{
+              padding: 50px 0 0 50px;
+            }
+          }
+        }
+      }
+    }
+    &.block__right{
+      .block{
+        &__text{
+          @include s{
+            &:before{
+              left: 0%;
+            }
+          }
+        }
+        &__image{
+          &--wrap{
+            img{
+              box-sizing: border-box;
+              @include s{
+                padding: 40px 40px 0 0;
+              }
+              @include m{
+                padding: 50px 50px 0 0;
+              }
+            }
+          }
         }
       }
     }
