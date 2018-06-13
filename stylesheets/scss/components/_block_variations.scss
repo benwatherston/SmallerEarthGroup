@@ -156,6 +156,20 @@
         }
       }
       &__image{
+        &--content{
+          &-wrap{
+            @include s{
+              width: auto;
+              height: auto;
+              top: 40px;
+              left: 40px;
+            }
+            @include m{
+              top: 50px;
+              left: 50px;
+            }
+          }
+        }
         &--wrap{
           z-index: 2;
           img{
@@ -180,6 +194,17 @@
           }
         }
         &__image{
+          &--content{
+            &-wrap{
+              @include s{
+                right: 40px;
+                left: 0;
+              }
+              @include m{
+                right: 50px;
+              }
+            }
+          }
           &--wrap{
             img{
               box-sizing: border-box;

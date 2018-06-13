@@ -89,6 +89,10 @@
     }
     .block__link{
       padding: 10px 0 0;
+      width: 100%;
+      @include s{
+        text-align: left;
+      }
     }
     // Colours
     &.block__brand-2{
@@ -102,7 +106,10 @@
     &.block__grey{
       background: $light-grey;
       .block__split{
-        &--big, &--small{
+        &--big{
+          color: $brand;
+        }
+        &--small{
           color: $brand-2;
         }
       }

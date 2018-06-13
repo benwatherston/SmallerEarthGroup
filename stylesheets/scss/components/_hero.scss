@@ -1,9 +1,9 @@
 .hero{
   &__wrap{
+    @include minus-container;
     height: 80vh;
     min-height: 460px;
     position: relative;
-    width: 100%;
     @include xs{
       height: 460px;
     }
