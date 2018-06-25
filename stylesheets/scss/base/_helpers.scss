@@ -2,7 +2,8 @@
 $colours: (
   ('brand', $brand),
   ('brand-2', $brand-2),
-  ('light-grey', $light-grey)
+  ('light-grey', $light-grey),
+  ('white', white)
 );
 
 @each $colour, $value in $colours{

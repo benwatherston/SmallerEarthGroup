@@ -1,0 +1,35 @@
+// Overrides for normal blocks with a header
+
+.block__header{
+  &.contains__block{
+    margin-bottom: 0;
+    .block{
+      &__content--wrap{
+        margin-bottom: 0;
+      }
+      &__split{
+        background: $light-grey;
+        &--big{
+          color: $brand;
+        }
+        &--small{
+          color: $brand-2;
+        }
+      }
+    }
+  }
+  &.block__brand{
+    .block{
+      &__title{
+        background: $brand;
+      }
+    }
+  }
+  &.block__brand-2{
+    .block{
+      &__title{
+        background: $brand-2;
+      }
+    }
+  }
+}

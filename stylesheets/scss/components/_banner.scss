@@ -16,8 +16,8 @@
       }
     }
   &__img{
-    height: 100%;
-    width: 100%;
+    @include align-self(strech);
+    @include flex(1);
     img{
       @include background-image;
     }

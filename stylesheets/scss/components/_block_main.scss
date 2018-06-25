@@ -18,7 +18,13 @@
     @include s{
       padding: 40px;
     }
-    h2{
+    div,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6{
       @include flex(1);
     }
     &--wrap{
@@ -58,6 +64,7 @@
     &--wrap{
       @include flexbox;
       @include flex-direction(column);
+      position: relative;
       @include s{
         margin-bottom: 30px;
         @include flex-direction(row);
@@ -101,11 +108,11 @@
         z-index: 2;
       }
       svg{
-        height: 80px;
-        width: 80px;
+        height: 70px;
+        width: 70px;
         @include s{
-          height: 100px;
-          width: 100px;
+          height: 80px;
+          width: 80px;
         }
       }
     }
@@ -181,6 +188,12 @@
       *{
         fill: $brand-3;
       }
+    }
+  }
+  &__button{
+    padding: 0 20px 20px;
+    @include s{
+      padding: 30px 20px 0;
     }
   }
   &__offer{

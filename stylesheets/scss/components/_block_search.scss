@@ -1,0 +1,96 @@
+.block{
+  &__search{
+    @include flexbox;
+    @include flex-direction(column);
+    @include border-radius(15px);
+    @include margin;
+    padding: 20px;
+    ::placeholder {
+      color: $brand;
+      @include font-heading;
+      font-size: 16px;
+      opacity: 1;
+    }
+    :-ms-input-placeholder {
+        color: $brand;
+        @include font-heading;
+        font-size: 16px;
+    }
+    ::-ms-input-placeholder {
+        color: $brand;
+        @include font-heading;
+        font-size: 16px;
+    }
+    &--title{
+      @include flex(1 1 100%);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    &--input{
+      &__wrap{
+        @include flexbox;
+        @include flex-direction(column);
+        @include s{
+          @include flex-direction(row);
+        }
+        [class^="block__search--input__"]{
+          &:first-child{
+            margin-bottom: 20px;
+          }
+          @include s{
+            &:first-child{
+              margin-right: 10px;
+              margin-bottom: 0;
+            }
+            &:last-child{
+              margin-left: 10px;
+            }
+          }
+        }
+      }
+      &__text{
+        @include flex(1);
+        @include s{
+          @include flex(3 1 100%);
+        }
+        input:not([type="checkbox"]):not([type="submit"]):not([type="radio"]), textarea, select{
+          @include border-radius(30px);
+          background: white;
+          color: $brand;
+          font-size: 16px;
+          height: 38px;
+          padding: 10px 40px;
+          width: 100%;
+          @include s{
+            height: 42px;
+          }
+        }
+      }
+      &__select{
+        @include flex(1);
+        @include s{
+          @include flex(1 2 100%);
+        }
+      }
+    }
+    &.block__brand{
+      background: $brand;
+      color: white;
+      .custom__select{
+        &--btn{
+          background: $brand-2;
+        }
+        &--list{
+          background: $light-grey;
+          a{
+            color: $brand;
+          }
+        }
+      }
+    }
+    &.block__grey{
+      background: $light-grey;
+      color: $brand;
+    }
+  }
+}

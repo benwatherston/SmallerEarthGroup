@@ -1,0 +1,49 @@
+.author{
+  &__wrap{
+    @include flexbox;
+    @include align-items(center);
+    @include margin;
+    background: $light-grey;
+    margin-left: 20px;
+    @include s{
+      @include align-items(flex-start);
+      margin-left: 0px;
+      margin-top: 90px;
+    }
+  }
+  &__img{
+    @include flex(0 0 100px);
+    height: 100px;
+    margin-left: -20px;
+    position: relative;
+    @include s{
+      @include flex(0 0 120px);
+      height: 120px;
+      margin-left: 20px;
+      margin-top: -40px;
+    }
+    img{
+      @include border-radius(50%);
+      width: 100%;
+      position: absolute;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+    }
+  }
+  &__content{
+    padding: 10px;
+    color: $brand-2;
+    @include s{
+      padding: 20px;
+    }
+  }
+  &__title{
+    @include font-heading;
+    font-size: 16px;
+    margin-bottom: 5px;
+    @include s{
+      font-size: 18px;
+    }
+  }
+}

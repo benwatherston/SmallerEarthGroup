@@ -33,13 +33,57 @@
       }
     }
   }
+  &__header{
+    &.block__has--sticker{
+      .block__title{
+        padding-top: 60px;
+        padding-bottom: 60px;
+        @include s{
+          padding-top: 70px;
+          padding-bottom: 70px;
+        }
+      }
+    }
+    &.block__left{
+      .block{
+        &__offer{
+          &--wrap{
+            @include transform(rotate(-10deg));
+            right: auto;
+            left: 10px;
+            top: -45px;
+            @include s{
+              left: 20px;
+              top: -55px;
+            }
+          }
+        }
+      }
+    }
+    &.block__right{
+      .block{
+        &__offer{
+          &--wrap{
+            @include transform(rotate(10deg));
+            left: auto;
+            right: 10px;
+            top: -45px;
+            @include s{
+              right: 20px;
+              top: -55px;
+            }
+          }
+        }
+      }
+    }
+  }
   // block__top used to overlap hero image
   &__top{
     margin-top: 0;
     .block__title--wrap{
       margin-top: -10px;
       @include s{
-        margin-top: -20px;
+        margin-top: -40px;
       }
     }
   }
@@ -59,6 +103,31 @@
   &__has--title{
     .block__content--wrap{
       margin-top: -15px;
+    }
+  }
+  // block__wide block__text overlaps the image more than normal
+  &__wide{
+    &.block{
+      &__left{
+        .block__text{
+          @include s{
+            margin-left: -40px;
+          }
+          @include m{
+            margin-left: -80px;
+          }
+        }
+      }
+      &__right{
+        .block__text{
+          @include s{
+            margin-right: -40px;
+          }
+          @include m{
+            margin-right: -80px;
+          }
+        }
+      }
     }
   }
   // block__skill used to center skills offer circle
@@ -91,7 +160,7 @@
         @include container-small;
         position: relative;
         cursor: pointer;
-        h1,h2,h3,h4,h5,h6{
+        h1,h2,h3,h4,h5,h6, div{
           width: 100%;
         }
         svg{
@@ -215,6 +284,65 @@
                 padding: 50px 50px 0 0;
               }
             }
+          }
+        }
+      }
+    }
+    &.block__app{
+      .block__image--wrap{
+        img{
+          @include s{
+            width: auto;
+            height: auto;
+            max-height: 100%;
+            max-width: 100%;
+            left: 50%;
+            top: 50%;
+            @include transform(translate(-50%, -50%));
+            padding-top: 30px;
+          }
+          @include l{
+            padding-top: 20px;
+          }
+          @include xl{
+            padding-top: 10px;
+          }
+        }
+      }
+      .block__app--buttons{
+        @include flexbox;
+        @include flex-wrap(nowrap);
+        @include align-items(center);
+        @include justify-content(center);
+        height: 50px;
+        margin-bottom: 20px;
+        @include xs{
+          height: 60px;
+        }
+        @include s{
+          height: 70px;
+        }
+        @include m{
+          height: 80px;
+        }
+        a{
+          @include flex(1 1 100%);
+          height: 100%;
+        }
+        svg{
+          height: 100%;
+        }
+        #app_store{
+          padding: 8.5px 0;
+          box-sizing: border-box;
+          @include xs{
+            padding: 10px 0;
+          }
+          @include s{
+            padding: 12px 0;
+          }
+          @include m{
+            padding: 13.35px 0;
           }
         }
       }

@@ -2,10 +2,12 @@
   &__wrap{
     &--home{
       .hero__content--wrap{
-        @include justify-content(space-between);
-        padding-bottom: 0;
+        @include justify-content(center);
+        padding-bottom: 110px;
         @include xs{
-          padding-top: 140px;
+          @include justify-content(space-between);
+          padding-top: 120px;
+          padding-bottom: 0;
         }
       }
       .hero__title{
@@ -19,36 +21,42 @@
       @include flex-direction(column);
       @include justify-content(center);
       font-weight: bold;
+      position: absolute;
+      bottom: 0;
       @include xs{
         @include align-items(flex-end);
+        position: initial;
+        bottom: initial;
       }
     }
     &--inner{
       @include align-items(center);
       @include flexbox;
-      @include flex(0 0 130px);
+      @include flex(0 0 110px);
       @include flex-direction(column);
       @include justify-content(center);
-      @include p-s();
       @include shadow;
       background: $brand-2;
       border-radius: 50%;
       box-sizing: border-box;
       color: #fff;
-      height: 130px;
+      height: 110px;
+      padding: 13px;
       text-align: center;
       text-decoration: none;
-      width: 130px;
+      width: 110px;
       z-index: 2;
       @include s{
-        @include flex(0 0 160px);
-        height: 160px;
-        width: 160px;
+        @include flex(0 0 130px);
+        padding: 15px;
+        height: 130px;
+        width: 130px;
       }
       *{
-        font-size: 11px;
+        font-size: 10px;
+        line-height: 1.2;
         @include s{
-          font-size: 13px;
+          font-size: 11px;
         }
       }
     }

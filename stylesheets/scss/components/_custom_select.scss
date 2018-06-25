@@ -1,0 +1,79 @@
+.custom__select{
+  &--btn{
+    @include flexbox;
+    @include justify-content(space-between);
+    @include border-radius;
+    @include align-items(center);
+    background: $brand;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 10px 20px;
+    position: relative;
+    text-align: center;
+    z-index: 2;
+    @include s{
+      padding: 12px 20px;
+    }
+    &_text{
+      @include font-heading;
+      color: white;
+      padding-left: 20px;
+    }
+    &_icon{
+      svg{
+        @include transform(scaleY(-1));
+        @include transition(all 0.3s);
+        display: block;
+        height: 15px;
+        padding-left: 0.5rem;
+        @include s{
+          height: 18px;
+        }
+      }
+    }
+  }
+  &--list{
+    @include border-radius;
+    @include shadow;
+    @include font-heading;
+    @include transition(all 0.3s);
+    background: $brand-2;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    box-sizing: border-box;
+    height: 0;
+    overflow: hidden;
+    padding: 0px 20px 0px;
+    position: relative;
+    top: -20px;
+    width: 100%;
+    z-index: 1;
+    a{
+      box-sizing: border-box;
+      color: white;
+      cursor: pointer;
+      display: block;
+      padding: 10px;
+      text-decoration: none;
+      width: 100%;
+    }
+  }
+  &.active{
+    .custom__select{
+      &--btn{
+        &_icon{
+          svg{
+            @include transform(scaleY(1));
+          }
+        }
+      }
+      &--list{
+        height: auto;
+        overflow: visible;
+        max-height: 500px;
+        margin-bottom: -20px;
+        padding: 30px 20px 10px;
+      }
+    }
+  }
+}

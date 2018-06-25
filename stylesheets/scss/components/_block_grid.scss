@@ -1,8 +1,8 @@
 .block{
-  &__returner{
+  &__grid{
     @include flexbox;
     @include flex-direction(column);
-    @include flex-wrap(wrap);
+    @include flex-wrap(nowrap);
     @include margin;
     position: relative;
     padding: 20px 20px 0;
@@ -21,7 +21,15 @@
       top: 0;
       z-index: 0;
     }
-    &--big{
+    &--wrap{
+      @include flexbox;
+      @include flex-direction(column);
+      @include s{
+        @include flex(1 1 100%);
+        @include flex-direction(row);
+      }
+    }
+    &--left{
       @include flex(1);
       background: $brand;
       box-sizing: border-box;
@@ -39,13 +47,14 @@
         margin-bottom: 20px;
       }
     }
-    &--small{
+    &--right{
       @include flexbox;
       @include flex-direction(column);
-      @include flex-wrap(wrap);
+      @include flex-wrap(nowrap);
       z-index: 1;
       @include s{
         @include flex(1 1 40%);
+        @include flex-wrap(wrap);
         margin-left: 10px;
       }
       &__image{
@@ -78,11 +87,57 @@
         top: -20px;
       }
     }
-  &.has--offer{
-    margin-top: 10px;
-    @include s{
-      margin-top: 20px;
+    &.has--offer{
+      margin-top: 10px;
+      @include s{
+        margin-top: 20px;
+      }
     }
-  }
+    &.has--title{
+      @include flex-wrap(wrap);
+      padding-top: 0;
+      &:before{
+        display: none;
+      }
+      .block{
+        &__grid{
+          &--wrap{
+            margin-top: -20px;
+          }
+          &--right__text{
+            background: $light-grey;
+            color: $brand;
+          }
+        }
+        &__title{
+          @include flex(1);
+          &--wrap{
+            @include flexbox;
+            @include flex(1 1 100%);
+            margin-left: -60px;
+            margin-right: -60px;
+            @include s{
+              margin-left: -40px;
+              margin-right: -40px;
+            }
+          }
+        }
+        &__offer--wrap{
+          left: auto;
+          right: 10px;
+          top: -20px;
+          @include s{
+            left: auto;
+            right: 40px
+          }
+        }
+      }
+      &.has--offer{
+        margin-top: 40px;
+        @include s{
+          margin-top: 50px;
+        }
+      }
+    }
   }
 }

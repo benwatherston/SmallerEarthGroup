@@ -3,11 +3,14 @@
 @import 'components/accordion';
 @import 'components/apply';
 @import 'components/apply_block';
+@import 'components/author';
 @import 'components/banner';
 // Blocks
 @import 'components/block_colours';
+@import 'components/block_header';
 @import 'components/block_main';
-@import 'components/block_returner';
+@import 'components/block_grid';
+@import 'components/block_search';
 @import 'components/block_slider';
 @import 'components/block_split';
 @import 'components/block_testimonial';
@@ -15,11 +18,13 @@
 
 @import 'components/contact_modal';
 @import 'components/cta';
+@import 'components/custom_select';
 @import 'components/faq';
 @import 'components/heading';
 @import 'components/icons.scss';
 @import 'components/range_slider';
 @import 'components/slider';
+@import 'components/sub_navigation';
 
 @import 'layout/footer';
 @import 'layout/form';
@@ -28,7 +33,6 @@
 @import 'layout/search';
 
 @import 'pages/home';
-@import 'pages/job_roles';
 
 @import 'vendor/magnific-popup';
 @import 'vendor/slick';

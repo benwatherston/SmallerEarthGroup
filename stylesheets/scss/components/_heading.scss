@@ -2,6 +2,8 @@
   @include flexbox;
   @include align-items(center);
   @include justify-content(center);
+  @include flex-direction(column);
+  background: $brand;
   color: white;
   margin-bottom: 20px;
   text-align: center;
@@ -17,5 +19,20 @@
     margin-left: 0;
     margin-right: 0;
     margin-bottom: $spacer-m;
+  }
+  &.block__brand-2{
+    background: $brand-2;
+  }
+  &.block__grey{
+    background: $light-grey;
+  }
+  &__btn--wrap{
+    margin-top: 30px;
+  }
+  &.subheading{
+    padding: 30px 20px;
+    @include s{
+      padding: 30px 40px;
+    }
   }
 }

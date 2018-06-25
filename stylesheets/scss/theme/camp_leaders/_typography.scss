@@ -16,7 +16,19 @@
   font-family: "Helvetica neue", Arial, Helvetica, sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+{
   @include font-heading;
   line-height: 1;
   *{
@@ -24,11 +36,12 @@ h1, h2, h3, h4, h5, h6{
   }
 }
 
-h1{
-  font-size: 39px;
+h1,
+.h1{
+  font-size: 45px;
   letter-spacing: -2px;
   @include xxs{
-    font-size: 44px;
+    font-size: 50px;
   }
   @include xs{
     font-size: 54px;
@@ -47,7 +60,8 @@ h1{
   }
 }
 
-h2{
+h2,
+.h2{
   font-size: 38px;
   letter-spacing: -2px;
   @include xxs{
@@ -70,7 +84,8 @@ h2{
   }
 }
 
-h3{
+h3,
+.h3{
   font-size: 32px;
   @include xs{
     font-size: 38px;
@@ -90,7 +105,8 @@ h3{
 }
 
 
-h4{
+h4,
+.h4{
   font-size: 24px;
   @include xs{
     font-size: 26px;
@@ -109,7 +125,8 @@ h4{
   }
 }
 
-h5{
+h5,
+.h5{
   font-size: 20px;
   @include xs{
     font-size: 22px;
@@ -128,7 +145,8 @@ h5{
   }
 }
 
-h6{
+h6,
+.h6{
   font-size: 18px;
   @include xs{
     font-size: 20px;
