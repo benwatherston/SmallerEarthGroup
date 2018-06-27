@@ -82,6 +82,15 @@
       }
     }
   }
+  &--text{
+    font-size: 10px;
+    @include s{
+      font-size: 11px;
+    }
+    @include m{
+      font-size: 12px;
+    }
+  }
 }
 
 .btn--primary{

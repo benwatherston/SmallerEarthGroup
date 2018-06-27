@@ -1,0 +1,155 @@
+.team{
+  &__wrap{
+    @include flexbox;
+    @include flex(1);
+    @include flex-wrap(wrap);
+    @include justify-content(space-between);
+  }
+  &__member{
+    @include flexbox;
+    @include flex-direction(column);
+    @include flex(0 1 calc(50% - 10px));
+    @include margin;
+    @include s{
+      @include flex(0 1 calc(33.33% - 20px));
+    }
+    @include m{
+      @include flex(0 1 calc(33.33% - 40px));
+    }
+    &:nth-child(2n){
+      .team__member--content{
+        margin-left: calc(-100% - 20px);
+        &:before{
+          left: calc(75% - 10px);
+          @include s{
+            left: initial;
+          }
+        }
+        @include s{
+          margin: 0;
+        }
+      }
+    }
+    &:nth-child(3n){
+      .team__member--content{
+        @include s{
+          margin-left: calc(-200% - 60px);
+        }
+        @include m{
+          margin-left: calc(-200% - 120px);
+        }
+        &:before{
+          @include s{
+            left: calc(85% - 15px);
+          }
+        }
+      }
+    }
+    &:nth-child(3n + 1){
+      .team__member--content{
+        &:before{
+          @include s{
+            left: calc(15% - 15px);
+          }
+        }
+      }
+    }
+    &:nth-child(3n + 2){
+      .team__member--content{
+        @include s{
+          margin-left: calc(-100% - 30px);
+        }
+        @include m{
+          margin-left: calc(-100% - 60px);
+        }
+        &:before{
+          @include s{
+            left: calc(50% - 15px);
+          }
+        }
+      }
+    }
+    &--img{
+      @include background-image;
+      cursor: pointer;
+      &__wrap{
+        height: 180px;
+        margin-bottom: 10px;
+        @include xs{
+          height: 220px;
+        }
+        @include s{
+          height: 300px;
+        }
+      }
+    }
+    &--info{
+      color: $brand-2;
+      cursor: pointer;
+      text-align: center;
+      margin-bottom: 30px;
+      &__name{
+        font-weight: bold;
+      }
+      &__camp{
+        font-size: 14px;
+      }
+    }
+    &--content{
+      @include transition(all 0.3s);
+      background: $brand;
+      box-sizing: border-box;
+      color: white;
+      font-size: 12px;
+      position: relative;
+      width: calc(200% + 20px);
+      @include s{
+        width: calc(300% + 60px);
+        font-size: 14px;
+      }
+      @include m{
+        width: calc(300% + 120px);
+      }
+      &:before{
+        content: "";
+        @include transition(all 0.3s);
+        position: absolute;
+        left: calc(25% - 20px);
+        top: 0px;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 0px solid $brand;
+        @include s{
+          &:before{
+            left: calc(50% - 15px);
+          }
+        }
+      }
+      &__inner{
+        @include transition(all 0.3s);
+        max-height: 0;
+        overflow: hidden;
+        padding: 0 20px;
+        @include s{
+          padding: 0 40px;
+        }
+      }
+    }
+    &.active{
+      .team__member--content{
+        &:before{
+          border-bottom: 20px solid $brand;
+          top: -20px;
+        }
+        &__inner{
+          max-height: 500px;
+          overflow: visible;
+          padding: 20px;
+          @include s{
+            padding: 40px;
+          }
+        }
+      }
+    }
+  }
+}

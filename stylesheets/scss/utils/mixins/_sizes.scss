@@ -1,71 +1,71 @@
 @mixin container{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: $container;
+  padding-right: $container;
   @include xs{
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: $container-xs;
+    padding-right: $container-xs;
   }
   @include s{
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: $container-s;
+    padding-right: $container-s;
   }
   @include m{
-    padding-left: 100px;
-    padding-right: 100px;
+    padding-left: $container-m;
+    padding-right: $container-m;
   }
   @include l{
-    padding-left: 140px;
-    padding-right: 140px;
+    padding-left: $container-l;
+    padding-right: $container-l;
   }
   @include xl{
-    padding-left: 200px;
-    padding-right: 200px;
+    padding-left: $container-xl;
+    padding-right: $container-xl;
   }
 }
 
 @mixin container-small{
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: $container;
+  padding-right: $container;
   @include s{
     padding-left: 30px;
     padding-right: 30px;
   }
   @include m{
-    padding-left: 40px;
-    padding-right: 40px;
+    padding-left: $container-xs;
+    padding-right: $container-xs;
   }
   @include l{
-    padding-left: 60px;
-    padding-right: 60px;
+    padding-left: $container-s;
+    padding-right: $container-s;
   }
   @include xl{
-    padding-left: 80px;
-    padding-right: 80px;
+    padding-left: $container-m;
+    padding-right: $container-m;
   }
 }
 
 @mixin minus-container{
-  margin-left: -20px;
-  margin-right: -20px;
+  margin-left: -$container;
+  margin-right: -$container;
   @include xs{
-    margin-left: -40px;
-    margin-right: -40px;
+    margin-left: -$container-xs;
+    margin-right: -$container-xs;
   }
   @include s{
-    margin-left: -60px;
-    margin-right: -60px;
+    margin-left: -$container-s;
+    margin-right: -$container-s;
   }
   @include m{
-    margin-left: -100px;
-    margin-right: -100px;
+    margin-left: -$container-m;
+    margin-right: -$container-m;
   }
   @include l{
-    margin-left: -140px;
-    margin-right: -140px;
+    margin-left: -$container-l;
+    margin-right: -$container-l;
   }
   @include xl{
-    margin-left: -200px;
-    margin-right: -200px;
+    margin-left: -$container-xl;
+    margin-right: -$container-xl;
   }
 }
 
@@ -144,6 +144,16 @@
 @mixin p-lx{
   padding: 40px;
   @include s{
+    padding: 50px;
+  }
+}
+
+@mixin block-padding{
+  padding: 20px;
+  @include s{
+    padding: 40px;
+  }
+  @include m{
     padding: 50px;
   }
 }

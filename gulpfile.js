@@ -32,7 +32,8 @@ gulp.task('main', () => {
       'src/accordion.js',
       'src/block-collapse.js',
       'src/custom-select.js',
-      'src/sub-navigation.js'
+      'src/sub-navigation.js',
+      'src/team.js'
     ])
     .pipe(sourcemaps.init())
     .pipe(concat('main.js'))

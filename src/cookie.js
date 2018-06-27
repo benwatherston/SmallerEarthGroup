@@ -16,6 +16,6 @@ if (cookieClose) {
 }
 
 // Check for cookie
-if (!getCookie) {
+if (!getCookie && cookieWrap) {
   cookieWrap.classList.add('active');
 }

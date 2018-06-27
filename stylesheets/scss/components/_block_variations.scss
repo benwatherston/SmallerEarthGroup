@@ -349,3 +349,38 @@
     }
   }
 }
+
+
+.login__apply--wrap{
+  @include flexbox;
+  @include flex-direction(column);
+  text-align: center;
+  @include s{
+    @include flex-direction(row);
+    @include align-items(flex-start);
+  }
+}
+
+.login__section, .apply__section{
+  .btn{
+    margin-bottom: 5px;
+    min-width: 100px;
+    width: 100%;
+  }
+}
+
+.login__section, .apply__section{
+  @include flex(1 1 100%);
+}
+.or__section{
+  @include flex(1 1 auto);
+  font-weight: bold;
+  margin: 0 10px 10px;
+  line-height: 39px;
+  @include s{
+    margin: 0 15px;
+  }
+  @include m{
+    margin: 0 20px;
+  }
+}

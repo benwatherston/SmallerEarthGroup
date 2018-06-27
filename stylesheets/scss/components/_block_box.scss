@@ -1,0 +1,59 @@
+.block{
+  &__box{
+    @include flexbox;
+    @include flex-direction(column);
+    @include block-padding;
+    @include margin;
+    &--heading__wrap{
+      @include flexbox;
+      @include justify-content(center);
+      margin-bottom: 20px;
+      @include s{
+        margin-bottom: 30px;
+      }
+    }
+    &--content__wrap{
+      margin-bottom: 20px;
+      @include s{
+        margin-bottom: 30px;
+      }
+    }
+    &--btn__wrap{
+      @include flexbox;
+      @include justify-content(center);
+      @include flex-direction(column);
+      @include xs{
+        @include flex-direction(row);
+      }
+      .btn{
+        @include flex(1);
+        @include s{
+          @include flex(0 1 300px);
+          &:only-child{
+            @include flex(0 1 350px);
+          }
+        }
+        &:last-child{
+          margin: 1rem 0 0;
+          @include xs{
+            margin: 0 0 0 1rem;
+          }
+        }
+        &:only-child{
+          margin: 0;
+        }
+      }
+    }
+    &.block__grey{
+      background: $light-grey;
+      .block__box{
+        &--heading__wrap{
+          color: $brand;
+        }
+        &--content__wrap{
+          color: $brand-2;
+        }
+      }
+    }
+  }
+}

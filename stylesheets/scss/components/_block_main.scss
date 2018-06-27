@@ -45,9 +45,9 @@
       }
     }
     &--prev, &--next{
-      @include flex(0 1 40px);
+      @include flex(0 1 20px);
       @include s{
-        @include flex(0 1 50px);
+        @include flex(0 1 30px);
       }
       svg{
         height: 30px;
@@ -57,6 +57,34 @@
       }
       *{
         stroke: white;
+      }
+    }
+    &--prev{
+      @include xs{
+        margin-left: 20px;
+      }
+      @include m{
+        margin-left: 60px;
+      }
+      @include l{
+        margin-left: 100px;
+      }
+      @include xl{
+        margin-left: 160px;
+      }
+    }
+    &--next{
+      @include xs{
+        margin-right: 20px;
+      }
+      @include m{
+        margin-right: 60px;
+      }
+      @include l{
+        margin-right: 100px;
+      }
+      @include xl{
+        margin-right: 160px;
       }
     }
   }
@@ -118,20 +146,16 @@
     }
   }
   &__text{
+    @include block-padding;
     background: $brand;
     color: white;
     margin-bottom: 20px;
     line-height: 1.4;
-    padding: 20px;
     position: relative;
     text-align: justify;
     @include s{
       margin-bottom: 0px;
-      padding: 40px;
       z-index: 1;
-    }
-    @include m{
-      padding: 50px;
     }
     h1,h2,h3,h4,h5,h6{
       margin-bottom: 20px;

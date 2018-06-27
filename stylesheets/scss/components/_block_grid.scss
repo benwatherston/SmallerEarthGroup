@@ -27,18 +27,20 @@
       @include s{
         @include flex(1 1 100%);
         @include flex-direction(row);
+        @include flex-wrap(wrap);
       }
     }
     &--left{
       @include flex(1);
+      @include block-padding;
       background: $brand;
       box-sizing: border-box;
-      margin-bottom: 20px;
-      padding: 20px;
       color: white;
+      margin-bottom: 20px;
+      text-align: justify;
       z-index: 1;
       @include s{
-        @include flex(1 1 60%);
+        @include flex(1 1 calc(60% - 10px));
         margin-bottom: 0;
         margin-right: 10px;
       }
@@ -53,7 +55,7 @@
       @include flex-wrap(nowrap);
       z-index: 1;
       @include s{
-        @include flex(1 1 40%);
+        @include flex(1 1 calc(40% - 10px));
         @include flex-wrap(wrap);
         margin-left: 10px;
       }
@@ -68,29 +70,50 @@
       }
       &__text{
         @include flex(1);
+        padding: 20px;
         background: $brand-2;
         box-sizing: border-box;
         color: white;
-        padding: 20px;
+        text-align: justify;
+        @include m{
+          padding: 40px;
+        }
         h1,h2,h3,h4,h5,h6{
           text-align: center;
           margin-bottom: 20px;
         }
       }
     }
-    .block__offer--wrap{
-      left: 10px;
-      right: auto;
-      top: -10px;
+    &--footer{
+      @include flex(0 0 100%);
+      @include block-padding;
+      background: $light-grey;
+      color: $brand;
+      text-align: center;
+      padding-top: 40px;
+      margin-top: -20px;
+      margin-left: -20px;
+      margin-right: -20px;
       @include s{
-        left: 20px;
-        top: -20px;
+        padding-top: 60px;
+        margin-top: -40px;
+        margin-left: -40px;
+        margin-right: -40px;
+      }
+    }
+    .block__offer--wrap{
+      @include transform(rotate(-10deg));
+      left: 30px;
+      right: auto;
+      top: -20px;
+      @include s{
+        left: 50px;
       }
     }
     &.has--offer{
-      margin-top: 10px;
-      @include s{
-        margin-top: 20px;
+      margin-top: 20px;
+      .block__grid--left{
+        padding-top: 50px;
       }
     }
     &.has--title{
@@ -123,6 +146,7 @@
           }
         }
         &__offer--wrap{
+          @include transform(rotate(10deg));
           left: auto;
           right: 10px;
           top: -20px;

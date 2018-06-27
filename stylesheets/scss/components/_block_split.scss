@@ -76,6 +76,7 @@
         @include flexbox;
         @include flex-wrap(wrap);
         @include flex-direction(column);
+        @include flex(1);
         @include s{
           @include flex-direction(row);
           @include flex-wrap(nowrap);

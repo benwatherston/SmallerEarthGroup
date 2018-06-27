@@ -36,6 +36,49 @@
   }
   &__blank{
     .block{
+      &__title{
+        background: $brand;
+      }
+      &__text{
+        background: transparent;
+        color: $brand-2;
+        padding-top: 0;
+        @include s{
+          margin-left: 0;
+          margin-right: 0;
+        }
+      }
+    }
+    &.block{
+      &__left{
+        .block__text{
+          margin-left: 0;
+          @include s{
+            padding: 40px 0px 40px 40px;
+          }
+          @include m{
+            padding: 60px 0px 60px 60px;
+          }
+        }
+      }
+      &__right{
+        .block__text{
+          margin-right: 0;
+          @include s{
+            padding: 40px 40px 40px 0px;
+          }
+          @include m{
+            padding: 60px 60px 60px 0px;
+          }
+        }
+      }
+    }
+  }
+  &__blank-2{
+    &__title{
+      background: $brand-2;
+    }
+    .block{
       &__text{
         background: transparent;
         color: $brand-2;

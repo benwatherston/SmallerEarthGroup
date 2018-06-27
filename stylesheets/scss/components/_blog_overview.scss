@@ -1,0 +1,91 @@
+.blog__overview{
+  @include flexbox;
+  @include flex-direction(column);
+  margin-bottom: 20px;
+  @include s{
+    @include flex-direction(row);
+    margin-bottom: 80px;
+  }
+  &--content{
+    @include minus-container;
+    box-sizing: border-box;
+    padding: 30px 20px 50px;
+    @include xs{
+      padding: 30px 40px 50px;
+    }
+    @include s{
+      @include order(1);
+      @include flex(1 1 55%);
+      @include block-padding;
+      z-index: 2;
+      margin: 0 0 0 -5%;
+    }
+    &__title{
+      display: block;
+      text-decoration: none;
+      margin-bottom: 20px;
+      @include s{
+        margin-bottom: 30px;
+      }
+    }
+    &__wrap{
+      @include flexbox;
+      @include flex(1);
+      @include justify-content(space-between);
+      @include align-items(center);
+      font-size: 12px;
+      @include xs{
+        font-size: 14px;
+      }
+      @include s{
+        font-size: 16px;
+      }
+    }
+    &__date{
+      color: $brand-2;
+    }
+    &__btn{
+      @include flex-shrink(0);
+      font-weight: bold;
+      text-decoration: none;
+      text-align: right;
+      margin-left: 10px;
+    }
+  }
+  &--img{
+    @include background-image;
+    &__wrap{
+      @include flexbox;
+      @include flex(1);
+      margin-top: -30px;
+      @include s{
+        @include flex(1 0 45%);
+        z-index: 1;
+        margin-bottom: -30px;
+      }
+    }
+  }
+  &:nth-child(odd){
+    .blog__overview--content{
+      background: $brand;
+      &__title{
+        color: white;
+      }
+      &__btn{
+        color: white;
+      }
+    }
+  }
+  &:nth-child(even){
+    .blog__overview--content{
+      background: $light-grey;
+      &__title{
+        color: $brand;
+      }
+      &__btn{
+        color: $brand;
+      }
+    }
+  }
+
+}
